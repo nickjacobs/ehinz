@@ -1,5 +1,44 @@
 header.page-top-header {
-	padding:30px 0;
+	padding:37px 0;
 	background-color:$white;	
-	color:$black;	
+	color:$black;
+	position: relative;
+	.uni-link:after {
+		position: absolute;
+		width: 1px;
+		height: 33px;
+		content: "";
+		background: $lightergrey;
+		right: -20px;
+		top: 10px;
+	}
+	.search-bar {
+		height: 34px;
+		padding: 9px 0px;
+		div.text {
+			width: calc(100% - 34px);
+		}
+		input.text {
+			border-top-left-radius: 80px;
+		    border-bottom-left-radius: 80px;
+		    border: 0 none;
+		    padding: 4px 20px;
+		    background: $lightergrey;
+		    font-size: 14px;
+		    width: 100%;
+		}
+		input.action {
+			width: 34px;
+			height: 34px;
+			background: none;
+			border: 0px none;
+			border-top-right-radius: 80px;
+		    border-bottom-right-radius: 80px;
+		    text-indent: -9999px;
+		    overflow: hidden;
+		    position: relative;
+		    top: -34px;
+		    background: $lightergrey url(../images/icon-search.png) no-repeat 3px 8px;
+		}
+	}
 }
