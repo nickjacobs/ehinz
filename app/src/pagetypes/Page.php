@@ -7,6 +7,7 @@ namespace {
 	//use SilverStripe\Forms\LiteralField;
 	//use SilverStripe\Forms\HeaderField;
     //use SilverStripe\Forms\DropdownField;
+    use SilverStripe\Forms\TextareaField;   
 	use SilverStripe\Forms\TextField;	
 	//use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 	use SilverStripe\Assets\File;
@@ -27,6 +28,7 @@ namespace {
     class Page extends SiteTree
     {
         private static $db = [
+            "BannerTitle" => "Text",
         	"ShowInFooterMenu" => "Boolean",
             "ShowInFooterMenuAbout" => "Boolean"
         ];
@@ -63,7 +65,7 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->addFieldToTab('Root.Banner', TextField::create("BannerTitle","Title"));
+            $fields->addFieldToTab('Root.Banner', TextareaField::create("BannerTitle","Title"));
             $up1 = UploadField::create('BannerImage',"Image");
             $up1->setFolderName('BannerImages');
             $up1->getValidator()->setAllowedExtensions(['png', 'gif', 'jpeg', 'jpg']);           
