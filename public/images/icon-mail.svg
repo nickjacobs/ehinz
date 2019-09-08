@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>icon-mail</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-mail">
+            <circle id="Oval" fill="#67314D" cx="23" cy="23" r="23"></circle>
+            <g transform="translate(8.000000, 13.000000)" fill="#FFFFFF" fill-rule="nonzero" id="Shape">
+                <path d="M0,0 L0,19.665 L30.255,19.665 L30.255,0 L0,0 Z M15.127,10.019 L5.571,2.799 L24.683,2.799 L15.127,10.019 Z M10.317,9.892 L2.797,15.482 L2.797,4.21 L10.317,9.892 Z M12.643,11.649 L15.127,13.525 L17.56,11.687 L24.594,16.865 L5.626,16.865 L12.643,11.649 Z M19.889,9.927 L27.455,4.21 L27.455,15.497 L19.889,9.927 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>

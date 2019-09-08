@@ -1,0 +1,14 @@
+
+
+
+
+.btn {
+	color:white;
+	background-color:$ehgreen;
+	border-color:$ehgreen;
+	border-radius:$badge-pill-border-radius;
+	@include font(16,s);
+	padding-left:2rem;
+	padding-right:2rem;
+}
+

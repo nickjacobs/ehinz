@@ -1,0 +1,12 @@
+body {
+	color:$body;
+	font-family: $body-font;
+	@include font(18);
+	@include rem('line-height',26);
+}
+
+.container {
+	//max-width:1440px;
+}
+
+

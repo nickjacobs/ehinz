@@ -1,0 +1,42 @@
+.section-security {
+	.main-page-content {
+		max-width:400px;
+		padding-top:60px;
+		text-align:center;
+
+	}
+	#MemberLoginForm_LoginForm {
+		text-align:left;
+		padding:40px 40px 30px;
+		border:1px solid #ccc;
+		border-radius:6px;
+		background-color:$lightergrey;
+		
+		.field.text label {
+			margin-bottom:0px;
+		}
+		input.text {
+			@extend .form-control;
+			margin-bottom:12px;
+		}
+		input.action {
+			@extend .btn;
+			@extend .btn-block;
+			@extend .btn-dark;
+		}
+		#MemberLoginForm_LoginForm_Remember_Holder {
+			padding:10px 0;
+			font-size:14px;
+		}
+		#ForgotPassword {
+			margin-top:20px;
+			a {
+				text-decoration:underline;
+				font-size:14px;
+			}
+		}
+		#MemberLoginForm_LoginForm_error {
+			color:$orange;
+		}
+	}
+}
