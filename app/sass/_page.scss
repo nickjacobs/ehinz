@@ -1,7 +1,12 @@
-
-
 .main-page-content {
-	
-	
+	padding: 50px 0px;
+	.side-header {
+		text-transform: uppercase;
+	    font-weight: 700;
+	    border-bottom: 3px solid $ehgreen;
+	    padding-bottom: 12px;
+	}
+	.main-content {
+		padding: 0px 40px;
+	}
 }
-
