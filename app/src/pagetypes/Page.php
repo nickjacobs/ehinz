@@ -9,9 +9,9 @@ namespace {
     //use SilverStripe\Forms\DropdownField;
 	use SilverStripe\Forms\TextField;	
 	//use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
-	//use SilverStripe\Assets\File;
-    //use SilverStripe\Assets\Image;
-	//use SilverStripe\AssetAdmin\Forms\UploadField;	
+	use SilverStripe\Assets\File;
+    use SilverStripe\Assets\Image;
+	use SilverStripe\AssetAdmin\Forms\UploadField;	
 	//use Sheadawson\Linkable\Models\Link;
     //use Sheadawson\Linkable\Forms\LinkField;
     //use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
@@ -30,9 +30,8 @@ namespace {
         	
         ];
 
-        private static $has_one = [          
-            
-        	
+        private static $has_one = [
+            'BannerImage' => Image::class
         ];
 
         private static $many_many = array(
@@ -50,36 +49,34 @@ namespace {
         ];
 
 	    private static $owns = [
-        	// 'CaseStudies','LinkBoxes','FeatureSVG','FeaturePNG','BannerTitle'
+            'BannerImage'
         ];
 
         private static $description = "";
-
 
         private static $create_table_options = [
             MySQLSchemaManager::ID => 'ENGINE=MyISAM'
         ];
 
-
-
-
-
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
-             
-            
 
+            $fields->addFieldToTab('Root.Banner', TextField::create("BannerTitle","Title"));
+            $up1 = UploadField::create('BannerImage',"Image");
+            $up1->setFolderName('BannerImages');
+            $up1->getValidator()->setAllowedExtensions(['png', 'gif', 'jpeg', 'jpg']);           
+            $fields->addFieldToTab('Root.Banner', $up1);
+ 
             return $fields;
-        } 
-
-
+        }
 
         public function getSettingsFields() {
             $fields = parent::getSettingsFields();
-            //$fields->addFieldToTab("Root.Settings", new TextField('PageTheme'));
             return $fields;
         }
+
+
        
 
 	}
