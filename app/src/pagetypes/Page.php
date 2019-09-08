@@ -3,7 +3,7 @@
 namespace {
 
     use SilverStripe\CMS\Model\SiteTree; 
-	//use SilverStripe\Forms\CheckboxField;
+	use SilverStripe\Forms\CheckboxField;
 	//use SilverStripe\Forms\LiteralField;
 	//use SilverStripe\Forms\HeaderField;
     //use SilverStripe\Forms\DropdownField;
@@ -27,7 +27,8 @@ namespace {
     class Page extends SiteTree
     {
         private static $db = [
-        	
+        	"ShowInFooterMenu" => "Boolean",
+            "ShowInFooterMenuAbout" => "Boolean"
         ];
 
         private static $has_one = [
@@ -73,10 +74,10 @@ namespace {
 
         public function getSettingsFields() {
             $fields = parent::getSettingsFields();
+            $fields->push( new CheckboxField("ShowInFooterMenu","Show In Footer Menu") );
+            $fields->push( new CheckboxField("ShowInFooterMenuAbout","Show In Footer About Menu") );
             return $fields;
         }
-
-
        
 
 	}
