@@ -8382,6 +8382,11 @@ body {
   max-width: 100%;
   height: auto; }
 
+.typography h3,
+.typography h4 {
+  font-size: 20px;
+  line-height: 1.5; }
+
 .vertical-center {
   min-height: 100%;
   /* Fallback for vh unit */
@@ -8452,34 +8457,110 @@ body {
     padding-left: 10px; }
 
 header.page-top-header {
-  padding: 30px 0;
+  padding: 37px 0;
   background-color: #fff;
-  color: #000; }
+  color: #000;
+  position: relative; }
+  header.page-top-header .uni-link:after {
+    position: absolute;
+    width: 1px;
+    height: 33px;
+    content: "";
+    background: #f2f2f2;
+    right: -20px;
+    top: 10px; }
+  header.page-top-header .search-bar {
+    height: 34px;
+    padding: 9px 0px; }
+    header.page-top-header .search-bar div.text {
+      width: calc(100% - 34px); }
+    header.page-top-header .search-bar input.text {
+      border-top-left-radius: 80px;
+      border-bottom-left-radius: 80px;
+      border: 0 none;
+      padding: 4px 20px;
+      background: #f2f2f2;
+      font-size: 14px;
+      width: 100%; }
+    header.page-top-header .search-bar input.action {
+      width: 34px;
+      height: 34px;
+      background: none;
+      border: 0px none;
+      border-top-right-radius: 80px;
+      border-bottom-right-radius: 80px;
+      text-indent: -9999px;
+      overflow: hidden;
+      position: relative;
+      top: -34px;
+      background: #f2f2f2 url(../images/icon-search.png) no-repeat 3px 8px; }
+
+#MainBanner {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #MainBanner .container {
+    height: 350px;
+    position: relative; }
+    #MainBanner .container .banner__title {
+      position: absolute;
+      bottom: 80px; }
+      #MainBanner .container .banner__title h1 {
+        font-size: 46px;
+        font-weight: 700;
+        color: #fff; }
 
 #topLevelNav {
   padding: 0;
   background: #8BB220; }
   #topLevelNav .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
-  #topLevelNav #mainNavigation ul.navbar-nav li.nav-item {
-    padding: 0; }
-    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
-      padding: 24px 4px;
-      color: #fff;
-      font-family: "Poppins", sans-serif;
-      font-size: 16px;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.1;
-      text-rendering: optimizeLegibility;
-      display: block;
-      height: 100%; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.current {
+  #topLevelNav #mainNavigation ul.navbar-nav {
+    /* home icon */ }
+    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item {
+      padding: 0; }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
+        padding: 18px 4px;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        line-height: 1.2;
+        text-rendering: optimizeLegibility;
+        display: block;
+        height: 100%;
+        font-weight: 400; }
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.current {
+          background-color: #195C2F; }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-8 {
+        max-width: 210px; }
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-8 a {
+          padding: 8px 4px 0; }
+    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link {
+      text-indent: -9999px;
+      overflow: hidden;
+      width: 55px;
+      height: 55px;
+      background: url(../images/icon-home.png) no-repeat 12px 13px; }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link.current {
         background-color: #195C2F; }
-    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-8 {
-      max-width: 210px; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-8 a {
-        padding: 14px 4px 0; }
+
+#subNavigation {
+  display: none;
+  position: absolute;
+  z-index: 4;
+  background: #fff;
+  width: 100%;
+  padding: 45px 0px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
+  #subNavigation .subpages {
+    display: none; }
+    #subNavigation .subpages h4 {
+      padding-bottom: 20px; }
+    #subNavigation .subpages a {
+      color: #888888;
+      padding: 8px 0px;
+      display: block; }
 
 footer {
   background: #ECECEC;
@@ -8543,6 +8624,20 @@ footer {
   @media (max-width: 575.98px) {
     footer .footer-menu li {
       text-align: center; } }
+
+.main-page-content {
+  padding: 50px 0px; }
+  .main-page-content .side-header {
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 3px solid #8BB220;
+    padding-bottom: 12px; }
+  .main-page-content .main-content {
+    padding: 0px 40px; }
+
+input:focus,
+button:focus {
+  outline: 0; }
 
 /*! Flickity v2.2.0
 https://flickity.metafizzy.co
@@ -8687,7 +8782,7 @@ https://flickity.metafizzy.co
   padding: 40px 40px 30px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  background-color: #f7f7f7; }
+  background-color: #f2f2f2; }
   .section-security #MemberLoginForm_LoginForm .field.text label {
     margin-bottom: 0px; }
   .section-security #MemberLoginForm_LoginForm input.text {
