@@ -10,7 +10,8 @@
         "sheadawson/silverstripe-linkable": "^2.0",
         "colymba/gridfield-bulk-editing-tools": "^3",
         "stevie-mayhew/silverstripe-svg": "^2.2",
-        "symbiote/silverstripe-gridfieldextensions": "^3"
+        "symbiote/silverstripe-gridfieldextensions": "^3",
+        "silverstripe/blog": "^3.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7"
