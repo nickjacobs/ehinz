@@ -15,5 +15,11 @@
 			}
 		}
 	}
-	
+}
+
+/* Make higher on home page */
+body.page-1 #MainBanner {
+	.container {
+		height: 470px;
+	}
 }

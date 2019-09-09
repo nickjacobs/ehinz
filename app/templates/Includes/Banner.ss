@@ -1,5 +1,5 @@
 <% if $BannerImage %>
-	<div class="banner" id="MainBanner" style="background-image: url($BannerImage.Fill(1500,700).URL);">
+	<div class="banner" id="MainBanner" style="background-image: url($BannerImage.Fill(1500,470).URL);">
 		<div class="container">		
 			<div class="banner__title" >
 				<% if $BannerTitle %>			

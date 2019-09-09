@@ -8513,6 +8513,10 @@ header.page-top-header {
         font-weight: 700;
         color: #fff; }
 
+/* Make higher on home page */
+body.page-1 #MainBanner .container {
+  height: 470px; }
+
 #topLevelNav {
   padding: 0;
   background: #8BB220; }
@@ -8607,6 +8611,13 @@ footer {
             font-size: 16px;
             color: #888888;
             line-height: 1; }
+
+.home-page .home-content {
+  font-size: 20px;
+  line-height: 30px;
+  padding-right: 15%; }
+  .home-page .home-content p {
+    margin-bottom: 30px; }
 
 input:focus,
 button:focus {
