@@ -5,6 +5,14 @@ body {
 	@include rem('line-height',26);
 }
 
+a {
+	color:$ehgreen;
+}
+
+a:hover {
+	color:$ehdarkgreen;
+}
+
 .container {
 	//max-width:1440px;
 }

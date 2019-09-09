@@ -8,4 +8,136 @@
 			margin-bottom: 30px;
 		}
 	}
+	.home-side {
+		border-left: 1px solid $lightgrey;
+		padding-left: 30px;
+		h4 {
+			border-bottom: 1px solid $lightgrey;
+			font-size: 16px;
+		    font-weight: 600;
+		    line-height: 25px;
+		    padding: 13px 20% 13px 0px;
+		    margin-top: 40px;
+		    &:first-child {
+		    	margin-top: 0px;
+		    }
+		}
+		.blog-items {
+			padding: 0px 0px;
+			margin: 0px 0px;
+			li {
+				list-style: none;
+				padding: 0px 0px;
+				margin: 0px 0px;
+				a {
+					color: $ehgreen;
+					display: block;
+					line-height: 1.2;
+					font-size: 16px;
+					padding: 8px 0px;
+					span {
+						display: block;
+						color: $darkgrey;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+		.quick-links {
+			p {
+				font-size: 16px;
+				margin: 0px 0px;
+				padding: 0px 0px;
+				a {
+					display: block;
+					padding: 7px 0px 7px 30px;
+					background: url(../images/list-arrow.png) no-repeat 0px 13px;
+				}
+			}
+		}
+		.healthspace {
+			font-size: 14px;
+			img {
+				margin-bottom: 40px;
+			}
+		}
+		.twitter-timeline {
+			height: 250px;
+			margin-top: 30px;
+		}
+	}
+
+	.col-smaller {
+		padding: 0px 5px;
+	}
+	.row-smaller {
+		margin: 0px -5px 0px -5px;
+	}
+	.starter {
+		color: $ehgreen;
+		font-size: 20px;	
+		font-weight: 400;	
+		line-height: 25px;
+		padding: 20px 20px;
+	}
+	.sub-pages {
+		margin-top: 70px;
+	}
+	.sub-page {
+		display: block;
+		height: 197px;
+		margin-bottom: 10px;
+		position: relative;
+		background-size: cover;
+		background-position: center center;
+		overflow: hidden;
+		.title {
+			transition: all 0.2s ease;
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+			background: $ehgreen;
+			border-radius: 50px;
+			color: #fff;
+			padding: 10px 14px;
+			margin-right: 10px;
+			line-height: 1.2;
+			font-size: 16px;
+			font-weight: 600;
+		}
+		.tip {
+			transition: all 0.4s ease;
+			top: 0px;
+			left: 0px;
+			position: absolute;
+		    background: $ehgreen;
+		    color: #fff;
+		    width: 100%;
+		    display: block;
+		    height: 197px;
+		    padding: 70px 22px 0px 22px;
+		    font-size: 15px;
+		    font-weight: 300;
+		    line-height: 1.5;
+		    opacity: 0;
+		    &:after {
+		    	content: "";
+		    	width: 80px;
+		    	height: 1px;
+		    	background: #fff;
+		    	position: absolute;
+		    	top: 55px;
+		    	left: 20px;
+		    }
+		}
+		&:hover {
+			.title {
+				bottom: 147px;
+			}
+			.tip {
+				opacity: 1;
+			}
+		}
+	}
+
 }

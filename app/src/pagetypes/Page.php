@@ -29,6 +29,7 @@ namespace {
     {
         private static $db = [
             "BannerTitle" => "Text",
+            "Summary" => "Varchar(256)",
         	"ShowInFooterMenu" => "Boolean",
             "ShowInFooterMenuAbout" => "Boolean"
         ];
@@ -65,6 +66,8 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
+            $fields->addFieldToTab('Root.Main', TextField::create("Summary","Summary"),"Content");
+
             $fields->addFieldToTab('Root.Banner', TextareaField::create("BannerTitle","Title"));
             $up1 = UploadField::create('BannerImage',"Image");
             $up1->setFolderName('BannerImages');
@@ -76,10 +79,14 @@ namespace {
 
         public function getSettingsFields() {
             $fields = parent::getSettingsFields();
-            $fields->push( new CheckboxField("ShowInFooterMenu","Show In Footer Menu") );
-            $fields->push( new CheckboxField("ShowInFooterMenuAbout","Show In Footer About Menu") );
+
+            $fields->insertAfter( new CheckboxField("ShowInFooterMenuAbout","Show In Footer About Menu"), "ShowInMenus" );
+            $fields->insertAfter( new CheckboxField("ShowInFooterMenu","Show In Footer Menu"), "ShowInMenus");
+            
             return $fields;
         }
+
+        
        
 
 	}

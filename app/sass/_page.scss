@@ -31,6 +31,7 @@
 				}
 			}
 			ul {
+				display: none;
 				margin: 10px 0px 10px;
 				padding: 0px 0px;
 				li {
@@ -41,6 +42,11 @@
 						color: $greytext;
 						line-height: 1;
 					}
+				}
+			}
+			&.current, &.section {
+				ul {
+					display: block;
 				}
 			}
 		}

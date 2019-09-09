@@ -1,0 +1,27 @@
+.indicators {
+	.indicators-first-item {
+		border-bottom: 2px solid $ehgreen;
+		margin: 0px 0px 0px 0px;
+		padding: 25px 0px;
+		&.item-1 {
+			border-top: 2px solid $ehgreen;
+			margin-top: 40px;
+		}
+		.icon {
+			img {
+				width: 50px;
+				height: 50px;
+				max-width: 50px;
+				margin-left: -15px;
+			}
+		}
+		.content {
+			a {
+				font-weight: 700;
+			}
+			span {
+				display: block;
+			}
+		}
+	}
+}

@@ -9,6 +9,8 @@ use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\Security\Permission;
 use SilverStripe\View\Requirements;
 
+use SilverStripe\blog\Model\BlogPost;
+
 class PageController extends ContentController
 {
     /**
@@ -31,12 +33,18 @@ class PageController extends ContentController
     protected function init()
     {
         parent::init();
-
-        
-
     }
 
-    
+    public function LatestPosts($num = 3) {
+        return BlogPost::get()->sort('PublishDate','desc')->limit($num);
+    }
 
+    public function FooterMenuItems($num = 3) {
+        return Page::get()->filter(array('ShowInFooterMenu'=>1));
+    } 
+
+    public function FooterMenuItemsAbout() {
+        return Page::get()->filter(array('ShowInFooterMenuAbout'=>1));
+    }
     
 }

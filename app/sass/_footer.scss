@@ -1,5 +1,39 @@
 footer {	
 	background:#4a4a4a;
-	padding:50px 0;
+	padding:60px 0;
 	color: #fff;
+	font-size: 16px;
+	.footer-header {
+		border-bottom: solid 2px $lightergrey;
+		padding: 0px 0px 20px;
+		margin-bottom: 50px;
+		img {
+			margin-top: -21px;
+		}
+	}
+	.footer-badge {
+		margin-top: 20px;
+	}
+	ul {
+		padding: 0px 0px;
+		margin: 0px 0px;
+		li {
+			padding: 0px 0px;
+			margin: 0px 0px;
+			list-style: none;
+			a {
+				color: #fff;
+				text-decoration: underline;
+				&:hover {
+					color: $ehgreen;
+				}
+			}
+		}
+	}
+	.social-icons {
+		margin-top: 20px;
+		a {
+			
+		}
+	}
 }

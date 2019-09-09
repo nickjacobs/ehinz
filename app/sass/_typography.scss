@@ -6,10 +6,6 @@
 			@include font(24);
 		}
 	}
-	a {
-		color:$body;
-		font-weight:$font-semi;
-	}
 
 	ol {
 	counter-reset: list-counter;
