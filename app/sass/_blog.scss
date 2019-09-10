@@ -1,0 +1,37 @@
+.blog {
+	padding: 30px 0px;
+}
+.post-summary {
+	text-decoration: none;
+	padding: 20px 0px;
+	
+	.title {
+		font-weight: 700;
+		font-size: 18px;
+		color: $ehgreen;
+		display: block;
+		position: relative;
+	}
+	.summary {
+		font-size: 16px;
+		color: $body;
+		border-bottom: 1px solid $lightgrey;
+		display: block;
+	}
+	.img-fluid {
+		width: 87%;
+	}
+	.date {
+		display: block;
+		font-size: 14px;
+		line-height: 1;
+		margin-bottom: 8px;
+	}
+
+	a:hover {
+		text-decoration: none;
+		.date {
+			color: $ehgreen;
+		}
+	}
+}

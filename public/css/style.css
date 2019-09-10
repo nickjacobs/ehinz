@@ -8384,11 +8384,13 @@ a:hover {
   max-width: 100%;
   height: auto; }
 
-.typography h1 {
-  margin-bottom: 20px; }
+h1 {
+  margin-bottom: 20px;
+  font-size: 44px;
+  line-height: 65px; }
 
-.typography h3,
-.typography h4 {
+h3,
+h4 {
   font-size: 20px;
   line-height: 1.5; }
 
@@ -8795,6 +8797,66 @@ footer {
       .page-groups .page-group .page .page-content h3 {
         font-weight: 700;
         font-size: 18px; }
+
+.blog {
+  padding: 30px 0px; }
+
+.post-summary {
+  text-decoration: none;
+  padding: 20px 0px; }
+  .post-summary .title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #8BB220;
+    display: block;
+    position: relative; }
+  .post-summary .summary {
+    font-size: 16px;
+    color: #464749;
+    border-bottom: 1px solid #ECECEC;
+    display: block; }
+  .post-summary .img-fluid {
+    width: 87%; }
+  .post-summary .date {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    margin-bottom: 8px; }
+  .post-summary a:hover {
+    text-decoration: none; }
+    .post-summary a:hover .date {
+      color: #8BB220; }
+
+.pagination {
+  margin-top: 30px; }
+  .pagination a {
+    background: #8BB220;
+    border-radius: 50px;
+    color: #fff;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 0px 4px;
+    text-align: center;
+    line-height: 35px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+    .pagination a:hover {
+      text-decoration: none;
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1); }
+  .pagination span {
+    background: #195C2F;
+    border-radius: 50px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 0px 4px 0px 0px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    font-weight: bold; }
 
 input:focus,
 button:focus {
