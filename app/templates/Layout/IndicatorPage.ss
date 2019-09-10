@@ -17,10 +17,12 @@
 					<% else %>
 						<h1>$MenuTitle</h1>
 					<% end_if %>
-					$Content
-
+					<div class="pad-bottom">
+						$Content
+					</div>
+					<div id="show-side-trigger"></div>
 					<% if $Files %>
-						<div class="downloads expand-box">
+						<div class="downloads expand-box" id="downloads">
 							<h3 class="toggle-clicker"><img src="images/icon-download.png" /> Downloads <img class="toggle-btn" src="images/icon-toggle.png" /></h3>
 							<div class="row row-toggle">
 								<% loop $Files %>
@@ -41,7 +43,7 @@
 					<% end_if %>
 
 					<% if $Links %>
-						<div class="downloads expand-box">
+						<div class="downloads expand-box links" id="links">
 							<h3 class="toggle-clicker"><img src="images/icon-link.png" /> Useful links <img class="toggle-btn" src="images/icon-toggle.png" /></h3>
 							<div class="row row-toggle">
 								<% loop $Links %>
@@ -88,3 +90,17 @@
 		</div>
 	</div>
 </section>
+<div class="side-tabs">
+	<% if $Files %>
+		<a href="#downloads" class="tab">
+			<img class="bullet-arrow-hash" src="images/icon-download-tab.png" />
+			Downloads
+		</a>
+	<% end_if %>
+	<% if $Links %>
+		<a href="#links" class="tab">
+			<img class="bullet-arrow-hash" src="images/icon-links-tab.png" />
+			Useful links
+		</a>
+	<% end_if %>
+</div>

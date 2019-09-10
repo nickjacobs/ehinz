@@ -20,6 +20,16 @@ $(function() {
 		$(this).parent().find(".row-toggle").toggleClass("open"); 
 	});
 
+	$(window).scroll(function(){
+		console.log($(window).scrollTop());
+		console.log($("#show-side-trigger").offset().top);
+		if($(window).scrollTop() >= $("#show-side-trigger").offset().top) {
+			$(".side-tabs .tab").addClass("showing");
+		}else{
+			$(".side-tabs .tab").removeClass("showing");
+		}
+	});
+
 	/*
 	$('.carousel-holder').flickity({
 	  // options

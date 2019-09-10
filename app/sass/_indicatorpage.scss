@@ -70,4 +70,36 @@
 	.extra-content {
 		padding: 30px 0px 0px 0px;
 	}
+	.pad-bottom {
+		padding-bottom: 30px;
+	}
+}
+
+.side-tabs {
+	position: fixed;
+    top: 50px;
+    right: 0px;
+    .tab {
+    	background: #dee9bf;
+    	border-radius: 13px;
+    	color: $ehgreen;
+    	padding: 15px 30px 15px 15px;
+    	margin-bottom: 5px;
+    	cursor: pointer;
+    	display: block;
+    	position: relative;
+    	transition: all 0.4s ease;
+	    right: -200px;
+	    text-decoration: none;
+	    &.showing {
+	    	right: -132px;
+	    }
+    	img {
+    		margin-right: 10px;
+    	}
+    	&:hover {
+    		right: -13px;
+    		text-decoration: none;
+    	}
+    }
 }
