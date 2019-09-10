@@ -8897,6 +8897,33 @@ footer {
       right: -13px;
       text-decoration: none; }
 
+.searchResults {
+  padding: 50px 0px; }
+  .searchResults h1 {
+    margin-bottom: 0px;
+    padding-bottom: 0px; }
+  .searchResults .searchQuery {
+    border-bottom: 2px #8BB220 solid;
+    padding: 0px 0px 40px 0px; }
+    .searchResults .searchQuery span {
+      color: #8BB220;
+      font-weight: 700; }
+  .searchResults ul {
+    margin: 0px 0px;
+    padding: 0px 0px; }
+    .searchResults ul li {
+      padding: 20px 0px 25px 0px;
+      margin: 0px 0px;
+      list-style: none;
+      border-bottom: 1px solid #ECECEC;
+      margin-bottom: 0px; }
+      .searchResults ul li h4 {
+        font-weight: 700; }
+      .searchResults ul li p {
+        margin-bottom: 0px; }
+      .searchResults ul li .readMoreLink {
+        font-size: 14px; }
+
 .blog {
   padding: 30px 0px; }
 

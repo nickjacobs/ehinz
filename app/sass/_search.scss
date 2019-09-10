@@ -1,0 +1,35 @@
+.searchResults {
+	padding: 50px 0px;
+	h1 {
+		margin-bottom: 0px;
+		padding-bottom: 0px;
+	}
+	.searchQuery {
+		border-bottom: 2px $ehgreen solid;
+		padding: 0px 0px 40px 0px;
+		span {
+			color: $ehgreen;
+			font-weight: 700;
+		}
+	}
+	ul {
+		margin: 0px 0px;
+		padding: 0px 0px;
+		li {
+			padding: 20px 0px 25px 0px;
+			margin: 0px 0px;
+			list-style: none;
+			border-bottom: 1px solid $lightgrey;
+			margin-bottom: 0px;
+			h4 {
+				font-weight: 700;
+			}
+			p {
+				margin-bottom: 0px;
+			}
+			.readMoreLink {
+				font-size: 14px;
+			}
+		}
+	}
+}
