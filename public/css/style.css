@@ -8776,6 +8776,26 @@ footer {
   .indicators .indicators-first-item .content span {
     display: block; }
 
+/* sub pages */
+.page-groups .page-group {
+  margin-top: 50px; }
+  .page-groups .page-group h2 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 35px; }
+  .page-groups .page-group .page {
+    padding: 20px 0px 0px 0px; }
+    .page-groups .page-group .page img {
+      width: 80%;
+      max-width: 80%; }
+    .page-groups .page-group .page .page-content {
+      border-bottom: 1px solid #ECECEC;
+      padding: 0px 0px 0px 0px;
+      font-size: 16px; }
+      .page-groups .page-group .page .page-content h3 {
+        font-weight: 700;
+        font-size: 18px; }
+
 input:focus,
 button:focus {
   outline: 0; }

@@ -31,6 +31,28 @@
 							</div>
 						<% end_if %>
 					<% end_loop %>
+					<div class="page-groups">
+						<% loop $IndicatorGroups %>
+							<div class="page-group">
+								<h2>$Title</h2>
+								<% loop $Pages %>
+									<div class="page">
+										<div class="row">
+											<% if $BannerImage %>
+												<div class="col-sm-2">
+													<img src="$BannerImage.Fill(120,120).Link" />
+												</div>
+											<% end_if %>
+											<div class="page-content <% if $BannerImage %> col-sm-10 <% else %> col-sm-12 <% end_if %>">
+												<h3><a href="$Link">$Title</a></h3>
+												<p>$Summary</p>
+											</div>
+										</div>
+									</div>
+								<% end_loop %>
+							</div>
+						<% end_loop %>
+					</div>
 				</div>
 			</div>
 		</div>
