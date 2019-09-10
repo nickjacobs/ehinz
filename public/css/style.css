@@ -8808,6 +8808,9 @@ footer {
   padding: 20px 20px 3px 20px;
   background: #f3f7e8;
   margin-bottom: 20px; }
+  .indicator .expand-box.on-this-page {
+    padding: 20px 0px 20px 0px;
+    background: #fff; }
   .indicator .expand-box h3 {
     font-weight: 700;
     margin-bottom: 20px;
@@ -8843,9 +8846,9 @@ footer {
       margin-left: 5px; }
     .indicator .expand-box .content .bullet-arrow-hash {
       margin-top: 0px;
-      -webkit-transform: rotate(180deg);
-          -ms-transform: rotate(180deg);
-              transform: rotate(180deg);
+      -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+              transform: rotate(0deg);
       margin-left: 5px; }
     .indicator .expand-box .content .bigger {
       font-size: 18px;

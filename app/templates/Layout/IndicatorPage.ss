@@ -65,7 +65,7 @@
 							<div class="row">
 								<% loop $ExtraContent %>
 									<div class="col-1 content smaller">
-										<img class="bullet-arrow-hash" src="images/icon-toggle.png" />
+										<img class="bullet-arrow-hash" src="images/icon-arrow-down.png" />
 									</div>
 									<div class="col-11 content smaller">
 										<a href="#content_$ID">
