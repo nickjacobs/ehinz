@@ -8378,7 +8378,7 @@ a:hover {
 .typography ul {
   margin: 2.4rem 0; }
   .typography ul li {
-    margin-bottom: 2.2rem; }
+    margin-bottom: 5px; }
 
 .typography img {
   max-width: 100%;
@@ -8388,6 +8388,10 @@ h1 {
   margin-bottom: 20px;
   font-size: 44px;
   line-height: 65px; }
+
+h2 {
+  font-size: 22px;
+  font-weight: 700; }
 
 h3,
 h4 {
@@ -8797,6 +8801,70 @@ footer {
       .page-groups .page-group .page .page-content h3 {
         font-weight: 700;
         font-size: 18px; }
+
+.indicator .expand-box {
+  border-top: 2px #8BB220 solid;
+  border-bottom: 2px #8BB220 solid;
+  padding: 20px 20px 3px 20px;
+  background: #f3f7e8;
+  margin-bottom: 20px; }
+  .indicator .expand-box h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    cursor: pointer; }
+    .indicator .expand-box h3 img {
+      margin-right: 10px; }
+    .indicator .expand-box h3 .toggle-btn {
+      float: right;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+      -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+      margin-top: 4px; }
+      .indicator .expand-box h3 .toggle-btn.open {
+        -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+                transform: rotate(0deg); }
+  .indicator .expand-box .content {
+    font-size: 15px;
+    line-height: 1.4;
+    margin: -5px 0px 25px 0px; }
+    .indicator .expand-box .content.smaller {
+      margin: -5px 0px 15px 0px; }
+    .indicator .expand-box .content span {
+      display: block;
+      font-weight: 700; }
+    .indicator .expand-box .content .bullet-arrow {
+      margin-top: 5px;
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+      margin-left: 5px; }
+    .indicator .expand-box .content .bullet-arrow-hash {
+      margin-top: 0px;
+      -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+      margin-left: 5px; }
+    .indicator .expand-box .content .bigger {
+      font-size: 18px;
+      font-weight: 400; }
+  .indicator .expand-box .row-toggle {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    opacity: 0;
+    height: 0; }
+    .indicator .expand-box .row-toggle.open {
+      opacity: 1;
+      height: auto; }
+    .indicator .expand-box .row-toggle.on-this-page {
+      opacity: 1;
+      height: auto; }
+
+.indicator .extra-content {
+  padding: 30px 0px 0px 0px; }
 
 .blog {
   padding: 30px 0px; }

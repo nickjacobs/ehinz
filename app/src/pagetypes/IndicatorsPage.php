@@ -48,11 +48,19 @@ namespace {
             "IndicatorGroups"
         ];
 
+        private static $allowed_children = [
+            Page::class,
+            IndicatorPage::class
+        ];
+
+        private static $can_be_root = false;
+
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
 
             $config = GridFieldConfig_RecordEditor::create();
+            $config->addComponent(new GridFieldOrderableRows());
             $gridField = new GridField("IndicatorGroups", "Indicator Groups", $this->IndicatorGroups(), $config);
             $fields->addFieldToTab("Root.IndicatorGroups", $gridField);
 
@@ -65,7 +73,8 @@ namespace {
     {
 
         private static $db = [ 
-            "Title" => "Varchar(128)"
+            "Title" => "Varchar(128)",
+            "Sort" => "Int"
         ];
 
         private static $has_one = [
@@ -80,9 +89,13 @@ namespace {
 
         ];
 
+        private static $default_sort = 'Sort';
+
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
+
+            $fields->removeByName("Sort");
 
             $pages = Page::get();
             $fields->addFieldToTab("Root.Main", new CheckboxSetField("Pages","Pages",$pages->map("ID","Title")));

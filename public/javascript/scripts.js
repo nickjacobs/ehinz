@@ -16000,6 +16000,10 @@ $(function () {
     $(".subnav").hide();
     $(".subpages").hide();
   });
+  $(".toggle-clicker").click(function (e) {
+    $(this).find(".toggle-btn").toggleClass("open");
+    $(this).parent().find(".row-toggle").toggleClass("open");
+  });
   /*
   $('.carousel-holder').flickity({
     // options
