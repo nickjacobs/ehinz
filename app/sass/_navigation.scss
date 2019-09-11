@@ -35,15 +35,18 @@
 				}
 			}
 			/* home icon */
-			li.nav-item:first-child a.nav-link{
-				text-indent: -9999px;
-				overflow: hidden;
-				width: 55px;
-				height: 55px;
-				background: url(../images/icon-home.png) no-repeat 12px 13px;
-				&.section,&.current {
-					background-color:$ehdarkgreen;
-				}	
+			li.nav-item:first-child {
+				flex: none;
+				a.nav-link{
+					text-indent: -9999px;
+					overflow: hidden;
+					width: 55px;
+					height: 55px;
+					background: url(../images/icon-home.png) no-repeat 12px 13px;
+					&.section,&.current {
+						background-color:$ehdarkgreen;
+					}	
+				}
 			}
 		}
 	}

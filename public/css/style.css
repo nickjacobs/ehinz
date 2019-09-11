@@ -8550,14 +8550,18 @@ body.page-1 #MainBanner .container {
         max-width: 210px; }
         #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-8 a {
           padding: 8px 4px 0; }
-    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link {
-      text-indent: -9999px;
-      overflow: hidden;
-      width: 55px;
-      height: 55px;
-      background: url(../images/icon-home.png) no-repeat 12px 13px; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link.current {
-        background-color: #195C2F; }
+    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child {
+      -webkit-box-flex: 0;
+          -ms-flex: none;
+              flex: none; }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link {
+        text-indent: -9999px;
+        overflow: hidden;
+        width: 55px;
+        height: 55px;
+        background: url(../images/icon-home.png) no-repeat 12px 13px; }
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link.current {
+          background-color: #195C2F; }
 
 #subNavigation {
   display: none;
