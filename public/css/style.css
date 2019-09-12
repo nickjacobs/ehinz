@@ -8387,7 +8387,7 @@ a:hover {
 h1 {
   margin-bottom: 20px;
   font-size: 44px;
-  line-height: 65px; }
+  line-height: 55px; }
 
 h2 {
   font-size: 22px;
@@ -8531,7 +8531,8 @@ header.mobile-top-header {
       #MainBanner .container .banner__title h1 {
         font-size: 46px;
         font-weight: 700;
-        color: #fff; }
+        color: #fff;
+        line-height: 1.2; }
 
 /* Make higher on home page */
 body.page-1 #MainBanner .container {
@@ -8952,7 +8953,7 @@ footer {
       text-decoration: none; }
 
 .searchResults {
-  padding: 50px 0px; }
+  padding: 50px 15px; }
   .searchResults h1 {
     margin-bottom: 0px;
     padding-bottom: 0px; }
@@ -8979,7 +8980,7 @@ footer {
         font-size: 14px; }
 
 .blog {
-  padding: 30px 0px; }
+  padding: 30px 15px; }
 
 .post-summary {
   text-decoration: none;
@@ -9053,7 +9054,57 @@ button:focus {
   #topLevelNav {
     display: none; }
   header.mobile-top-header {
-    display: block; } }
+    display: block; }
+  #MainBanner .container .banner__title h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff; }
+  .home-page .sub-pages {
+    margin-top: 20px; }
+    .home-page .sub-pages .starter {
+      padding: 20px 0px 20px 0px; }
+  .indicators .indicators-first-item .icon img {
+    width: 35px;
+    height: 35px; }
+  .blog-post h1 {
+    font-size: 35px;
+    margin-bottom: 0px; }
+  .blog-post .blog-post-meta {
+    margin-top: 0px; } }
+
+.page-groups .page-group .page .page-content {
+  padding: 10px 15px; }
+
+.home-page .home-side {
+  border-left: none;
+  padding-left: 0px;
+  margin-top: 50px; }
+
+footer .footer-header {
+  margin-top: 50px;
+  margin-bottom: 20px; }
+
+.main-page-content .side-menu {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #8BB220; }
+
+.main-page-content .main-content {
+  padding-left: 0px;
+  padding-right: 0px; }
+
+.page-groups .page-group .page img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 40px; }
+
+.page-groups .page-group .page .page-content {
+  padding: 0px 15px 10px 15px; }
+
+.blog-post,
+.blog {
+  padding: 30px 15px; }
 
 /*! Flickity v2.2.0
 https://flickity.metafizzy.co

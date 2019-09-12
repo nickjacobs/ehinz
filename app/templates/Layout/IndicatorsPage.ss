@@ -21,10 +21,10 @@
 					<% loop $Children %>
 						<% if $Pos == 1 || $Pos == 2%>
 							<div class="indicators-first-item item-$Pos row">
-								<div class="icon col-sm-1">
+								<div class="icon col-1">
 									<img src="images/icon-info-{$Pos}.png" />
 								</div>
-								<div class="content col-sm-11">
+								<div class="content col-10">
 									<a href="$Link">$Title</a>
 									<span>$Summary</span>
 								</div>
@@ -39,11 +39,11 @@
 									<div class="page">
 										<div class="row">
 											<% if $BannerImage %>
-												<div class="col-sm-2">
+												<div class="col-2">
 													<img src="$BannerImage.Fill(120,120).Link" />
 												</div>
 											<% end_if %>
-											<div class="page-content <% if $BannerImage %> col-sm-10 <% else %> col-sm-12 <% end_if %>">
+											<div class="page-content <% if $BannerImage %> col-10 <% else %> col-sm-12 <% end_if %>">
 												<h3><a href="$Link">$Title</a></h3>
 												<p>$Summary</p>
 											</div>
