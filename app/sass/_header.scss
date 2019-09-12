@@ -42,3 +42,13 @@ header.page-top-header {
 		}
 	}
 }
+
+header.mobile-top-header {
+	padding:10px 0px;
+	background: $ehgreen;
+	display: none;
+	.menu {
+		padding: 5px 0px 5px 5px;
+		cursor: pointer;
+	}
+}

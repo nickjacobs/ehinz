@@ -28,3 +28,26 @@
 		<% end_loop %>
 	</div>
 </nav>
+
+<nav class="" id="mobileLevelNav">
+	<div class="container" >
+		<div class="row" >
+			<div class="col-md-12" >
+				<ul class="nav navbar-nav nav-fill w-100">  
+					<li>
+						<% if $SearchForm %>				
+			  				<div class="search-bar">
+			  					$SearchForm
+			  				</div>
+			  			<% end_if %>      
+		          <% loop $Menu(1) %> 
+		          </li>         
+		          <li class="nav-item section-{$ID}">
+		            <a class="nav-link $LinkingMode" title="{$MenuTitle}" data-id="$Link" href="$Link" >$MenuTitle <% if $LinkingMode=='current'%><span class="sr-only">(current)</span><% end_if %></a>
+		          </li>          
+		          <% end_loop %>
+		        </ul>
+		    </div>
+		</div>
+	</div>
+</nav>

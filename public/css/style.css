@@ -8510,6 +8510,14 @@ header.page-top-header {
       top: -34px;
       background: #f2f2f2 url(../images/icon-search.png) no-repeat 3px 8px; }
 
+header.mobile-top-header {
+  padding: 10px 0px;
+  background: #8BB220;
+  display: none; }
+  header.mobile-top-header .menu {
+    padding: 5px 0px 5px 5px;
+    cursor: pointer; }
+
 #MainBanner {
   background-position: center center;
   background-repeat: no-repeat;
@@ -8584,6 +8592,44 @@ body.page-1 #MainBanner .container {
       color: #888888;
       padding: 8px 0px;
       display: block; }
+
+#mobileLevelNav {
+  padding: 40px 0px;
+  background: #fff;
+  position: fixed;
+  top: 55px;
+  width: 100%;
+  z-index: 2;
+  display: none; }
+  #mobileLevelNav.open {
+    display: block; }
+  #mobileLevelNav .search-bar {
+    height: 34px;
+    padding: 9px 0px;
+    margin-bottom: 20px; }
+    #mobileLevelNav .search-bar div.text {
+      width: calc(100% - 34px); }
+    #mobileLevelNav .search-bar input.text {
+      border-top-left-radius: 80px;
+      border-bottom-left-radius: 80px;
+      border: 0 none;
+      padding: 4px 20px;
+      background: #f2f2f2;
+      font-size: 14px;
+      width: 100%; }
+    #mobileLevelNav .search-bar input.action {
+      width: 34px;
+      height: 34px;
+      background: 0 0;
+      border: 0 none;
+      border-top-right-radius: 80px;
+      border-bottom-right-radius: 80px;
+      text-indent: -9999px;
+      overflow: hidden;
+      position: relative;
+      top: -34px;
+      background: #f2f2f2 url(../images/icon-search.png) no-repeat 3px 8px;
+      left: calc(100% - 36px); }
 
 footer {
   background: #4a4a4a;
@@ -9001,6 +9047,13 @@ footer {
 input:focus,
 button:focus {
   outline: 0; }
+
+@media (max-width: 991.98px) {
+  .page-top-header,
+  #topLevelNav {
+    display: none; }
+  header.mobile-top-header {
+    display: block; } }
 
 /*! Flickity v2.2.0
 https://flickity.metafizzy.co

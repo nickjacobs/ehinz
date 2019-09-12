@@ -73,3 +73,47 @@
 	    }
 	}
 }
+
+#mobileLevelNav {
+	padding: 40px 0px;
+	background: #fff;
+	position: fixed;
+	top: 55px;
+	width: 100%;
+	z-index: 2;
+	display: none;
+	&.open {
+		display: block;
+	}
+	.search-bar {
+		height: 34px;
+		padding: 9px 0px;
+		margin-bottom: 20px;
+		div.text {
+			width: calc(100% - 34px);
+		}
+		input.text {
+			border-top-left-radius: 80px;
+		    border-bottom-left-radius: 80px;
+		    border: 0 none;
+		    padding: 4px 20px;
+		    background: $lightergrey;
+		    font-size: 14px;
+		    width: 100%;
+		}
+		input.action {
+			width: 34px;
+		    height: 34px;
+		    background: 0 0;
+		    border: 0 none;
+		    border-top-right-radius: 80px;
+		    border-bottom-right-radius: 80px;
+		    text-indent: -9999px;
+		    overflow: hidden;
+		    position: relative;
+		    top: -34px;
+		    background: #f2f2f2 url(../images/icon-search.png) no-repeat 3px 8px;
+		    left: calc(100% - 36px);
+		}
+	}
+}

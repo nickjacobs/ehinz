@@ -1,0 +1,9 @@
+@include media-breakpoint-down(md) {
+	.page-top-header,
+	#topLevelNav {
+		display: none;
+	}
+	header.mobile-top-header {
+		display: block;
+	}
+}

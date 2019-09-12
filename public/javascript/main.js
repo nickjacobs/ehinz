@@ -1,7 +1,7 @@
 $(function() {
 
 
-	$(".nav-link").mouseover(function(e){
+	$("#topLevelNav .nav-link").mouseover(function(e){
 		$(".subpages").hide();
 		$(".subnav").hide();
 		if($("[data-in-id='"+$(this).attr("data-id")+"']").length > 0){
@@ -28,6 +28,17 @@ $(function() {
 		}else{
 			$(".side-tabs .tab").removeClass("showing");
 		}
+	});
+
+	$(".mobile-top-header .menu").click(function(e){
+		$("#mobileLevelNav").toggleClass("open");
+	});
+
+	$(window).on('resize', function(){
+		var win = $(this);
+	    if (win.width() >= 992) {
+	    	$("#mobileLevelNav").removeClass("open");
+	    };
 	});
 
 	/*

@@ -15985,7 +15985,7 @@
   });
 });
 $(function () {
-  $(".nav-link").mouseover(function (e) {
+  $("#topLevelNav .nav-link").mouseover(function (e) {
     $(".subpages").hide();
     $(".subnav").hide();
 
@@ -16013,6 +16013,18 @@ $(function () {
     } else {
       $(".side-tabs .tab").removeClass("showing");
     }
+  });
+  $(".mobile-top-header .menu").click(function (e) {
+    $("#mobileLevelNav").toggleClass("open");
+  });
+  $(window).on('resize', function () {
+    var win = $(this);
+
+    if (win.width() >= 992) {
+      $("#mobileLevelNav").removeClass("open");
+    }
+
+    ;
   });
   /*
   $('.carousel-holder').flickity({
