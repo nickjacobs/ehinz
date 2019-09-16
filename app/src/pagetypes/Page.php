@@ -28,7 +28,7 @@ namespace {
     class Page extends SiteTree
     {
         private static $db = [
-            "BannerTitle" => "Text",
+            "BannerTitle" => "Varchar(256)",
             "Summary" => "Varchar(256)",
         	"ShowInFooterMenu" => "Boolean",
             "ShowInFooterMenuAbout" => "Boolean"
@@ -68,7 +68,7 @@ namespace {
 
             $fields->addFieldToTab('Root.Main', TextField::create("Summary","Summary"),"Content");
 
-            $fields->addFieldToTab('Root.Banner', TextareaField::create("BannerTitle","Title"));
+            $fields->addFieldToTab('Root.Banner', TextField::create("BannerTitle","Title"));
             $up1 = UploadField::create('BannerImage',"Image");
             $up1->setFolderName('BannerImages');
             $up1->getValidator()->setAllowedExtensions(['png', 'gif', 'jpeg', 'jpg']);           
