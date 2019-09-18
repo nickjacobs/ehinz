@@ -6,12 +6,12 @@
 					$Content
 				</div>
 				<div class="sub-pages">
-					<% with $Page(indicators) %>
+					
 						<div class="row row-smaller">
 							<div class="col-sm-6 col-lg-4 col-smaller starter">
 								Explore our Enviromental Health Indicators.
 							</div>
-							<% loop $Children %>
+							<% loop $IndicatorsPages %>
 								<% if $BannerImage %>
 									<div class="col-sm-6 col-lg-4 col-smaller">
 										<a class="sub-page" href="$Link" style="background-image: url($BannerImage.Fit(360,360).Link);">
@@ -24,7 +24,7 @@
 								<% end_if %>
 							<% end_loop %>
 						</div>
-					<% end_with %>
+					
 				</div>
 			</div>
 			<div class="col-md-4">

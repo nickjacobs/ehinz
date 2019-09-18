@@ -46,5 +46,9 @@ class PageController extends ContentController
     public function FooterMenuItemsAbout() {
         return Page::get()->filter(array('ShowInFooterMenuAbout'=>1));
     }
+
+    public function IndicatorsPages() {
+        return IndicatorsPage::get();
+    }
     
 }
