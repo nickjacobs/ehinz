@@ -34,6 +34,8 @@ namespace {
 
         private static $description ="Individual indicator page, ie Wood and Coal Fires";
 
+        private static $icon_class = 'font-icon-p-data';
+
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();

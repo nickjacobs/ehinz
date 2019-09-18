@@ -43,6 +43,8 @@ namespace {
         ];
 
         private static $description ="Top level indicators page, ie Air Quality";
+        private static $icon_class = 'font-icon-p-list';
+        
 
         private static $allowed_children = [
             Page::class,
