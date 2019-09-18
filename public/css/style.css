@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8147,6 +8147,9 @@ a.text-dark:hover, a.text-dark:focus {
 /*!
  * Custom imports
  */
+* {
+  text-rendering: optimizeLegibility; }
+
 /* ==========================================================================
    Media queries mixins
    ========================================================================== */
@@ -8762,9 +8765,26 @@ footer {
 .home-page .starter {
   color: #8BB220;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 25px;
-  padding: 20px 20px; }
+  padding: 20px 20px;
+  position: relative; }
+  .home-page .starter:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 70%;
+    border-left: 1px solid #f1f1f1; }
+  .home-page .starter:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 1;
+    border-top: 1px solid #f1f1f1; }
 
 .home-page .sub-pages {
   margin-top: 70px; }
@@ -8789,7 +8809,7 @@ footer {
     padding: 10px 14px;
     margin-right: 10px;
     line-height: 1.2;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600; }
   .home-page .sub-page .tip {
     -webkit-transition: all 0.4s ease;
@@ -9072,39 +9092,33 @@ button:focus {
   .blog-post .blog-post-meta {
     margin-top: 0px; } }
 
-.page-groups .page-group .page .page-content {
-  padding: 10px 15px; }
-
-.home-page .home-side {
-  border-left: none;
-  padding-left: 0px;
-  margin-top: 50px; }
-
-footer .footer-header {
-  margin-top: 50px;
-  margin-bottom: 20px; }
-
-.main-page-content .side-menu {
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #8BB220; }
-
-.main-page-content .main-content {
-  padding-left: 0px;
-  padding-right: 0px; }
-
-.page-groups .page-group .page img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 40px; }
-
-.page-groups .page-group .page .page-content {
-  padding: 0px 15px 10px 15px; }
-
-.blog-post,
-.blog {
-  padding: 30px 15px; }
+@media (max-width: 767.98px) {
+  .page-groups .page-group .page .page-content {
+    padding: 10px 15px; }
+  .home-page .home-side {
+    border-left: none;
+    padding-left: 0px;
+    margin-top: 50px; }
+  footer .footer-header {
+    margin-top: 50px;
+    margin-bottom: 20px; }
+  .main-page-content .side-menu {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #8BB220; }
+  .main-page-content .main-content {
+    padding-left: 0px;
+    padding-right: 0px; }
+  .page-groups .page-group .page img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    min-width: 40px; }
+  .page-groups .page-group .page .page-content {
+    padding: 0px 15px 10px 15px; }
+  .blog-post,
+  .blog {
+    padding: 30px 15px; } }
 
 /*! Flickity v2.2.0
 https://flickity.metafizzy.co
