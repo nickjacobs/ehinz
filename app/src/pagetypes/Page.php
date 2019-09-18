@@ -66,7 +66,7 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->addFieldToTab('Root.Main', TextField::create("Summary","Summary"),"Content");
+            //$fields->addFieldToTab('Root.Main', TextField::create("Summary","Summary"),"Content");
 
             $fields->addFieldToTab('Root.Banner', TextField::create("BannerTitle","Title"));
             $up1 = UploadField::create('BannerImage',"Image");
