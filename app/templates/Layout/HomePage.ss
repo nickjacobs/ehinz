@@ -11,17 +11,15 @@
 							<div class="col-sm-6 col-lg-4 col-smaller starter">
 								Explore our Enviromental Health Indicators.
 							</div>
-							<% loop $IndicatorsPages %>
-								<% if $BannerImage %>
+							<% loop $IndicatorsPages %>								
 									<div class="col-sm-6 col-lg-4 col-smaller">
-										<a class="sub-page" href="$Link" style="background-image: url($BannerImage.Fit(360,360).Link);">
+										<a class="sub-page" href="$Link" <% if $BannerImage %>style="background-image: url($BannerImage.Fit(360,360).Link);"<% end_if %>>
 											<span class="tip">
 												$Summary
 											</span>
 											<span class="title">$Title</span>
 										</a>
-									</div>
-								<% end_if %>
+									</div>								
 							<% end_loop %>
 						</div>
 					
