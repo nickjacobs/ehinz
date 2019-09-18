@@ -32,6 +32,8 @@ namespace {
             "Links"
         ];
 
+        private static $description ="Individual indicator page, ie Wood and Coal Fires";
+
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
