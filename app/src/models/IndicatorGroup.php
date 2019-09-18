@@ -4,6 +4,7 @@
 namespace {
 
 	use SilverStripe\ORM\DataObject;
+    use SilverStripe\CMS\Model\SiteTree;
 	//use SilverStripe\Forms\ToggleCompositeField;
     //use SilverStripe\Forms\FieldList;
     //use SilverStripe\Forms\TextField;
