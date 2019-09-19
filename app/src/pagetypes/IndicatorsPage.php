@@ -4,7 +4,7 @@ namespace {
 
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
-    use SilverStripe\Forms\TextField;
+   
     //use SilverStripe\Assets\Image;
     //use SilverStripe\AssetAdmin\Forms\UploadField;
     //use SilvearStripe\Forms\TextField;
@@ -58,8 +58,7 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->addFieldToTab('Root.Main', TextField::create("Summary","Summary"),"Content");
-
+            
             $config = GridFieldConfig_RecordEditor::create();
             $config->addComponent(new GridFieldOrderableRows());
             $gridField = new GridField("IndicatorGroups", "Indicator Groups", $this->IndicatorGroups(), $config);

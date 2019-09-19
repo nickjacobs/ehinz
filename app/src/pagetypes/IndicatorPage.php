@@ -5,8 +5,7 @@ namespace {
     use SilverStripe\ORM\DBEnum;
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
-    use SilverStripe\Forms\TextField;
-    use SilverStripe\Forms\GridField\GridField;
+        use SilverStripe\Forms\GridField\GridField;
     use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
     use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
@@ -39,8 +38,6 @@ namespace {
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
-
-            $fields->addFieldToTab('Root.Main', TextField::create("Summary","Summary"),"Content");
 
             $config = GridFieldConfig_RecordEditor::create();
             $config->addComponent(new GridFieldOrderableRows());

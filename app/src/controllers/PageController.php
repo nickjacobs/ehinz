@@ -50,5 +50,8 @@ class PageController extends ContentController
     public function IndicatorsPages() {
         return IndicatorsPage::get();
     }
+
+
+    
     
 }

@@ -19,12 +19,14 @@
 					<% end_if %>
 					$Content
 					<% loop $Children %>
-						<% if $Pos == 1 || $Pos == 2%>
-							<div class="indicators-first-item item-$Pos row">
+						<% if ClassName.Shortname == 'Page' %>
+							<div class="indicators-first-item item-{$Pos} row">
+								<% if $SummaryIcon %>
 								<div class="icon col-1">
-									<img src="images/icon-info-{$Pos}.png" />
+									<img src="$SummaryIcon.URL" />
 								</div>
-								<div class="content col-10">
+								<% end_if %>
+								<div class="content <% if $SummaryIcon %>col-10<% else %><% end_if %>">
 									<a href="$Link">$Title</a>
 									<span>$Summary</span>
 								</div>
@@ -37,15 +39,16 @@
 								<h2>$Title</h2>
 								<% loop $Pages %>
 									<div class="page">
-										<div class="row">
-											<% if $BannerImage %>
+										<div class="row tiny-gutters">
+											<% if $ShowSummaryThumb %>
 												<div class="col-2">
-													<img src="$BannerImage.Fill(120,120).Link" />
+													<img src="$ShowSummaryThumb.Fill(120,120).Link" />
 												</div>
 											<% end_if %>
-											<div class="page-content <% if $BannerImage %> col-10 <% else %> col-sm-12 <% end_if %>">
+											<div class="page-content <% if ShowSummaryThumb %> col-10 <% else %> col-12 <% end_if %>">
 												<h3><a href="$Link">$Title</a></h3>
 												<p>$Summary</p>
+												<hr>
 											</div>
 										</div>
 									</div>
