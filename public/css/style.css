@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8334,7 +8334,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   color: #464749;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 400;
@@ -8351,7 +8351,7 @@ a:hover {
   font-size: 28px;
   font-size: 1.75rem;
   font-weight: 400;
-  font-family: "Poppins", sans-serif; }
+  font-family: "Montserrat", sans-serif; }
   @media (max-width: 575.98px) {
     .typography .lead {
       font-size: 24px;
@@ -8376,7 +8376,7 @@ a:hover {
       font-size: 48px;
       font-size: 3rem;
       font-weight: 400;
-      font-family: "Poppins", sans-serif; }
+      font-family: "Montserrat", sans-serif; }
 
 .typography ul {
   margin: 2.4rem 0; }
@@ -8553,7 +8553,7 @@ body.page-1 #MainBanner .container {
       #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
         padding: 18px 4px;
         color: #fff;
-        font-family: "Poppins", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 16px;
         line-height: 1.2;
         text-rendering: optimizeLegibility;
@@ -8871,8 +8871,6 @@ footer {
       width: 80%;
       max-width: 80%; }
     .page-groups .page-group .page .page-content {
-      border-bottom: 1px solid #ECECEC;
-      padding: 0px 0px 0px 0px;
       font-size: 16px; }
       .page-groups .page-group .page .page-content h3 {
         font-weight: 700;
