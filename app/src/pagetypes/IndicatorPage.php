@@ -23,7 +23,7 @@ namespace {
         private static $has_many = [
            "Files" => DownloadFile::class,
            "Links" => Link::class,
-           "ExtraContent" => ExtraContent::class
+           //"ExtraContent" => ExtraContent::class
         ];
 
         private static $owns = [
@@ -39,10 +39,10 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $config = GridFieldConfig_RecordEditor::create();
-            $config->addComponent(new GridFieldOrderableRows());
-            $gridField = new GridField("ExtraContent", "Extra Content", $this->ExtraContent(), $config);
-            $fields->addFieldToTab("Root.ExtraContent", $gridField);
+            // $config = GridFieldConfig_RecordEditor::create();
+            // $config->addComponent(new GridFieldOrderableRows());
+            // $gridField = new GridField("ExtraContent", "Extra Content", $this->ExtraContent(), $config);
+            // $fields->addFieldToTab("Root.ExtraContent", $gridField);
 
             $config = GridFieldConfig_RecordEditor::create();
             $config->addComponent(new GridFieldOrderableRows());

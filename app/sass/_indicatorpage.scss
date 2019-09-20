@@ -5,27 +5,7 @@
 		padding: 20px 20px 3px 20px;
 		background: $ehlightgreen;
 		margin-bottom: 20px;
-		&.on-this-page {
-			padding: 20px 0px 20px 0px;
-			background: #fff;
-		}
-		h3 {
-			font-weight: 700;
-			margin-bottom: 20px;
-			cursor: pointer;
-			img {
-				margin-right: 10px;
-			}
-			.toggle-btn {
-				float: right;
-				transition: all 0.4s ease;
-				transform: rotate(180deg);
-				margin-top: 4px;
-				&.open {
-					transform: rotate(0deg);
-				}
-			}
-		}
+		
 		.content {
 			font-size: 15px;
 		    line-height: 1.4;

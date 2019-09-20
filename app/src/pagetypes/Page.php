@@ -12,7 +12,12 @@ namespace {
 	use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 	use SilverStripe\Assets\File;
     use SilverStripe\Assets\Image;
-	use SilverStripe\AssetAdmin\Forms\UploadField;	
+	use SilverStripe\AssetAdmin\Forms\UploadField;
+    use SilverStripe\ORM\ArrayList;
+    use SilverStripe\ORM\FieldType\DBField;
+    use SilverStripe\Core\Convert;
+
+
 	//use Sheadawson\Linkable\Models\Link;
     //use Sheadawson\Linkable\Forms\LinkField;
     //use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
@@ -109,7 +114,29 @@ namespace {
             return false;
         }
 
-        
+
+        public function Subheadings()
+        {
+            preg_match_all('/<h2 class="anchor">(.*?)<\/h2>/is', $this->Content, $matches);
+            $out = [];
+            foreach ($matches[1] as $subheading) {
+                $out[] = [
+                    'Title'      => $subheading,
+                    'urlsegment' => Convert::raw2url($subheading),
+                ];
+            }
+            return ArrayList::create($out);
+        }
+
+        public function GetFormattedContent()
+        {
+            $content = $this->dbObject('Content')->RAW();
+            foreach ($this->Subheadings() as $subheading) {
+                $content = str_replace('<h2 class="anchor">' . $subheading->Title . '</h2>', '<h2 class="anchor" id="' . $subheading->urlsegment . '">' . $subheading->Title . '</h2>', $content);
+            }
+            return DBField::create_field('HTMLText', $content);
+        }
+      
        
 
 	}
