@@ -3,6 +3,7 @@ body {
 	font-family: $body-font;
 	@include font(18);
 	@include rem('line-height',26);
+	font-weight:$font-light;
 }
 
 a {
@@ -15,6 +16,76 @@ a:hover {
 
 .container {
 	//max-width:1440px;
+}
+
+
+.on-this-page {
+	padding: 20px 0px 10px 0px;
+	background: #fff;
+	border-top: 2px $ehgreen solid;
+	border-bottom: 2px $ehgreen solid;	
+	margin-bottom: 40px;
+	
+	.content {
+		font-size: 15px;
+	    line-height: 1.4;
+	    margin: -5px 0px 25px 0px;
+	    &.smaller {
+	    	margin: -5px 0px 15px 0px;
+	    }
+	    span {
+	    	display: block;
+	    	font-weight: 700;
+	    }
+	    .bullet-arrow {
+	    	margin-top: 5px;
+	    	transform: rotate(45deg);
+	    	margin-left: 5px;
+	    }
+	    .bullet-arrow-hash {
+	    	margin-top: 0px;
+	    	transform: rotate(0deg);
+	    	margin-left: 5px;
+	    }
+	    .bigger {
+	    	font-size: 18px;
+	    	font-weight: 400;
+	    }
+	}
+	.row-toggle {
+		transition: all 0.4s ease;
+		overflow: hidden;
+		opacity: 0;
+		height: 0;
+		&.open {
+			opacity: 1;
+			height: auto;
+		}
+		&.on-this-page {
+			opacity: 1;
+			height: auto;
+		}
+	}
+
+	
+	h3 {
+		font-weight: $font-med;
+		margin-bottom: 20px;
+		cursor: pointer;
+		@include font(18,s);
+		img {
+			margin-right: 10px;
+		}
+		.toggle-btn {
+			float: right;
+			transition: all 0.4s ease;
+			transform: rotate(180deg);
+			margin-top: 4px;
+			&.open {
+				transform: rotate(0deg);
+			}
+		}
+	}
 }
 
 

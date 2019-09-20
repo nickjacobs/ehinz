@@ -1,2 +1,6 @@
 .lead {
-  font-size: 28px; }
+  font-size: 22px;
+  line-height: 1.2; }
+
+h2.anchor {
+  color: blue; }

@@ -1,6 +1,6 @@
 .typography {
 	.lead {
-		@include font(28);
+		@include font(22);
 		font-family:$heading-font;
 		@include max-xs {
 			@include font(24);
@@ -37,25 +37,42 @@
 		max-width:100%;
 		height:auto;
 	}
-	
-}
 
-h1 {
+
+	h1 {
 	margin-bottom: 20px;
 	font-size: 44px;
 	line-height: 55px;
-}
-h2 {
-	font-size: 22px;
-	font-weight: 700;
-}
-h3 {
-	font-size: 20px;
-	font-weight: 700;
+	}
+	h2 {
+		font-size: 23px;
+		font-weight: $font-semi;
+	}
+	h3 {
+		font-size: 19px;
+		font-weight: $font-semi;
+	}
+	
+	h4 {
+		font-size: 18px;
+		line-height: 1.5;
+		font-weight: $font-semi;
+	}
+
+	a {
+		color:$ehgreen;
+		//text-decoration:underline;
+		border-bottom:1px solid $ehgreen;
+		&:hover {
+			text-decoration: none;
+			background:$ehlightgreen;
+		}
+	}
+
+
+
+
+
+	
 }
 
-h3,
-h4 {
-	font-size: 20px;
-	line-height: 1.5;
-}
