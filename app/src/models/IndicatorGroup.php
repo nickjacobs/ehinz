@@ -22,7 +22,7 @@ namespace {
         ];
 
         private static $has_one = [
-            "IndicatorsPage" => "IndicatorsPage"
+            "IndicatorsHolder" => "IndicatorsHolder"
         ];
 
         private static $many_many = [

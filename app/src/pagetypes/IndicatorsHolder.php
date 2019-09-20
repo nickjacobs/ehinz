@@ -24,7 +24,7 @@ namespace {
 
     
 
-    class IndicatorsPage extends Page
+    class IndicatorsHolder extends Page
     {
 
         private static $db = [ 
