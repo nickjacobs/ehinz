@@ -1,8 +1,8 @@
 <section class="main-page-content home-page">
 	<div class="container">		
 		<div class="row">
-			<div class="col-md-8 typography">
-				<div class="home-content">
+			<div class="col-md-8">
+				<div class="home-content typography">
 					$Content
 				</div>
 				<div class="sub-pages">

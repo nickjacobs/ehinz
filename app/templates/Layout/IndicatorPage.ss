@@ -11,96 +11,24 @@
 					<% end_with %>
 				</div>
 			<% end_if %>
-			<div class="<% if $Menu(2)  %>col-md-9<% else %>col-md-12<% end_if %> typography">
+			<div class="<% if $Menu(2)  %>col-md-9<% else %>col-md-12<% end_if %>">
 				<div class="main-content">
-					<% if $BannerImage %>
-					<% else %>
-						<h1>$MenuTitle</h1>
-					<% end_if %>
-					<div class="pad-bottom">
-						$Content
-					</div>
+					
+					<% include IntroSection %>
+
 					<div id="show-side-trigger"></div>
-					<% if $Files %>
-						<div class="downloads expand-box" id="downloads">
-							<h3 class="toggle-clicker"><img src="images/icon-download.png" /> Downloads <img class="toggle-btn" src="images/icon-toggle.png" /></h3>
-							<div class="row row-toggle">
-								<% loop $Files %>
-									<div class="col-1">
-										<% if $DocType == 'Background' %><img src="images/icon-doc-background.png" /><% end_if %>
-										<% if $DocType == 'Metadata' %><img src="images/icon-doc-metadata.png" /><% end_if %>
-										<% if $DocType == 'Factsheet' %><img src="images/icon-doc-factsheet.png" /><% end_if %>
-									</div>
-									<div class="col-11 col-md-5 content">
-										<a href="$Link" target="_blank">
-											<strong>$DocType:</strong> 
-											$Title
-										</a>
-									</div>
-								<% end_loop %>
-							</div>
-						</div>
-					<% end_if %>
+					
+					<% include FilesSection %>
 
-					<% if $Links %>
-						<div class="downloads expand-box links" id="links">
-							<h3 class="toggle-clicker"><img src="images/icon-link.png" /> Useful links <img class="toggle-btn" src="images/icon-toggle.png" /></h3>
-							<div class="row row-toggle">
-								<% loop $Links %>
-										<div class="col-1 content">
-											<img class="bullet-arrow" src="images/icon-toggle.png" />
-										</div>
-										<div class="col-11 content">
-											<a href="$URL" target="_blank">
-												<span>$Title</span>
-												$Summary
-											</a>
-										</div>
-								<% end_loop %>
-							</div>
-						</div>
-					<% end_if %>
+					<% include LinksSection %>
 
-					<% if $ExtraContent %>
-						<div class="downloads expand-box on-this-page">
-							<h3>On this page:</h3>
-							<div class="row">
-								<% loop $ExtraContent %>
-									<div class="col-1 content smaller">
-										<img class="bullet-arrow-hash" src="images/icon-arrow-down.png" />
-									</div>
-									<div class="col-11 content smaller">
-										<a href="#content_$ID">
-											<span class="bigger">$Title</span>
-										</a>
-									</div>
-								<% end_loop %>
-							</div>
-						</div>
-						<% loop $ExtraContent %>
-							<div id="content_$ID" class="extra-content">
-								<h2>$Title</h2>
-								$Content
-							</div>
-						<% end_loop %>
-					<% end_if %>
+					<% include OnThisPageList %>
+
+					<% include ContentSection %>
 
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<div class="side-tabs">
-	<% if $Files %>
-		<a href="#downloads" class="tab">
-			<img class="bullet-arrow-hash" src="images/icon-download-tab.png" />
-			Downloads
-		</a>
-	<% end_if %>
-	<% if $Links %>
-		<a href="#links" class="tab">
-			<img class="bullet-arrow-hash" src="images/icon-links-tab.png" />
-			Useful links
-		</a>
-	<% end_if %>
-</div>
+<% include SideTabs %>

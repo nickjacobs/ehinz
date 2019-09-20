@@ -11,14 +11,9 @@
 					<% end_with %>
 				</div>
 			<% end_if %>
-			<div class="<% if $Menu(2)  %>col-md-9<% else %>col-md-12<% end_if %> typography">
-				<div class="main-content">
-					<% if $BannerImage %>
-					<% else %>
-						<h1>$MenuTitle</h1>
-					<% end_if %>
-					$Content
-				</div>
+			<div class="<% if $Menu(2)  %>col-md-9<% else %>col-md-12<% end_if %>">
+				<% include IntroSection %>
+				<% include ContentSection %>
 			</div>
 		</div>
 	</div>
