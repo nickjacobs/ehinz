@@ -5,7 +5,28 @@
 		padding: 20px 20px 3px 20px;
 		background: $ehlightgreen;
 		margin-bottom: 20px;
-		
+		&.on-this-page {
+			padding: 20px 0px 20px 0px;
+			background: #fff;
+		}
+		h3 {
+			font-weight: 700;
+			margin-bottom: 20px;
+			cursor: pointer;
+			@include font(18,s);
+			img {
+				margin-right: 10px;
+			}
+			.toggle-btn {
+				float: right;
+				transition: all 0.4s ease;
+				transform: rotate(180deg);
+				margin-top: 4px;
+				&.open {
+					transform: rotate(0deg);
+				}
+			}
+		}
 		.content {
 			font-size: 15px;
 		    line-height: 1.4;
@@ -83,3 +104,78 @@
     	}
     }
 }
+
+
+
+
+.page-summary-link-item {
+	border-bottom: 2px solid $ehgreen;
+	margin: 0px;
+	padding: 20px 0px;
+	&.first {
+		border-top: 2px solid $ehgreen;
+		margin-top:40px;		
+	}
+	&.last {margin-bottom:40px;}
+	.icon {
+		img {
+			width: 50px;
+			height: 50px;
+			max-width: 50px;
+			margin-left: -15px;
+		}
+	}
+	.content {
+		a {
+			font-weight: 700;
+		}
+		span {
+			display: block;
+		}
+	}
+}
+
+
+/* sub pages */
+.page-groups {
+	.page-group {
+		margin-top: 50px;
+		h2 {
+			font-size: 24px;
+			font-weight: bold;	
+			line-height: 35px;
+		}
+		
+	}
+}
+
+
+
+
+
+.indicator-link-item {
+	color:$body;
+	.media-body{border-bottom: 1px solid $lightgrey;}
+	&:hover {
+		//color:$body;
+		text-decoration:none;
+
+		.indicator-link-item__title {			
+			text-decoration: underline;
+			color:$ehdarkgreen;
+			//background:$ehlightgreen;		
+		}
+		
+		.indicator-link-item__summary {
+			color:$body;
+			text-decoration:none;
+		}
+	}
+	&__title {
+		color:$ehgreen;
+		text-decoration:none;
+	}
+	&__summary {}
+}
+
+

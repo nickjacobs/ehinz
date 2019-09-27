@@ -32,10 +32,14 @@ namespace {
         ];
 
         private static $has_one = [
-            "IndicatorPage" => "IndicatorPage",
+            //"IndicatorPage" => "IndicatorPage",
         ];
 
         private static $owns = [
+        ];
+
+        private static $summary_fields = [
+            'Title','URL'
         ];
 
         private static $default_sort = 'Sort';

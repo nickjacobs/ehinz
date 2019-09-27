@@ -2,6 +2,7 @@
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
@@ -16,7 +17,9 @@ class CustomSiteConfig extends DataExtension
     	'TWLink' => 'Varchar',
     	'LinkedInLink' => 'Varchar',
     	'EmailLink' => 'Varchar',
-        'Address' => 'Text'
+        'Address' => 'Text',
+        'DownloadsOpen' => 'Boolean',
+        'LinksOpen' => 'Boolean'
     ];
 
     private static $has_one = [        
@@ -36,6 +39,13 @@ class CustomSiteConfig extends DataExtension
     		TextField::create('EmailLink'),
             TextareaField::create('Address'),
     	]);
+
+        $fields->addFieldsToTab('Root.Main',[            
+            HeaderField::create('hf2','Downloads and Links section'),
+            CheckboxField::create('DownloadsOpen','Default downloads section to open'),
+            CheckboxField::create('LinksOpen','Default links section to open')
+        ]
+        );
 
      
         

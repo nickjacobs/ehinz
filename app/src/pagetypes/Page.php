@@ -34,7 +34,7 @@ namespace {
     {
         private static $db = [
             "BannerTitle" => "Varchar(256)",
-            "Summary" => "Varchar(256)",
+            "Summary" => "Text",
         	"ShowInFooterMenu" => "Boolean",
             "ShowInFooterMenuAbout" => "Boolean",
             "PageIntro" => "HTMLText",
@@ -79,7 +79,7 @@ namespace {
             
             $fields->addFieldToTab('Root.Summary', HeaderField::create("hf1","Summary information for page listings"));
 
-            $fields->addFieldToTab('Root.Summary', TextField::create("Summary","Summary"));
+            $fields->addFieldToTab('Root.Summary', TextareaField::create("Summary","Summary"));
 
             $up3 = UploadField::create('SummaryIcon',"Summary icon");
             $up3->setFolderName('SummaryIcons');
@@ -99,8 +99,8 @@ namespace {
         public function getSettingsFields() {
             $fields = parent::getSettingsFields();
 
-            $fields->insertAfter( new CheckboxField("ShowInFooterMenuAbout","Show In Footer About Menu"), "ShowInMenus" );
-            $fields->insertAfter( new CheckboxField("ShowInFooterMenu","Show In Footer Menu"), "ShowInMenus");
+            $fields->insertAfter( new CheckboxField("ShowInFooterMenuAbout","Show In footer More Info menu"), "ShowInMenus" );
+            $fields->insertAfter( new CheckboxField("ShowInFooterMenu","Show In footer menu"), "ShowInMenus");
             
             return $fields;
         }

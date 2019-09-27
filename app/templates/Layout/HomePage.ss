@@ -5,8 +5,7 @@
 				<div class="home-content typography">
 					$Content
 				</div>
-				<div class="sub-pages">
-					
+				<div class="sub-pages">					
 						<div class="row row-smaller">
 							<div class="col-sm-6 col-lg-4 col-smaller starter">
 								Explore our Enviromental Health Indicators.

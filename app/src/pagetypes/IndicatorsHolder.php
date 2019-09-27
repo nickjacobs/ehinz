@@ -43,7 +43,7 @@ namespace {
             "IndicatorGroups"
         ];
 
-        private static $description ="Top level indicators page, ie Air Quality";
+        private static $description ="Indicators holder page, ie Air Quality";
         private static $icon_class = 'font-icon-p-list';
         
 

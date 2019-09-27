@@ -6,7 +6,7 @@ namespace {
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
         use SilverStripe\Forms\GridField\GridField;
-    use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+    use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
     use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
     class IndicatorPage extends Page
@@ -20,10 +20,19 @@ namespace {
            
         ];
 
-        private static $has_many = [
+        private static $many_many = [
            "Files" => DownloadFile::class,
            "Links" => Link::class,
            //"ExtraContent" => ExtraContent::class
+        ];        
+
+        private static $many_many_extraFields = [
+            'Files' => [
+                'FileSort' => 'Int',
+            ],
+            'Links' => [
+                'LinkSort' => 'Int',
+            ],
         ];
 
         private static $owns = [
@@ -44,12 +53,12 @@ namespace {
             // $gridField = new GridField("ExtraContent", "Extra Content", $this->ExtraContent(), $config);
             // $fields->addFieldToTab("Root.ExtraContent", $gridField);
 
-            $config = GridFieldConfig_RecordEditor::create();
+            $config = GridFieldConfig_RelationEditor::create();
             $config->addComponent(new GridFieldOrderableRows());
             $gridField = new GridField("Files", "Files", $this->Files(), $config);
             $fields->addFieldToTab("Root.Files", $gridField);
 
-            $config = GridFieldConfig_RecordEditor::create();
+            $config = GridFieldConfig_RelationEditor::create();
             $config->addComponent(new GridFieldOrderableRows());
             $gridField = new GridField("Links", "Links", $this->Links(), $config);
             $fields->addFieldToTab("Root.Links", $gridField);

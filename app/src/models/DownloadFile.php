@@ -26,12 +26,16 @@ namespace {
         ];
 
         private static $has_one = [
-            "IndicatorPage" => "IndicatorPage",
+           // "IndicatorPage" => "IndicatorPage",
             "File" => File::class
         ];
 
         private static $owns = [
             "File"
+        ];
+
+        private static $summary_fields = [
+            'DocType','Title'
         ];
 
         private static $default_sort = 'Sort';
@@ -54,7 +58,7 @@ namespace {
             $fields->addFieldToTab("Root.Main", new DropdownField("DocType","Document Type",$types,$this->DocType));
 
             $up1 = UploadField::create('File',"File");
-            $up1->setFolderName('IndicatorFiles');
+            $up1->setFolderName('Factsheets');
             $up1->getValidator()->setAllowedExtensions(['pdf']);           
             $fields->addFieldToTab('Root.Main', $up1);
 
