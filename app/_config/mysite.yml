@@ -25,3 +25,9 @@ StevieMayhew\SilverStripeSVG\SVGTemplate:
 SilverStripe\ORM\Search\FulltextSearchable:
   enabled: ‘true’
 
+SilverStripe\Blog\Model\Blog:
+  extensions:
+    - SilverStripe\Widgets\Extensions\WidgetPageExtension
+SilverStripe\Blog\Model\BlogPost:
+  extensions:
+    - SilverStripe\Widgets\Extensions\WidgetPageExtension
