@@ -8360,24 +8360,22 @@ a:hover {
     font-size: 18px;
     font-size: 1.125rem;
     font-weight: 600; }
-  .on-this-page .content {
+  .on-this-page .on-this-page__item {
     font-size: 15px;
-    line-height: 1.4;
-    margin: -5px 0px 25px 0px; }
-    .on-this-page .content.smaller {
-      margin: -5px 0px 15px 0px; }
-    .on-this-page .content .bullet-arrow-hash {
-      margin-top: 0px;
+    line-height: 1.2;
+    margin: -5px 0px 18px 0px;
+    position: relative; }
+    .on-this-page .on-this-page__item .bullet-arrow-hash {
       -webkit-transform: rotate(0deg);
           -ms-transform: rotate(0deg);
               transform: rotate(0deg);
-      margin-left: 5px;
-      display: inline-block;
-      margin-top: -4px; }
-    .on-this-page .content .bigger {
+      position: absolute;
+      left: 15px;
+      top: -1px; }
+    .on-this-page .on-this-page__item a {
       font-size: 18px;
       font-weight: 400;
-      padding-left: 10px;
+      padding-left: 30px;
       display: inline-block; }
 
 .typography .lead {
@@ -8391,26 +8389,6 @@ a:hover {
       font-size: 1.5rem;
       font-weight: 400; } }
 
-.typography ol {
-  counter-reset: list-counter;
-  list-style: none;
-  padding-left: 0;
-  margin: 2.4rem 0; }
-  .typography ol li {
-    padding-left: 2rem;
-    position: relative;
-    margin-bottom: 2.4rem; }
-    .typography ol li:before {
-      position: absolute;
-      left: 0;
-      top: 8px;
-      content: counter(list-counter);
-      counter-increment: list-counter;
-      font-size: 48px;
-      font-size: 3rem;
-      font-weight: 400;
-      font-family: "Montserrat", sans-serif; }
-
 .typography ul {
   margin: 2.4rem 0; }
   .typography ul li {
@@ -8423,7 +8401,7 @@ a:hover {
 .typography h1 {
   margin-bottom: 20px;
   font-size: 44px;
-  line-height: 55px; }
+  line-height: 1.1; }
 
 .typography h2 {
   font-size: 23px;
@@ -8444,6 +8422,87 @@ a:hover {
   .typography a:hover {
     text-decoration: none;
     background: #f3f7e8; }
+
+/* IMAGES
+-------------------------------------------- */
+.typography img {
+  height: auto;
+  /* resets the image height so that it maintains its aspect ratio when width is set */ }
+
+.typography img.left {
+  float: left;
+  max-width: 50%;
+  margin: 5px 20px 10px 0; }
+
+.typography img.right {
+  float: right;
+  max-width: 50%;
+  /* Responsive width */
+  margin: 5px 0 10px 20px; }
+
+.typography img.leftAlone {
+  float: left;
+  margin-right: 100%;
+  margin-bottom: 10px;
+  clear: both; }
+
+.typography img.center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 10px;
+  clear: both; }
+
+.typography .captionImage {
+  width: 100%;
+  margin-top: 5px; }
+
+.typography .captionImage img {
+  margin: 0; }
+
+.typography .captionImage.left {
+  float: left;
+  margin: 5px 30px 20px 0px; }
+
+.typography .captionImage.right {
+  float: right;
+  margin: 5px 0 20px 30px; }
+
+.typography .captionImage.left[style],
+.typography .captionImage.right[style] {
+  max-width: 50%;
+  /* Overides core width to make responsive */ }
+
+.typography .captionImage.left img,
+.typography .captionImage.right img {
+  float: none;
+  max-width: none;
+  width: 100%; }
+
+.typography .captionImage.left img {
+  margin-right: -10px; }
+
+.typography .captionImage.right img {
+  margin-left: -10px; }
+
+.typography .captionImage.right p {
+  margin-left: -10px;
+  text-align: left;
+  margin-left: -10px; }
+
+.typography .captionImage.leftAlone {
+  float: none;
+  margin: 0 20px 20px 0px; }
+
+.typography .captionImage.center {
+  margin: 0 auto 20px; }
+
+.typography .captionImage p {
+  clear: both;
+  margin: 5px 0;
+  font-style: italic;
+  color: #888; }
 
 .vertical-center {
   min-height: 100%;
@@ -8887,9 +8946,6 @@ footer {
   padding: 20px 20px 3px 20px;
   background: #f3f7e8;
   margin-bottom: 20px; }
-  .indicator .expand-box.on-this-page {
-    padding: 20px 0px 20px 0px;
-    background: #fff; }
   .indicator .expand-box h3 {
     font-weight: 700;
     margin-bottom: 20px;
@@ -8942,9 +8998,6 @@ footer {
     opacity: 0;
     height: 0; }
     .indicator .expand-box .row-toggle.open {
-      opacity: 1;
-      height: auto; }
-    .indicator .expand-box .row-toggle.on-this-page {
       opacity: 1;
       height: auto; }
 
@@ -9302,6 +9355,28 @@ https://flickity.metafizzy.co
 
 .flickity-page-dots .dot.is-selected {
   opacity: 1; }
+
+.newsletter-list .newsletter-item {
+  font-size: 1rem; }
+  .newsletter-list .newsletter-item h4 {
+    font-size: 1.1rem; }
+    .newsletter-list .newsletter-item h4 span {
+      color: #888888; }
+  .newsletter-list .newsletter-item.first {
+    font-size: 1.25rem;
+    padding: 40px 15px;
+    background: #f3f7e8;
+    margin-bottom: 30px; }
+    .newsletter-list .newsletter-item.first hr {
+      display: none; }
+    .newsletter-list .newsletter-item.first h6 {
+      font-size: .9rem;
+      color: #8BB220;
+      text-transform: uppercase; }
+    .newsletter-list .newsletter-item.first h4 {
+      font-size: 1.6rem; }
+  .newsletter-list .newsletter-item i {
+    font-size: 16px; }
 
 .section-security .main-page-content {
   max-width: 400px;

@@ -67,5 +67,11 @@ namespace {
             return $fields;
         }
 
+
+        public function IndicatorPages()
+        {
+            return IndicatorPage::get()->filter('ParentID',$this->ID);
+        }
+
     }
 }

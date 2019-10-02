@@ -1,0 +1,22 @@
+.newsletter-list {
+	.newsletter-item {
+		font-size:1rem;
+		h4 {
+			font-size:1.1rem;
+			span {
+				color:$greytext;
+			}
+		}
+		&.first {
+			font-size:1.25rem;
+			padding:40px 15px;
+			background:$ehlightgreen;
+			hr {display:none;}
+			margin-bottom:30px;
+			h6 {font-size:.9rem;color:$ehgreen;text-transform:uppercase;}
+			h4 {font-size:1.6rem}
+		}
+		i {font-size:16px;}
+		
+	}
+}

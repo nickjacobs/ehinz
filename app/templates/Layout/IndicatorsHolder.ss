@@ -15,23 +15,36 @@
 				<div class="main-content">
 					<% include IntroSection %>
 					<% include ContentSection %>
-
-					<% loop $Children %>
-						<% if ClassName.Shortname == 'Page' %>												
-							<% include PageSummaryLinkItem %>													
-						<% end_if %>
-					<% end_loop %>
-					<div class="page-groups">
-						<% loop $IndicatorGroups %>
-							<div class="page-group">
-								<h2 class="mb-3">$Title</h2>
-								<% loop $Pages %>
-									<div class="page">										
-										<% include IndicatorLinkItem %>	
-									</div>
-								<% end_loop %>
-							</div>
+					
+					<% if $PageSummaryLinks %>
+						<div class="page-summary-links">
+						<% loop $PageSummaryLinks %>																		
+							<% include PageSummaryLinkItem %>
 						<% end_loop %>
+						</div>
+					<% end_if %>
+
+					<div class="page-groups">
+						<% if $IndicatorGroups %>
+							<% loop $IndicatorGroups %>
+								<div class="page-group">
+									<h2 class="mb-3">$Title</h2>
+									<% loop $Pages %>
+										<div class="page">										
+											<% include IndicatorLinkItem %>	
+										</div>
+									<% end_loop %>
+								</div>
+							<% end_loop %>
+						<% else %>
+							<% loop $IndicatorPages %>
+								<div class="page">										
+									<% include IndicatorLinkItem %>	
+								</div>
+							<% end_loop %>
+
+
+						<% end_if %>
 					</div>
 				</div>
 			</div>

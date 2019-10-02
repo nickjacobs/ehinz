@@ -13,6 +13,7 @@
 			<% end_if %>
 			<div class="<% if $Menu(2)  %>col-md-9<% else %>col-md-12<% end_if %>">
 				<% include IntroSection %>
+				<% include OnThisPageList %>
 				<% include ContentSection %>
 			</div>
 		</div>

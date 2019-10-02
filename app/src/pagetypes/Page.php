@@ -38,7 +38,7 @@ namespace {
         	"ShowInFooterMenu" => "Boolean",
             "ShowInFooterMenuAbout" => "Boolean",
             "PageIntro" => "HTMLText",
-            "ShowOnThisPage" => "Boolean"
+            //"ShowOnThisPage" => "Boolean"
         ];
 
         private static $has_one = [
@@ -49,11 +49,20 @@ namespace {
 
         private static $many_many = [];
 
+
+
         private static $many_many_extraFields = [];
 
 	    private static $owns = [
             'BannerImage','SummaryThumb','SummaryIcon'
         ];
+
+
+        // private static $casting = [
+        //     'FormattedTitle' => 'Raw' 
+        // ];      
+
+
 
         private static $description = "";
 
@@ -67,7 +76,7 @@ namespace {
 
             if($this->ClassName == 'Page' || $this->ClassName == 'IndicatorPage'){
                 $fields->addFieldToTab('Root.Main', HTMLEditorField::create('PageIntro')->setRows(8)->addExtraClass('stacked'),'Content');
-                $fields->addFieldToTab('Root.Main', CheckboxField::create('ShowOnThisPage','Show "On this page list"?'),'Content');
+                //$fields->addFieldToTab('Root.Main', CheckboxField::create('ShowOnThisPage','Show "On this page list"?'),'Content');
             }
 
            

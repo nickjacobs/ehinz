@@ -32,26 +32,24 @@ a:hover {
 		@include font(18,s);				
 	}
 	
-	.content {
+	.on-this-page__item {
 		font-size: 15px;
-	    line-height: 1.4;
-	    margin: -5px 0px 25px 0px;
-	    &.smaller {
-	    	margin: -5px 0px 15px 0px;
-	    } 
-	    .bullet-arrow-hash {
-	    	margin-top: 0px;
-	    	transform: rotate(0deg);
-	    	margin-left: 5px;
-	    	display:inline-block;
-	    	margin-top:-4px;
+	    line-height: 1.2;	    
+	    margin: -5px 0px 18px 0px;
+	    position:relative;
+	     
+	    .bullet-arrow-hash {	
+	    	transform: rotate(0deg);	    	
+	    	position:absolute;
+	    	left:15px;
+	    	top:-1px;
 	    }
-	    .bigger {
+	    a {
 	    	font-size: 18px;
 	    	font-weight: 400;
-	    	padding-left:10px;
-	    	//padding-top:3px;
+	    	padding-left:30px;
 	    	display:inline-block;
+
 	    }
 	}	
 	

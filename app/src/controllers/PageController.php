@@ -52,6 +52,11 @@ class PageController extends ContentController
     }
 
 
+    public function PageSummaryLinks() {
+        return Page::get()->filter(['ClassName'=>'Page','ParentID'=>$this->ID]);
+    }
+
+
     
     
 }

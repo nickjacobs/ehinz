@@ -27,6 +27,7 @@
   <meta property="og:image" content=""> --%>
   
   <% require css('public/css/style.min.css') %>
+  <script src="https://kit.fontawesome.com/d689586e59.js" crossorigin="anonymous"></script>
   <%-- <script src="https://kit.fontawesome.com/f7dd464e09.js"></script> --%>
     
   </head>
