@@ -1,6 +1,6 @@
 <% if $Archive %>
 	<ul>
-		<% loop $Archive %>
+		<% loop $Archive.Limit($NumberToDisplay) %>
 			<li>
 				<a href="$Link" title="$Title">
 					<span class="arrow">&rarr;</span>
