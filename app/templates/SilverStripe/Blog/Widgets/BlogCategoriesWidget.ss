@@ -2,8 +2,7 @@
 	<ul>
 		<% loop $Categories %>
 			<li>
-				<a href="$Link" title="$Title">
-					<span class="arrow">&rarr;</span>
+				<a href="$Link" title="$Title">					
 					<span class="text">$Title</span>
 				</a>
 			</li>

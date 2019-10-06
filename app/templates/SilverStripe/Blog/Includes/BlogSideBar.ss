@@ -1,5 +1,5 @@
 <% if $SideBarView %>
-	<div class="blog-sidebar typography unit size1of4 lastUnit">
+	<div class="blog-sidebar">
 		$SideBarView
 	</div>
 <% end_if %>
