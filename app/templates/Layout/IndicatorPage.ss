@@ -19,10 +19,11 @@
 					<div id="show-side-trigger"></div>
 					
 					<% include FilesSection %>
-					<% include LinksSection %>
+					
 					<% include StaffContactsSection %>
 					<% include OnThisPageList %>
 					<% include ContentSection %>
+					<% include LinksSection %>
 
 				</div>
 			</div>
