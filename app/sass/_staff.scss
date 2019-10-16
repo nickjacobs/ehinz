@@ -1,0 +1,34 @@
+.staff-section {
+	.staff-member {
+		margin-bottom:20px;
+		&__image {
+			
+		}
+		&__title {
+			font-weight:$font-semi;
+			font-size:22px;
+			margin-bottom:0px;
+		}
+		&__position {
+			font-weight:$font-semi;
+			font-size:19px;
+			margin-bottom:0px;
+		}
+		&__content {
+			padding-top:20px;
+		}
+
+	}
+	
+}
+
+
+
+.expand-box.contacts {
+	.staff-contact-item {
+		padding-bottom:20px;
+	}
+	.domain-first {
+		margin-bottom:20px;
+	}
+}

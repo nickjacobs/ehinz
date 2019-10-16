@@ -6,7 +6,7 @@ class DownloadFileAdmin extends ModelAdmin
 {
 
     private static $managed_models = [
-        'DownloadFile'        
+        'DownloadFile','Topic'      
     ];
 
     private static $url_segment = 'download-files';

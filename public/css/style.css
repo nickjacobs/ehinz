@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -367,7 +367,7 @@ mark,
   padding: 0.2em;
   background-color: #fcf8e3; }
 
-.list-unstyled {
+.list-unstyled, .blog-sidebar nav.secondary ul {
   padding-left: 0;
   list-style: none; }
 
@@ -8334,7 +8334,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   color: #464749;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 400;
@@ -8355,7 +8355,6 @@ a:hover {
   border-bottom: 2px #8BB220 solid;
   margin-bottom: 40px; }
   .on-this-page h3 {
-    font-weight: 500;
     margin-bottom: 20px;
     font-size: 18px;
     font-size: 1.125rem;
@@ -8371,9 +8370,11 @@ a:hover {
               transform: rotate(0deg);
       position: absolute;
       left: 15px;
-      top: -1px; }
+      top: 0px;
+      width: 20px;
+      height: 20px; }
     .on-this-page .on-this-page__item a {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 400;
       padding-left: 30px;
       display: inline-block; }
@@ -8382,7 +8383,7 @@ a:hover {
   font-size: 22px;
   font-size: 1.375rem;
   font-weight: 400;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Source Sans Pro", sans-serif; }
   @media (max-width: 575.98px) {
     .typography .lead {
       font-size: 24px;
@@ -8404,11 +8405,11 @@ a:hover {
   line-height: 1.1; }
 
 .typography h2 {
-  font-size: 23px;
+  font-size: 26px;
   font-weight: 600; }
 
 .typography h3 {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 600; }
 
 .typography h4 {
@@ -8653,7 +8654,7 @@ body.page-1 #MainBanner .container {
       #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
         padding: 18px 4px;
         color: #fff;
-        font-family: "Montserrat", sans-serif;
+        font-family: "Source Sans Pro", sans-serif;
         font-size: 16px;
         line-height: 1.2;
         text-rendering: optimizeLegibility;
@@ -8662,6 +8663,10 @@ body.page-1 #MainBanner .container {
         font-weight: 400; }
         #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.current {
           background-color: #195C2F; }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-6 {
+        max-width: 190px; }
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-6 a {
+          padding: 8px 4px 0; }
       #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-239 {
         max-width: 210px; }
         #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-239 a {
@@ -8940,22 +8945,22 @@ footer {
   .home-page .sub-page:hover .tip {
     opacity: 1; }
 
-.indicator .expand-box {
+.expand-box {
   border-top: 2px #8BB220 solid;
   border-bottom: 2px #8BB220 solid;
   padding: 20px 20px 3px 20px;
   background: #f3f7e8;
   margin-bottom: 20px; }
-  .indicator .expand-box h3 {
+  .expand-box h3 {
     font-weight: 700;
     margin-bottom: 20px;
     cursor: pointer;
     font-size: 18px;
     font-size: 1.125rem;
     font-weight: 600; }
-    .indicator .expand-box h3 img {
+    .expand-box h3 img {
       margin-right: 10px; }
-    .indicator .expand-box h3 .toggle-btn {
+    .expand-box h3 .toggle-btn {
       float: right;
       -webkit-transition: all 0.4s ease;
       transition: all 0.4s ease;
@@ -8963,48 +8968,48 @@ footer {
           -ms-transform: rotate(180deg);
               transform: rotate(180deg);
       margin-top: 4px; }
-      .indicator .expand-box h3 .toggle-btn.open {
+      .expand-box h3 .toggle-btn.open {
         -webkit-transform: rotate(0deg);
             -ms-transform: rotate(0deg);
                 transform: rotate(0deg); }
-  .indicator .expand-box .content {
+  .expand-box .content {
     font-size: 15px;
     line-height: 1.4;
     margin: -5px 0px 25px 0px; }
-    .indicator .expand-box .content.smaller {
+    .expand-box .content.smaller {
       margin: -5px 0px 15px 0px; }
-    .indicator .expand-box .content span {
+    .expand-box .content span {
       display: block;
       font-weight: 700; }
-    .indicator .expand-box .content .bullet-arrow {
+    .expand-box .content .bullet-arrow {
       margin-top: 5px;
       -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
               transform: rotate(45deg);
       margin-left: 5px; }
-    .indicator .expand-box .content .bullet-arrow-hash {
+    .expand-box .content .bullet-arrow-hash {
       margin-top: 0px;
       -webkit-transform: rotate(0deg);
           -ms-transform: rotate(0deg);
               transform: rotate(0deg);
       margin-left: 5px; }
-    .indicator .expand-box .content .bigger {
+    .expand-box .content .bigger {
       font-size: 18px;
       font-weight: 400; }
-  .indicator .expand-box .row-toggle {
+  .expand-box .row-toggle {
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
     overflow: hidden;
     opacity: 0;
     height: 0; }
-    .indicator .expand-box .row-toggle.open {
+    .expand-box .row-toggle.open {
       opacity: 1;
       height: auto; }
 
-.indicator .extra-content {
+.extra-content {
   padding: 30px 0px 0px 0px; }
 
-.indicator .pad-bottom {
+.pad-bottom {
   padding-bottom: 30px; }
 
 .side-tabs {
@@ -9037,8 +9042,7 @@ footer {
   margin: 0px;
   padding: 20px 0px; }
   .page-summary-link-item.first {
-    border-top: 2px solid #8BB220;
-    margin-top: 40px; }
+    border-top: 2px solid #8BB220; }
   .page-summary-link-item.last {
     margin-bottom: 40px; }
   .page-summary-link-item .icon img {
@@ -9136,6 +9140,16 @@ footer {
   .blog-post .blog-post-meta {
     margin-top: -30px;
     margin-bottom: 20px; }
+
+.blog-sidebar nav.secondary h3 {
+  font-size: 18px; }
+
+.blog-sidebar nav.secondary ul li {
+  line-height: 1.1;
+  margin-bottom: 8px; }
+  .blog-sidebar nav.secondary ul li a {
+    text-decoration: underline;
+    font-size: 16px; }
 
 .pagination {
   margin-top: 30px; }
@@ -9377,6 +9391,25 @@ https://flickity.metafizzy.co
       font-size: 1.6rem; }
   .newsletter-list .newsletter-item i {
     font-size: 16px; }
+
+.staff-section .staff-member {
+  margin-bottom: 20px; }
+  .staff-section .staff-member__title {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 0px; }
+  .staff-section .staff-member__position {
+    font-weight: 600;
+    font-size: 19px;
+    margin-bottom: 0px; }
+  .staff-section .staff-member__content {
+    padding-top: 20px; }
+
+.expand-box.contacts .staff-contact-item {
+  padding-bottom: 20px; }
+
+.expand-box.contacts .domain-first {
+  margin-bottom: 20px; }
 
 .section-security .main-page-content {
   max-width: 400px;

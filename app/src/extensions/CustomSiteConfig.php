@@ -19,7 +19,9 @@ class CustomSiteConfig extends DataExtension
     	'EmailLink' => 'Varchar',
         'Address' => 'Text',
         'DownloadsOpen' => 'Boolean',
-        'LinksOpen' => 'Boolean'
+        'LinksOpen' => 'Boolean',
+        'ContactsOpen' => 'Boolean'
+
     ];
 
     private static $has_one = [        
@@ -43,7 +45,8 @@ class CustomSiteConfig extends DataExtension
         $fields->addFieldsToTab('Root.Main',[            
             HeaderField::create('hf2','Downloads and Links section'),
             CheckboxField::create('DownloadsOpen','Default downloads section to open'),
-            CheckboxField::create('LinksOpen','Default links section to open')
+            CheckboxField::create('LinksOpen','Default links section to open'),
+            CheckboxField::create('ContactsOpen','Default staff contacts section to open')
         ]
         );
 

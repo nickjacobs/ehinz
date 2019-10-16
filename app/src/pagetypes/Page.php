@@ -18,6 +18,11 @@ namespace {
     use SilverStripe\Core\Convert;
 
 
+    use SilverStripe\Forms\GridField\GridField;
+    use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
+    use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+
+
 	//use Sheadawson\Linkable\Models\Link;
     //use Sheadawson\Linkable\Forms\LinkField;
     //use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
@@ -47,14 +52,28 @@ namespace {
             'SummaryIcon' => Image::class
         ];
 
-        private static $many_many = [];
+        private static $many_many = [
+           "Files" => DownloadFile::class,
+           "Links" => Link::class,
+           "StaffContacts" => StaffPage::class,
+           //"ExtraContent" => ExtraContent::class
+        ];        
 
+        private static $many_many_extraFields = [
+            'Files' => [
+                'FileSort' => 'Int',
+            ],
+            'Links' => [
+                'LinkSort' => 'Int',
+            ],
+            'StaffContacts' => [
+                'ContactSort' => 'Int',
+            ],
+        ];
 
-
-        private static $many_many_extraFields = [];
-
+       
 	    private static $owns = [
-            'BannerImage','SummaryThumb','SummaryIcon'
+            'BannerImage','SummaryThumb','SummaryIcon','Files','Links','StaffContacts'
         ];
 
 
@@ -101,6 +120,27 @@ namespace {
             $up2->getValidator()->setAllowedExtensions(['png', 'gif', 'jpeg', 'jpg']); 
             $up2->setDescription('Set an image for the summary listing - otherwise we\'ll use the indicator banner');        
             $fields->addFieldToTab('Root.Summary', $up2);
+
+
+
+
+            $config = GridFieldConfig_RelationEditor::create();
+            $config->addComponent(new GridFieldOrderableRows());
+            $gridField = new GridField("Files", "Files", $this->Files(), $config);
+            $fields->addFieldToTab("Root.Files", $gridField);
+
+            $config2 = GridFieldConfig_RelationEditor::create();
+            $config2->addComponent(new GridFieldOrderableRows());
+            $gridField2 = new GridField("Links", "Links", $this->Links(), $config2);
+            $fields->addFieldToTab("Root.Links", $gridField2);
+
+            $config3 = GridFieldConfig_RelationEditor::create();
+            $config3->addComponent(new GridFieldOrderableRows());
+            $config3->removeComponentsByType(SilverStripe\Forms\GridField\GridFieldAddNewButton::class);
+            $gridField3 = new GridField("StaffContacts", "StaffContacts", $this->StaffContacts(), $config3);
+            $fields->addFieldToTab("Root.StaffContacts", $gridField3);
+
+
  
             return $fields;
         }

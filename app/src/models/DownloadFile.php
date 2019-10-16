@@ -12,7 +12,7 @@ namespace {
     use SilverStripe\AssetAdmin\Forms\UploadField;
     use SilverStripe\Forms\TextField;
     use SilverStripe\Forms\TextareaField;
-
+    use SilverStripe\Forms\ListboxField;
     
 
 	class DownloadFile extends DataObject
@@ -21,7 +21,7 @@ namespace {
         private static $db = [ 
             "Title" => "Varchar(128)",
             "Summary" => "Varchar(512)",
-            "DocType" => "Varchar(128)", //"Enum('Factsheet,Metadata,Background')",
+            "DocType" => "Varchar(128)", //"Enum('Factsheet,Metadata,Background,Report')",
             "Sort" => "Int"
         ];
 
@@ -30,8 +30,12 @@ namespace {
             "File" => File::class
         ];
 
+        private static $many_many = [
+            'Topics' => Topic::class
+        ];
+
         private static $owns = [
-            "File"
+            "File","Topics"
         ];
 
         private static $summary_fields = [
@@ -45,6 +49,7 @@ namespace {
             $fields = parent::getCMSFields();
 
             $fields->removeByName("Sort");
+            $fields->removeByName("Topics");
 
             $pages = Page::get();
             $fields->addFieldToTab("Root.Main", new TextField("Title","Title"));
@@ -53,7 +58,8 @@ namespace {
             $types = [
                 "Factsheet"=>"Factsheet",
                 "Metadata"=>"Metadata",
-                "Background"=>"Background"
+                "Background"=>"Background",
+                "Report"=>"Report"
             ];
             $fields->addFieldToTab("Root.Main", new DropdownField("DocType","Document Type",$types,$this->DocType));
 
@@ -61,6 +67,13 @@ namespace {
             $up1->setFolderName('Factsheets');
             $up1->getValidator()->setAllowedExtensions(['pdf']);           
             $fields->addFieldToTab('Root.Main', $up1);
+
+
+            $fields->addFieldToTab('Root.Main', ListboxField::create(
+            'Topics',
+            'Topics',
+            Topic::get()->map('ID', 'Topic')
+        ), 'Metadata');
 
             return $fields;
         }

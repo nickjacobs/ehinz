@@ -21,12 +21,14 @@ $(function() {
 	});
 
 	$(window).scroll(function(){
-		console.log($(window).scrollTop());
-		console.log($("#show-side-trigger").offset().top);
-		if($(window).scrollTop() >= $("#show-side-trigger").offset().top) {
-			$(".side-tabs .tab").addClass("showing");
-		}else{
-			$(".side-tabs .tab").removeClass("showing");
+		//console.log($(window).scrollTop());
+		//console.log($("#show-side-trigger").offset().top);
+		if($("#show-side-trigger").length){
+			if($(window).scrollTop() >= $("#show-side-trigger").offset().top) {
+				$(".side-tabs .tab").addClass("showing");
+			}else{
+				$(".side-tabs .tab").removeClass("showing");
+			}
 		}
 	});
 

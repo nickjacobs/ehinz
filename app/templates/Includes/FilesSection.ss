@@ -7,9 +7,10 @@
 					<% if $DocType == 'Background' %><img src="images/icon-doc-background.png" /><% end_if %>
 					<% if $DocType == 'Metadata' %><img src="images/icon-doc-metadata.png" /><% end_if %>
 					<% if $DocType == 'Factsheet' %><img src="images/icon-doc-factsheet.png" /><% end_if %>
+					<% if $DocType == 'Report' %><img src="images/icon-doc-report.png" /><% end_if %>
 				</div>
 				<div class="col-11 col-md-5 content">
-					<a href="$Link" target="_blank">
+					<a href="$AbsoluteLink" target="_blank">
 						<strong>$DocType:</strong> 
 						$Title
 					</a>
