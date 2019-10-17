@@ -1,16 +1,23 @@
 header.page-top-header {
-	padding:37px 0;
+	padding:24px 0;
 	background-color:$white;	
 	color:$black;
 	position: relative;
+	.uni-link,.home-link {
+		display:inline-block;
+	}
 	.uni-link:after {
 		position: absolute;
 		width: 1px;
 		height: 33px;
 		content: "";
-		background: $lightergrey;
-		right: -20px;
+		background: $lightgrey;
+		right: 16px;
 		top: 10px;
+	}
+	.home-link {
+		margin-top:-10px;
+		position:relative;
 	}
 	.search-bar {
 		height: 34px;

@@ -5,7 +5,7 @@
         <a class="uni-link" href="/"><img src="images/uni-logo.png" /></a>
       </div> 
   		<div class="col-6">
-        <a class="home-link" href="/"><img src="images/logo.png" /></a>
+        <a class="home-link" href="/"><img src="images/logo_reo.png" /></a>
       </div> 
   		<div class="col-4 text-right">
   			<% if $SearchForm %>				

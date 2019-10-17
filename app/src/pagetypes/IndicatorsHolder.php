@@ -7,7 +7,7 @@ namespace {
    
     //use SilverStripe\Assets\Image;
     //use SilverStripe\AssetAdmin\Forms\UploadField;
-    //use SilvearStripe\Forms\TextField;
+    use SilverStripe\Forms\TextField;
     //use SilverStripe\Forms\TextareaField;
     //use SilverStripe\Forms\TreeDropdownField;
     //use SilverStripe\Forms\GridField\GridField;
@@ -28,6 +28,7 @@ namespace {
     {
 
         private static $db = [ 
+            'TeReoTitle' => 'Varchar'
 
         ];
 
@@ -57,6 +58,8 @@ namespace {
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
+
+            $fields->addFieldToTab('Root.Main', TextField::create("TeReoTitle"),'Content');
 
             
             $config = GridFieldConfig_RecordEditor::create();
