@@ -8928,6 +8928,9 @@ footer {
     line-height: 1.2;
     font-size: 15px;
     font-weight: 600; }
+  .home-page .sub-page .tereotitle {
+    display: none;
+    margin-top: -15px; }
   .home-page .sub-page .tip {
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -8944,16 +8947,10 @@ footer {
     font-weight: 300;
     line-height: 1.5;
     opacity: 0; }
-    .home-page .sub-page .tip:after {
-      content: "";
-      width: 80px;
-      height: 1px;
-      background: #fff;
-      position: absolute;
-      top: 55px;
-      left: 20px; }
   .home-page .sub-page:hover .title {
-    bottom: 147px; }
+    bottom: 130px; }
+  .home-page .sub-page:hover .tereotitle {
+    display: block; }
   .home-page .sub-page:hover .tip {
     opacity: 1; }
 

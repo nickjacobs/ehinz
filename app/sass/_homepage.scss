@@ -122,6 +122,16 @@
 			font-size: 15px;
 			font-weight: $font-semi;
 		}
+
+		.tereotitle {
+			display:none;
+			margin-top:-15px;
+
+		}
+
+
+
+
 		.tip {
 			transition: all 0.4s ease;
 			top: 0px;
@@ -137,19 +147,22 @@
 		    font-weight: $font-light;
 		    line-height: 1.5;
 		    opacity: 0;
-		    &:after {
-		    	content: "";
-		    	width: 80px;
-		    	height: 1px;
-		    	background: #fff;
-		    	position: absolute;
-		    	top: 55px;
-		    	left: 20px;
-		    }
+		    // &:after {
+		    // 	content: "";
+		    // 	width: 80px;
+		    // 	height: 1px;
+		    // 	background: #fff;
+		    // 	position: absolute;
+		    // 	top: 55px;
+		    // 	left: 20px;
+		    // }
 		}
 		&:hover {
 			.title {
-				bottom: 147px;
+				bottom: 130px;
+			}
+			.tereotitle {
+				display:block
 			}
 			.tip {
 				opacity: 1;

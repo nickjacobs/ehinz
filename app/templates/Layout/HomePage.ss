@@ -16,7 +16,8 @@
 											<span class="tip">
 												$Summary
 											</span>
-											<span class="title">$Title</span>
+											<span class="title">$Title <% if $TeReoTitle %><span class="tereotitle"><br>$TeReoTitle</span><% end_if %></span>
+
 										</a>
 									</div>								
 							<% end_loop %>
