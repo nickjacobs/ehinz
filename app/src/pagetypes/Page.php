@@ -39,6 +39,7 @@ namespace {
     {
         private static $db = [
             "BannerTitle" => "Varchar(256)",
+            "BannerSubTitle" => "Varchar(256)",
             "Summary" => "Text",
         	"ShowInFooterMenu" => "Boolean",
             "ShowInFooterMenuAbout" => "Boolean",
@@ -100,6 +101,7 @@ namespace {
 
            
             $fields->addFieldToTab('Root.Banner', TextField::create("BannerTitle","Title"));
+            $fields->addFieldToTab('Root.Banner', TextField::create("BannerSubTitle","SubTitle"));
             $up1 = UploadField::create('BannerImage',"Image");
             $up1->setFolderName('BannerImages');
             $up1->getValidator()->setAllowedExtensions(['png', 'gif', 'jpeg', 'jpg']);           

@@ -4,6 +4,7 @@
 			<div class="banner__title" >
 				<% if $BannerTitle %>			
 					<h1>$BannerTitle</h1>
+					<h4>$BannerSubTitle</h4>
 				<% else %>
 					<h1>$Title</h1>
 				<% end_if %>
