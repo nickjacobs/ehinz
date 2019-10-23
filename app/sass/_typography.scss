@@ -68,6 +68,13 @@
 			background:$ehlightgreen;
 		}
 	}
+
+	table {
+		@extend .table;
+		ul {
+			margin:0;
+		}
+	}
 	
 }
 

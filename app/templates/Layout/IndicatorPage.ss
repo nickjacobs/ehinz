@@ -18,12 +18,11 @@
 
 					<div id="show-side-trigger"></div>
 					
-					<% include FilesSection %>
-					
-					<% include StaffContactsSection %>
+					<% include FilesSection %>					
 					<% include OnThisPageList %>
 					<% include ContentSection %>
 					<% include LinksSection %>
+					<% include StaffContactsSection %>
 
 				</div>
 			</div>

@@ -4,7 +4,7 @@ namespace {
 
     use SilverStripe\CMS\Model\SiteTree; 
 	use SilverStripe\Forms\CheckboxField;
-	//use SilverStripe\Forms\LiteralField;
+	use SilverStripe\Forms\LiteralField;
 	use SilverStripe\Forms\HeaderField;
     //use SilverStripe\Forms\DropdownField;
     use SilverStripe\Forms\TextareaField;   
@@ -136,11 +136,14 @@ namespace {
             $gridField2 = new GridField("Links", "Links", $this->Links(), $config2);
             $fields->addFieldToTab("Root.Links", $gridField2);
 
+            $fields->addFieldToTab("Root.StaffContacts", LiteralField::create('lf1','<p>The first contact will display as the primary domain contact - all others will be listed as domain seconds</p>'));
+
             $config3 = GridFieldConfig_RelationEditor::create();
             $config3->addComponent(new GridFieldOrderableRows());
             $config3->removeComponentsByType(SilverStripe\Forms\GridField\GridFieldAddNewButton::class);
             $gridField3 = new GridField("StaffContacts", "StaffContacts", $this->StaffContacts(), $config3);
             $fields->addFieldToTab("Root.StaffContacts", $gridField3);
+            
 
 
  
