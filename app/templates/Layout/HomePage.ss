@@ -32,9 +32,9 @@
 						<% loop $LatestPosts %>
 							<li>
 								<a class="$LinkingMode" href="$Link">
-									$Title
-									<span class="date">$PublishDate.Format(dd/mm/YYYY)</span>
+									$Title									
 								</a>
+								<span class="date">$NiceDatePublished</span>
 							</li>
 						<% end_loop %>
 					</ul>
