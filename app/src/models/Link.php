@@ -58,6 +58,20 @@ namespace {
             return $fields;
         }
 
+
+        public function validate() 
+        {
+            $result = parent::validate();          
+
+            $doc = DownloadFile::get()->filter(['Title' => $this->Title,'URL' => $this->URL])->first();
+            
+            if($doc) {
+                 $result->addError('This link already exists - please use the add existing link to add this document');
+            }
+
+            return $result;
+        }
+
     }
 
     
