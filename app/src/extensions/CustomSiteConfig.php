@@ -20,7 +20,8 @@ class CustomSiteConfig extends DataExtension
         'Address' => 'Text',
         'DownloadsOpen' => 'Boolean',
         'LinksOpen' => 'Boolean',
-        'ContactsOpen' => 'Boolean'
+        'ContactsOpen' => 'Boolean',
+        'HealthspaceHeader' => 'Text',
 
     ];
 
@@ -47,6 +48,13 @@ class CustomSiteConfig extends DataExtension
             CheckboxField::create('DownloadsOpen','Default downloads section to open'),
             CheckboxField::create('LinksOpen','Default links section to open'),
             CheckboxField::create('ContactsOpen','Default staff contacts section to open')
+        ]
+        );
+
+        $fields->addFieldsToTab('Root.Main',[            
+            HeaderField::create('hf3','Healthspace'),
+            Textfield::create('HealthspaceHeader','Healthspace default header')
+           
         ]
         );
 

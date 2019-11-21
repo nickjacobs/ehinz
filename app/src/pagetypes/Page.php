@@ -22,6 +22,7 @@ namespace {
     use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
     use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
+    use Silverstripe\SiteConfig\SiteConfig;
 
 	//use Sheadawson\Linkable\Models\Link;
     //use Sheadawson\Linkable\Forms\LinkField;
@@ -97,6 +98,7 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
+
             if($this->ClassName == 'Page' || $this->ClassName == 'IndicatorPage'){
                 $fields->addFieldToTab('Root.Main', HTMLEditorField::create('PageIntro')->setRows(8)->addExtraClass('stacked'),'Content');
                 //$fields->addFieldToTab('Root.Main', CheckboxField::create('ShowOnThisPage','Show "On this page list"?'),'Content');
@@ -147,10 +149,11 @@ namespace {
             $gridField3 = new GridField("StaffContacts", "StaffContacts", $this->StaffContacts(), $config3);
             $fields->addFieldToTab("Root.StaffContacts", $gridField3);
 
+            $siteconfig = SiteConfig::current_site_config(); 
 
             $fields->addFieldsToTab("Root.ExtraContent",[
                 HeaderField::create('Healthspace box'),
-                Textfield::create('HealthspaceExtraTitle','Healthspace box title')->setDescription('override title - by default we\'ll use "Explore the data"'),
+                Textfield::create('HealthspaceExtraTitle','Healthspace box title')->setDescription('override title - by default we\'ll use "'. $siteconfig->HealthspaceHeader .'"'),
                 HTMLEditorField::create('HealthspaceExtra','Healthspace box content')->setRows(6),
                 HeaderField::create('Extra content box'),
                 Textfield::create('ExtraTitle','Extra box title'),
