@@ -63,7 +63,7 @@ namespace {
         {
             $result = parent::validate();          
 
-            $doc = Link::get()->filter(['Title' => $this->Title,'URL' => $this->URL])->first();
+            $doc = Link::get()->filter(['Title' => $this->Title,'URL' => $this->URL,'ID:not' => $this->ID])->first();
             
             if($doc) {
                  $result->addError('This link already exists - please use the add existing link to add this document');
