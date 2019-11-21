@@ -21,6 +21,8 @@
 					<% include FilesSection %>					
 					<% include OnThisPageList %>
 					<% include ContentSection %>
+					<% include HealthspaceSection %>
+					<% include ExtraContentSection %>
 					<% include LinksSection %>
 					<% include StaffContactsSection %>
 

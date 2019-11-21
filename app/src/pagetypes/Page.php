@@ -44,7 +44,10 @@ namespace {
         	"ShowInFooterMenu" => "Boolean",
             "ShowInFooterMenuAbout" => "Boolean",
             "PageIntro" => "HTMLText",
-            //"ShowOnThisPage" => "Boolean"
+            "HealthspaceExtraTitle" => "Varchar",
+            "HealthspaceExtra" => "HTMLText",
+            "ExtraTitle" => "Varchar",
+            "ExtraContent" => "HTMLText"
         ];
 
         private static $has_one = [
@@ -143,6 +146,17 @@ namespace {
             $config3->removeComponentsByType(SilverStripe\Forms\GridField\GridFieldAddNewButton::class);
             $gridField3 = new GridField("StaffContacts", "StaffContacts", $this->StaffContacts(), $config3);
             $fields->addFieldToTab("Root.StaffContacts", $gridField3);
+
+
+            $fields->addFieldsToTab("Root.ExtraContent",[
+                HeaderField::create('Healthspace box'),
+                Textfield::create('HealthspaceExtraTitle','Healthspace box title')->setDescription('override title - by default we\'ll use "Explore the data"'),
+                HTMLEditorField::create('HealthspaceExtra','Healthspace box content')->setRows(6),
+                HeaderField::create('Extra content box'),
+                Textfield::create('ExtraTitle','Extra box title'),
+                HTMLEditorField::create('ExtraContent','Extra box content')->setRows(6),
+
+            ]);
             
 
 

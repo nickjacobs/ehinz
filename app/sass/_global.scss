@@ -56,3 +56,26 @@ a:hover {
 }
 
 
+.healthspace-link-section {
+	border:1px solid $ehgreen;
+	margin:30px 0 40px;
+	padding:30px;
+	padding-left:130px;
+	border-radius:4px;
+	background:white;
+	position:relative;
+	&:before {
+		content:'';
+		width:100px;
+		height:140px;
+		position:absolute;
+		left:10px;
+		top:50%;
+		transform:translateY(-50%);
+		background:url(../images/healthspace.png) no-repeat;
+
+	}
+	p:last-child {margin-bottom:0;}
+
+}
+
