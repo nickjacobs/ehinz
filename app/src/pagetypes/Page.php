@@ -151,13 +151,13 @@ namespace {
 
             $siteconfig = SiteConfig::current_site_config(); 
 
-            $fields->addFieldsToTab("Root.ExtraContent",[
+            $fields->addFieldsToTab("Root.Healthspace",[
                 HeaderField::create('Healthspace box'),
                 Textfield::create('HealthspaceExtraTitle','Healthspace box title')->setDescription('override title - by default we\'ll use "'. $siteconfig->HealthspaceHeader .'"'),
                 HTMLEditorField::create('HealthspaceExtra','Healthspace box content')->setRows(6),
-                HeaderField::create('Extra content box'),
-                Textfield::create('ExtraTitle','Extra box title'),
-                HTMLEditorField::create('ExtraContent','Extra box content')->setRows(6),
+                //HeaderField::create('Extra content box'),
+                //Textfield::create('ExtraTitle','Extra box title'),
+                //HTMLEditorField::create('ExtraContent','Extra box content')->setRows(6),
 
             ]);
             
