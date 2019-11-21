@@ -12,7 +12,8 @@
         "stevie-mayhew/silverstripe-svg": "^2.2",
         "symbiote/silverstripe-gridfieldextensions": "^3",
         "silverstripe/blog": "^3.4",
-        "silverstripe/widgets": "^2.0"
+        "silverstripe/widgets": "^2.0",
+        "silverstripe/userforms": "^5.5"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7"
