@@ -8455,6 +8455,12 @@ a:hover {
 .typography table ul {
   margin: 0; }
 
+.typography img[alt*="pdf"], .typography img[alt*="excel"], .typography img[alt*="Excel"], .typography img[alt*="doc"] {
+  display: inline-block !important;
+  float: none !important;
+  margin: 0 !important;
+  clear: none !important; }
+
 /* IMAGES
 -------------------------------------------- */
 .typography img {

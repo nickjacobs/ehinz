@@ -75,6 +75,14 @@
 			margin:0;
 		}
 	}
+
+
+	img[alt*="pdf"],img[alt*="excel"],img[alt*="Excel"],img[alt*="doc"] {
+		display: inline-block!important;
+	    float: none!important;
+	    margin: 0!important;
+	    clear: none!important;
+	}
 	
 }
 
