@@ -7,7 +7,7 @@
 				
 				<div class="row staff-contact-item">
 					<div class="col-sm-3">
-						<img class="img-fluid" src="$Image.ScaleWidth(300).Link">
+						<img class="img-fluid" src="$Image.ScaleWidth(240).Link">
 					</div>
 					<div class="col-sm-9">
 						<div class="domain-first">
@@ -19,7 +19,6 @@
 
 						<% if $Top.StaffContacts.Count > 1 %>
 						<h6>Domain second<% if $Top.StaffContacts.Count > 2 %>s<% end_if %></h6>
-
 							<% loop $Top.StaffContacts.Sort(ContactSort) %>
 							<% if not $First %>
 								<div class="domain-second"><a href="$Link">$Title</a> <% if $Email %>(email <a href="mailto:$Email">$Email</a>)<% end_if %></div>
