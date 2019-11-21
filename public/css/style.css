@@ -8381,6 +8381,10 @@ a:hover {
       padding-left: 30px;
       display: inline-block; }
 
+.downloads .download-icon img {
+  width: 30px;
+  height: auto; }
+
 .healthspace-link-section {
   border: 1px solid #8BB220;
   margin: 30px 0 40px;
