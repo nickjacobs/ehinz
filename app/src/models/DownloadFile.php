@@ -81,13 +81,13 @@ namespace {
 
         public function validate() 
         {
-            $result = parent::validate();          
-
-            $doc = DownloadFile::get()->filter(['Title' => $this->Title])->first();
-            
+            $result = parent::validate();
+                $doc = DownloadFile::get()->filter(['Title' => $this->Title,'DocType' => $this->DocType,'ID:not' => $this->ID])->first();               
+                
             if($doc) {
                  $result->addError('This download document already exists - please use the add existing link to add this document');
             }
+            
 
             return $result;
         }
