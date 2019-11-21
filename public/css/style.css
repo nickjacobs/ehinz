@@ -8841,7 +8841,7 @@ footer {
     font-weight: 600;
     line-height: 25px;
     padding: 13px 20% 13px 0px;
-    margin-top: 40px; }
+    margin-top: 20px; }
     .home-page .home-side h4:first-child {
       margin-top: 0px; }
   .home-page .home-side .blog-items {
@@ -8849,18 +8849,17 @@ footer {
     margin: 0px 0px; }
     .home-page .home-side .blog-items li {
       list-style: none;
-      padding: 0px 0px;
+      padding: 8px 0px;
       margin: 0px 0px; }
       .home-page .home-side .blog-items li a {
         color: #8BB220;
         display: block;
         line-height: 1.2;
-        font-size: 16px;
-        padding: 8px 0px; }
-        .home-page .home-side .blog-items li a span {
-          display: block;
-          color: #707070;
-          font-size: 14px; }
+        font-size: 16px; }
+      .home-page .home-side .blog-items li span {
+        display: block;
+        color: #707070;
+        font-size: 14px; }
   .home-page .home-side .quick-links p {
     font-size: 16px;
     margin: 0px 0px;

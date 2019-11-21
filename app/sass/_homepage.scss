@@ -17,7 +17,7 @@
 		    font-weight: 600;
 		    line-height: 25px;
 		    padding: 13px 20% 13px 0px;
-		    margin-top: 40px;
+		    margin-top: 20px;
 		    &:first-child {
 		    	margin-top: 0px;
 		    }
@@ -27,20 +27,20 @@
 			margin: 0px 0px;
 			li {
 				list-style: none;
-				padding: 0px 0px;
+				padding: 8px 0px;
 				margin: 0px 0px;
 				a {
 					color: $ehgreen;
 					display: block;
 					line-height: 1.2;
 					font-size: 16px;
-					padding: 8px 0px;
-					span {
+										
+				}
+				span {
 						display: block;
 						color: $darkgrey;
 						font-size: 14px;
 					}
-				}
 			}
 		}
 		.quick-links {
