@@ -18,8 +18,7 @@
 				<% end_if %>
 			</span>
 			<span class="date">
-				<%t SilverStripe\\Blog\\Model\\Blog.Posted "Posted" %>
-    			$PublishDate.ago
+				$NiceDatePublished
     		</span>
 			<span class="summary">
 				<% if $Summary %>
