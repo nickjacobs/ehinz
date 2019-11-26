@@ -2,3 +2,20 @@ input:focus,
 button:focus {
 	outline:0;
 }
+
+
+.publication-filter {
+	//border-top:2px solid $ehgreen;
+	border-bottom:2px solid $ehgreen;
+	margin-bottom:30px;
+	.filter-form {
+		&__btn {		
+			background-color:white;
+			color:$ehgreen;
+			&:hover {
+				background-color:$ehgreen;
+				color:$white;
+			}
+		}
+	}
+}

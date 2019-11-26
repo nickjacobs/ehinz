@@ -10,7 +10,7 @@
 					<% if $DocType == 'Report' %><img src="images/icon-doc-report.png" /><% end_if %>
 				</div>
 				<div class="col-11 col-md-5 content">
-					<a href="$AbsoluteLink" target="_blank">
+					<a href="$File.Link" target="_blank">
 						<strong>$DocType:</strong> 
 						$Title
 					</a>

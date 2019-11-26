@@ -42,6 +42,13 @@ namespace {
             'DocType','Title'
         ];
 
+        private static $searchable_fields = [
+          'Title',
+          'Summary',
+          'DocType',
+          'Topics.Topic'
+       ];
+
         private static $default_sort = 'Sort';
 
         public function getCMSFields()

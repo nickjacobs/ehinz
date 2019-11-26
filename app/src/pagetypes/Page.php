@@ -207,6 +207,12 @@ namespace {
             }
             return DBField::create_field('HTMLText', $content);
         }
+
+
+        public function getTopics()
+        {
+            return Topic::get()->Sort('Topic');
+        }
       
        
 
