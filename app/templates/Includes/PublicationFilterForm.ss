@@ -6,7 +6,7 @@
 			<label class="sr-only" for="Keywords">Keywords</label>
 			<input type="text" name="Keywords" class="w-100 form-control " id="Keywords" placeholder="Search for keywords" value="$getQueryVar">
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<label class="sr-only" for="Form_PublicationSearchForm_Topic">Topic</label>	
 			<select name="Topic" class="custom-select  w-100" id="Form_PublicationSearchForm_Topic">
 				<option value="" selected="selected">Choose topic</option>
@@ -25,8 +25,11 @@
 				<option value="Report" <% if $getTypeVar == 'Report' %>selected="selected"<% end_if %>>Report</option>
 			</select>
 		</div>
-		<div class="col-md-1">		
-			<input type="submit" value="Search" class="btn filter-form__btn">
+		<div class="col-md-2">
+					
+				<input type="submit" value="Search" class="btn filter-form__btn">
+				<div id="clearFilterForm"></div>
+			
 		</div>
 	</div>
 </form>

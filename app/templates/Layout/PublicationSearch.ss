@@ -12,8 +12,19 @@
 				</div>
 			<% end_if %>
 			<div class="<% if $Menu(2)  %>col-md-9<% else %>col-md-12<% end_if %>">
-			<% include IntroSection %>
+			<div class="typography">
+				<h1>$MenuTitle</h1>
+			</div>
+			<% if not $Results %>
+			<div class="typography">				
+				<% if $PageIntro %>
+				<div class="pad-bottom">
+					$PageIntro
+				</div>
+				<% end_if %>
+			</div>
 			<% include ContentSection %>
+			<% end_if %>
 
 
 			<% include PublicationFilterForm %>

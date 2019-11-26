@@ -9245,6 +9245,15 @@ button:focus {
     .publication-filter .filter-form__btn:hover {
       background-color: #8BB220;
       color: #fff; }
+  .publication-filter .filter-form #clearFilterForm {
+    display: none;
+    width: 22px;
+    height: 22px;
+    background: url(../images/clear-button.svg);
+    position: absolute;
+    right: -50px;
+    top: 8px;
+    opacity: .2; }
 
 @media (max-width: 991.98px) {
   .page-top-header,

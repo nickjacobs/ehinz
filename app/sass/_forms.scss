@@ -17,5 +17,18 @@ button:focus {
 				color:$white;
 			}
 		}
+		
+			#clearFilterForm {
+				display:none;
+				width:22px;
+				height:22px;
+				background:url(../images/clear-button.svg);
+				position:absolute;
+				right:-50px;
+				top:8px;
+				opacity:.2;
+			}
+		
 	}
+
 }

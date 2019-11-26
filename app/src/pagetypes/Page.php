@@ -99,7 +99,7 @@ namespace {
             $fields = parent::getCMSFields();
 
 
-            if($this->ClassName == 'Page' || $this->ClassName == 'IndicatorPage'){
+            if($this->ClassName == 'Page' || $this->ClassName == 'IndicatorPage' || $this->ClassName == 'PublicationSearch'){
                 $fields->addFieldToTab('Root.Main', HTMLEditorField::create('PageIntro')->setRows(8)->addExtraClass('stacked'),'Content');
                 //$fields->addFieldToTab('Root.Main', CheckboxField::create('ShowOnThisPage','Show "On this page list"?'),'Content');
             }
