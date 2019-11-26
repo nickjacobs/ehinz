@@ -10,7 +10,7 @@ use SilverStripe\Security\Permission;
 use SilverStripe\View\Requirements;
 
 
-class StaffHolderController extends ContentController
+class StaffHolderController extends PageController
 {
     /**
      * An array of actions that can be accessed via a request. Each array element should be an action name, and the
