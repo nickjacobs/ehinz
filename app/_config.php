@@ -3,6 +3,8 @@
 
 use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
 use SilverStripe\Forms\HTMLEditor\HtmlEditorConfig;
+use SilverStripe\View\Parsers\ShortcodeParser;
+
 
 $formats = [    
                   
@@ -21,6 +23,23 @@ TinyMCEConfig::get('cms')
 
 
 SilverStripe\ORM\Search\FulltextSearchable::enable();
+
+
+
+
+ShortcodeParser::get('default')->register('dashboard', function($arguments, $address, $parser, $shortcode) {
+    
+    $random = substr(md5(mt_rand()), 0, 7);
+
+    return sprintf(
+        '<div class="atlas-dashboard-wrapper" id="dashboard-%s"><script type="text/javascript" src="https://dashboards.instantatlas.com/viewer/embed/%s?container=dashboard-%s"></script></div>',
+        $random,
+        $address,
+        $random
+    );
+});
+
+//<div id="iao-dashboard" style="width: 800px; height: 600px;"><script type="text/javascript" src="https://dashboards.instantatlas.com/embed/a871bc83736540988d57020089f4f2f8?container=iao-dashboard"></script></div>
 
 
 // $formats = [
