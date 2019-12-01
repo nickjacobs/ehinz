@@ -8797,7 +8797,8 @@ footer {
   footer .footer-header {
     border-bottom: solid 2px #f2f2f2;
     padding: 0px 0px 20px;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    font-weight: bold; }
     footer .footer-header img {
       margin-top: -21px; }
   footer .footer-badge {
@@ -8857,6 +8858,11 @@ footer {
             line-height: 1; }
       .main-page-content .side-menu li.current ul, .main-page-content .side-menu li.section ul {
         display: block; }
+
+.atlas-dashboard-wrapper {
+  border: 1px dotted red;
+  margin: 30px 0;
+  min-height: 400px; }
 
 .home-page .home-content {
   font-size: 20px;
