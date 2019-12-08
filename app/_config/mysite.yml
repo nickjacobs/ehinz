@@ -32,3 +32,7 @@ SilverStripe\Blog\Model\BlogPost:
   extensions:
     - SilverStripe\Widgets\Extensions\WidgetPageExtension
     - BlogPostExtension
+
+GoogleRecaptcha:
+  recaptcha_key: 6LeFssYUAAAAACSIxzYSDnPs9AK3rW4pNplabP3w
+  recaptcha_secret: 6LeFssYUAAAAAPb-Mjy4AU6WCFpNziXF9W6kmOnI

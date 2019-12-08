@@ -15,7 +15,7 @@ namespace {
 
     class ContactPageController extends PageController {
         
-       private static $allowed_actions = ['Form'];
+       private static $allowed_actions = ['ContactForm'];
 
         public function init() {
             parent::init();
@@ -24,66 +24,71 @@ namespace {
             // //Requirements::customScript("$.fn.datepicker.noConflict();");
             // Requirements::javascript("themes/bootstrap/javascript/bookingforms.js");
         }
-        
-        
 
-        public function Form() {
-        $validator = new RequiredFields('Name','Email','Comments');
-        
-        return Form::create(
-            $this,
-            "Form",
-            FieldList::create(  
-
-    	        TextField::create("Name","Your Name"),  
-    	        TextField::create("Organisation","Organisation"), 
-    	        TextField::create("Email","Email Address"),               
-    	        TextareaField::create("Comments","Comments")
-
-
-            ),
-            FieldList::create(
-                FormAction::create("submit","Send")->setUseButtonTag(true)->addExtraClass('btn')
-                
-            ),
-            $validator
-        );
-            
+        public function ContactForm()
+        {
+            return new ContactForm($this, 'ContactForm');
         }
+        
+        
 
-        public function submit($data, $form) { 
-            $email = new Email(); 
+        // public function Form() {
+        // $validator = new RequiredFields('Name','Email','Comments');
+        
+        // return Form::create(
+        //     $this,
+        //     "Form",
+        //     FieldList::create(  
 
-            //$email->setTo('info@fallsafe.co.nz'); 
-            //$email->setTo('nick@nfx.nz'); 
-            $email->setTo($this->EmailTo);
-            $email->setFrom('noreply@ehinz.ac.nz'); 
-            $email->setSubject("EHINZ website feedback form"); 
+    	   //      TextField::create("Name","Your Name"),  
+    	   //      TextField::create("Organisation","Organisation"), 
+    	   //      TextField::create("Email","Email Address"),               
+    	   //      TextareaField::create("Comments","Comments")
 
-            //$email->setHTMLTemplate('LogicContact');
-            //$email->setData($data);
-            //$email->populateTemplate($data); 
 
-            $CommentsBody = " 
-            <p><strong>Name:</strong> {$data['Name']}</p>           
-            <p><strong>Email:</strong> {$data['Email']}</p> 
-            <p><strong>Organisation:</strong> {$data['Organisation']}</p> 
-            <p><strong>Comments:</strong> {$data['Comments']}</p> 
-            "; 
-            $email->setBody($CommentsBody); 
+        //     ),
+        //     FieldList::create(
+        //         FormAction::create("submit","Send")->setUseButtonTag(true)->addExtraClass('btn')
+                
+        //     ),
+        //     $validator
+        // );
+            
+        // }
+
+        // public function submit($data, $form) { 
+        //     $email = new Email(); 
+
+        //     //$email->setTo('info@fallsafe.co.nz'); 
+        //     //$email->setTo('nick@nfx.nz'); 
+        //     $email->setTo($this->EmailTo);
+        //     $email->setFrom('noreply@ehinz.ac.nz'); 
+        //     $email->setSubject("EHINZ website feedback form"); 
+
+        //     //$email->setHTMLTemplate('LogicContact');
+        //     //$email->setData($data);
+        //     //$email->populateTemplate($data); 
+
+        //     $CommentsBody = " 
+        //     <p><strong>Name:</strong> {$data['Name']}</p>           
+        //     <p><strong>Email:</strong> {$data['Email']}</p> 
+        //     <p><strong>Organisation:</strong> {$data['Organisation']}</p> 
+        //     <p><strong>Comments:</strong> {$data['Comments']}</p> 
+        //     "; 
+        //     $email->setBody($CommentsBody); 
            
 
-            $email->send(); 
-            $link = Controller::curr()->Link();
-            Controller::curr()->redirect($link . "?success=1");
+        //     $email->send(); 
+        //     $link = Controller::curr()->Link();
+        //     Controller::curr()->redirect($link . "?success=1");
             
-        }
+        // }
 
 
         
-        public function Success() {
-            return isset($_REQUEST['success']) && $_REQUEST['success'] == "1";
-        }
+        // public function Success() {
+        //     return isset($_REQUEST['success']) && $_REQUEST['success'] == "1";
+        // }
 
 
 

@@ -14,7 +14,7 @@
         </div> 
           <% else %>
             $FormIntro
-            $Form
+            $ContactForm
           <% end_if %>
         </div>
       </div>
