@@ -13,7 +13,7 @@ namespace {
     use SilverStripe\Control\Email\Email;
     use SilverStripe\Control\Controller;
 
-    class FeedbackPageController extends PageController {
+    class ContactPageController extends PageController {
         
        private static $allowed_actions = ['Form'];
 
