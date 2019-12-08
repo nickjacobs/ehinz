@@ -8800,7 +8800,7 @@ body.page-1 #MainBanner .container {
   display: none;
   position: absolute;
   z-index: 4;
-  background: #fff;
+  background: #8BB220;
   width: 100%;
   padding: 45px 0px;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
@@ -8808,9 +8808,10 @@ body.page-1 #MainBanner .container {
   #subNavigation .subpages {
     display: none; }
     #subNavigation .subpages h4 {
-      padding-bottom: 20px; }
+      padding-bottom: 20px;
+      color: #fff; }
     #subNavigation .subpages a {
-      color: #888888;
+      color: #fff;
       padding: 8px 0px;
       display: block; }
 
