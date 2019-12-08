@@ -40,48 +40,20 @@ ShortcodeParser::get('default')->register('dashboard', function($arguments, $add
 });
 
 
+ShortcodeParser::get('default')->register('dashboardiframe', function($arguments, $address, $parser, $shortcode) {
+    
+    $random = substr(md5(mt_rand()), 0, 7);
+    $height = (isset($arguments['height']) && $arguments['height']) ? $arguments['height'] : 600;
+
+    return sprintf(        
+        '<div class="atlas-iframe"><iframe height="%d" class="atlas-iframe__iframe" id="dashboard-%s" src="https://dashboards.instantatlas.com/viewer/report?appid=%s" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div class="atlas-iframe__caption"><a href="https://dashboards.instantatlas.com/viewer/report?appid=%s" target="_blank">View in new window</a></div></div>',
+        $height,
+        $random,
+        $address,
+        $address
+    );
+});       
 
 
-//<div id="iao-dashboard" style="width: 800px; height: 600px;"><script type="text/javascript" src="https://dashboards.instantatlas.com/embed/a871bc83736540988d57020089f4f2f8?container=iao-dashboard"></script></div>
 
 
-// $formats = [
-//     [ 'title' => 'Headings', 'items' => [
-//             ['title' => 'Heading 1', 'block' => 'h1' ],
-//             ['title' => 'Heading 2', 'block' => 'h2' ],
-//             ['title' => 'Heading 3', 'block' => 'h3' ],
-//             ['title' => 'Heading 4', 'block' => 'h4' ],
-//             ['title' => 'Heading 5', 'block' => 'h5' ],
-//             ['title' => 'Heading 6', 'block' => 'h6' ],
-//             [
-//                 'title'           => 'Subtitle',
-//                 'selector'        => 'p',
-//                 'classes'         => 'title-sub',
-//             ],
-//         ]
-//     ],
-//     [
-//         'title' => 'Misc Styles', 'items' => [
-//             [
-//                 'title' => 'Style 1',
-//                 'selector' => 'ul',
-//                 'classes' => 'style1',
-//                 'wrapper' => true,
-//                 'merge_siblings' => false,
-//             ],
-//             [
-//                 'title' => 'Button red',
-//                 'inline' => 'span',
-//                 'classes' => 'btn-red',
-//                 'merge_siblings' => true,
-//             ],
-//         ]
-//     ],
-// ];
-
-// TinyMCEConfig::get('cms')
-//     ->addButtonsToLine(1, 'styleselect')
-//     ->setOptions([
-//         'importcss_append' => true,
-//         'style_formats' => $formats,
-//     ]);

@@ -53,8 +53,20 @@
 	}
 }
 
+.atlas-iframe {
+	margin:30px 0;
+	&__iframe {
+		min-height:400px;
+		width:100%;
+	}
+	&__caption {
+
+	}
+}
 
 .atlas-dashboard-wrapper {
-	margin:30px 0;
 	min-height:400px;
+		width:100%;
+		margin:30px 0;
+	
 }

@@ -8859,9 +8859,16 @@ footer {
       .main-page-content .side-menu li.current ul, .main-page-content .side-menu li.section ul {
         display: block; }
 
+.atlas-iframe {
+  margin: 30px 0; }
+  .atlas-iframe__iframe {
+    min-height: 400px;
+    width: 100%; }
+
 .atlas-dashboard-wrapper {
-  margin: 30px 0;
-  min-height: 400px; }
+  min-height: 400px;
+  width: 100%;
+  margin: 30px 0; }
 
 .home-page .home-content {
   font-size: 20px;
