@@ -71,23 +71,3 @@
 	
 }
 
-
-.cls-contactpage {
-	form.contact-form__form {
-		input,textarea {
-			@extend .form-control;
-		}
-		.Actions {
-			margin-top:20px;
-			.btn.action {width:auto!important}
-			.btn {
-				@extend .btn;
-			}
-		}
-		.field {margin-bottom:12px;}
-		label {margin:0;}
-		
-		#ContactForm_ContactForm_SecurityID_Holder {display:none;}
-		.all-fields {margin-bottom:20px;}
-	}
-}

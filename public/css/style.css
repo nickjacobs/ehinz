@@ -8933,23 +8933,6 @@ footer {
   width: 100%;
   margin: 30px 0; }
 
-.cls-contactpage form.contact-form__form .Actions {
-  margin-top: 20px; }
-  .cls-contactpage form.contact-form__form .Actions .action.btn, .cls-contactpage form.contact-form__form .Actions .section-security #MemberLoginForm_LoginForm input.action, .section-security #MemberLoginForm_LoginForm .cls-contactpage form.contact-form__form .Actions input.action {
-    width: auto !important; }
-
-.cls-contactpage form.contact-form__form .field {
-  margin-bottom: 12px; }
-
-.cls-contactpage form.contact-form__form label {
-  margin: 0; }
-
-.cls-contactpage form.contact-form__form #ContactForm_ContactForm_SecurityID_Holder {
-  display: none; }
-
-.cls-contactpage form.contact-form__form .all-fields {
-  margin-bottom: 20px; }
-
 .home-page .home-content {
   font-size: 20px;
   line-height: 30px; }
@@ -9346,6 +9329,28 @@ button:focus {
     right: -50px;
     top: 8px;
     opacity: .2; }
+
+.cls-contactpage form.contact-form__form .Actions {
+  margin-top: 20px; }
+  .cls-contactpage form.contact-form__form .Actions .action.btn, .cls-contactpage form.contact-form__form .Actions .section-security #MemberLoginForm_LoginForm input.action, .section-security #MemberLoginForm_LoginForm .cls-contactpage form.contact-form__form .Actions input.action {
+    width: auto !important; }
+
+.cls-contactpage form.contact-form__form .field {
+  margin-bottom: 12px; }
+
+.cls-contactpage form.contact-form__form label {
+  margin: 0; }
+
+.cls-contactpage form.contact-form__form #ContactForm_ContactForm_SecurityID_Holder {
+  display: none; }
+
+.cls-contactpage form.contact-form__form .all-fields {
+  margin-bottom: 20px; }
+
+.form-success-message {
+  padding: 20px;
+  border: 1px solid #8BB220;
+  margin-bottom: 40px; }
 
 @media (max-width: 991.98px) {
   .page-top-header,

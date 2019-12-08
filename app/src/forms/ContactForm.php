@@ -117,8 +117,8 @@ class ContactForm extends Form
             //$session->set('page_alert', ['Message' => 'Your message has been submitted, thank you.', 'Type' => 'success']);
             //return $this->controller->redirect($this->controller->Link());
             return [
-                'SuccessMessage' => 'Your message has been submitted, thank you.',
-                'ContactForm' => ''
+                'SuccessMessage' => 'Your message has been submitted, thank you.'
+                
             ];
         } else {
             $session->set('FormInfo.ContactForm_ContactForm.data', $data);

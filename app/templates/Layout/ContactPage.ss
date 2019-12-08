@@ -8,14 +8,18 @@
         <% include ContentSection %>         
       </div>
       <div class="col-md-4 offset-md-1">
-        <% if Success %>
-        <div class="alert-message">
-          Thank you for getting in touch - we'll review your comments and get back to you soon.
-        </div> 
-          <% else %>
+          
+
             $FormIntro
+
+            <% if $SuccessMessage %>
+            <div class="form-success-message">
+              $SuccessMessage
+            </div>  
+            <% end_if %>
+          
             $ContactForm
-          <% end_if %>
+         
         </div>
       </div>
     </div>

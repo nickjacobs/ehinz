@@ -15,7 +15,7 @@ namespace {
 
     class ContactPageController extends PageController {
         
-       private static $allowed_actions = ['ContactForm'];
+       private static $allowed_actions = array('index', 'ContactForm');
 
         public function init() {
             parent::init();
