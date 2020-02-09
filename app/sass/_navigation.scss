@@ -40,6 +40,13 @@
 						padding:8px 4px 0;
 					}
 				}
+				//the birth defects registry item
+				&.section-326 {
+					max-width:120px;
+					a {
+						padding:8px 4px 0;
+					}
+				}
 			}
 			/* home icon */
 			li.nav-item:first-child {
@@ -84,7 +91,7 @@
 
 #mobileLevelNav {
 	padding: 40px 0px;
-	background: #fff;
+	background: $ehgreen;
 	position: fixed;
 	top: 55px;
 	width: 100%;
@@ -93,6 +100,7 @@
 	&.open {
 		display: block;
 	}
+	a.nav-link{color:$white;}
 	.search-bar {
 		height: 34px;
 		padding: 9px 0px;
