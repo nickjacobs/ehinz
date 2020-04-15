@@ -24,6 +24,8 @@ TinyMCEConfig::get('cms')
 
 SilverStripe\ORM\Search\FulltextSearchable::enable();
 
+SilverStripe\View\Requirements::set_force_js_to_bottom(true);
+
 
 
 
@@ -32,12 +34,14 @@ ShortcodeParser::get('default')->register('dashboard', function($arguments, $add
     $random = substr(md5(mt_rand()), 0, 7);
 
     return sprintf(
-        '<div class="atlas-dashboard-wrapper" id="dashboard-%s"><script type="text/javascript" src="https://dashboards.instantatlas.com/embed/%s?container=dashboard-%s"></script></div>',
+        '<div class="atlas-dashboard-wrapper" id="dashboard-%s"><script type="text/javascript" defer="true" src="https://dashboards.instantatlas.com/embed/%s?container=dashboard-%s"></script></div>',
         $random,
         $address,
         $random
     );
 });
+
+
 
 
 ShortcodeParser::get('default')->register('dashboardiframe', function($arguments, $address, $parser, $shortcode) {
