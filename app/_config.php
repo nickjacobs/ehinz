@@ -34,7 +34,7 @@ ShortcodeParser::get('default')->register('dashboard', function($arguments, $add
     $random = substr(md5(mt_rand()), 0, 7);
 
     return sprintf(
-        '<div class="atlas-dashboard-wrapper" id="dashboard-%s"><script type="text/javascript" defer="true" src="https://dashboards.instantatlas.com/embed/%s?container=dashboard-%s"></script></div><div class="atlas-iframe__caption"><a href="https://dashboards.instantatlas.com/viewer/report?appid=%s" target="_blank">View in new window</a></div>',
+        '<div class="atlas-dashboard-wrapper" id="dashboard-%s"><script type="text/javascript" defer="true" src="https://dashboards.instantatlas.com/embed/%s?container=dashboard-%s"></script></div><div class="atlas-iframe__caption"><a href="https://dashboards.instantatlas.com/viewer/report?appid=%s" target="_blank">View larger dashboard in new window</a></div>',
         $random,
         $address,
         $random,
@@ -51,7 +51,7 @@ ShortcodeParser::get('default')->register('dashboardiframe', function($arguments
     $height = (isset($arguments['height']) && $arguments['height']) ? $arguments['height'] : 600;
 
     return sprintf(        
-        '<div class="atlas-iframe"><iframe height="%d" class="atlas-iframe__iframe" id="dashboard-%s" src="https://dashboards.instantatlas.com/viewer/report?appid=%s" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div class="atlas-iframe__caption"><a href="https://dashboards.instantatlas.com/viewer/report?appid=%s" target="_blank">View in new window</a></div></div>',
+        '<div class="atlas-iframe"><iframe height="%d" class="atlas-iframe__iframe" id="dashboard-%s" src="https://dashboards.instantatlas.com/viewer/report?appid=%s" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div class="atlas-iframe__caption"><a href="https://dashboards.instantatlas.com/viewer/report?appid=%s" target="_blank">View larger dashboard in new window</a></div></div>',
         $height,
         $random,
         $address,
