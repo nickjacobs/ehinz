@@ -34,10 +34,11 @@ ShortcodeParser::get('default')->register('dashboard', function($arguments, $add
     $random = substr(md5(mt_rand()), 0, 7);
 
     return sprintf(
-        '<div class="atlas-dashboard-wrapper" id="dashboard-%s"><script type="text/javascript" defer="true" src="https://dashboards.instantatlas.com/embed/%s?container=dashboard-%s"></script></div>',
+        '<div class="atlas-dashboard-wrapper" id="dashboard-%s"><script type="text/javascript" defer="true" src="https://dashboards.instantatlas.com/embed/%s?container=dashboard-%s"></script></div><div class="atlas-iframe__caption"><a href="https://dashboards.instantatlas.com/viewer/report?appid=%s" target="_blank">View in new window</a></div>',
         $random,
         $address,
-        $random
+        $random,
+        $address
     );
 });
 
