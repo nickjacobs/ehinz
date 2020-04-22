@@ -1,88 +1,91 @@
 .typography {
-	.lead {
-		@include font(22);
-		font-family:$heading-font;
-		@include max-xs {
-			@include font(24);
+		.lead {
+			@include font(22);
+			font-family:$heading-font;
+			@include max-xs {
+				@include font(24);
+			}
 		}
-	}
 
-	// ol {
-	// counter-reset: list-counter;
-	// list-style:none;
-	// padding-left:0;
-	// margin:2.4rem 0;
-	// 	li {
-	// 		padding-left:2rem;
-	// 		position:relative;
-	// 		margin-bottom:2.4rem;
-	// 		&:before {
-	// 			position:absolute;
-	// 			left:0;
-	// 			top:8px;
-	// 			content: counter(list-counter);
-	// 			counter-increment: list-counter;
-	// 			@include font(48);
-	// 			font-family:$heading-font;
-	// 		}
-	// 	}
-	// }
-	ul {
-		margin:2.4rem 0;
-		li {
-			margin-bottom:5px;
-		}
-	}
-	img {
-		max-width:100%;
-		height:auto;
-	}
-
-
-	h1 {
-	margin-bottom: 20px;
-	font-size: 44px;
-	line-height: 1.1;
-	}
-	h2 {
-		font-size: 26px;
-		font-weight: $font-semi;
-	}
-	h3 {
-		font-size: 22px;
-		font-weight: $font-semi;
-	}
-	
-	h4 {
-		font-size: 18px;
-		line-height: 1.5;
-		font-weight: $font-semi;
-	}
-
-	a {
-		color:$ehgreen;
-		//text-decoration:underline;
-		border-bottom:1px solid $ehgreen;
-		&:hover {
-			text-decoration: none;
-			background:$ehlightgreen;
-		}
-	}
-
-	table {
-		@extend .table;
+		// ol {
+		// counter-reset: list-counter;
+		// list-style:none;
+		// padding-left:0;
+		// margin:2.4rem 0;
+		// 	li {
+		// 		padding-left:2rem;
+		// 		position:relative;
+		// 		margin-bottom:2.4rem;
+		// 		&:before {
+		// 			position:absolute;
+		// 			left:0;
+		// 			top:8px;
+		// 			content: counter(list-counter);
+		// 			counter-increment: list-counter;
+		// 			@include font(48);
+		// 			font-family:$heading-font;
+		// 		}
+		// 	}
+		// }
 		ul {
-			margin:0;
+			margin:2.4rem 0;
+			li {
+				margin-bottom:5px;
+			}
 		}
-	}
+		img {
+			max-width:100%;
+			height:auto;
+		}
 
 
-	img[alt*="pdf"],img[alt*="excel"],img[alt*="Excel"],img[alt*="doc"] {
-		display: inline-block!important;
-	    float: none!important;
-	    margin: 0!important;
-	    clear: none!important;
-	}
+		h1 {
+		margin-bottom: 20px;
+		font-size: 44px;
+		line-height: 1.1;
+		}
+		h2 {
+			font-size: 26px;
+			font-weight: $font-semi;
+		}
+		h3 {
+			font-size: 22px;
+			font-weight: $font-semi;
+		}
+		
+		h4 {
+			font-size: 18px;
+			line-height: 1.5;
+			font-weight: $font-semi;
+		}
+
+		a {
+			color:$ehgreen;
+			//text-decoration:underline;
+			border-bottom:1px solid $ehgreen;
+			&:hover {
+				text-decoration: none;
+				background:$ehlightgreen;
+			}
+		}
+
+		
+		table {
+			@extend .table;
+			ul {
+				margin:0;
+			}
+		}
+
+
+
+		img[alt*="pdf"],img[alt*="excel"],img[alt*="Excel"],img[alt*="doc"] {
+			display: inline-block!important;
+		    float: none!important;
+		    margin: 0!important;
+		    clear: none!important;
+		}
+
 	
 }
 

@@ -9609,3 +9609,14 @@ https://flickity.metafizzy.co
       font-size: 14px; }
   .section-security #MemberLoginForm_LoginForm #MemberLoginForm_LoginForm_error {
     color: #fd7e14; }
+
+.atlas-dashboard-wrapper {
+  line-height: 1.2; }
+  .atlas-dashboard-wrapper ul {
+    margin: 0 0 10px; }
+  .atlas-dashboard-wrapper .ia-table-cell {
+    vertical-align: middle !important; }
+  .atlas-dashboard-wrapper .ia-layer-list-item {
+    padding-left: 30px !important; }
+  .atlas-dashboard-wrapper table td, .atlas-dashboard-wrapper table th {
+    padding: 3px !important; }
