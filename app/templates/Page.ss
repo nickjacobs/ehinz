@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="$ContentLocale" class="h-100">
   <head>
-
+    <% include GoogleAnalytics %>
   	<% base_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
