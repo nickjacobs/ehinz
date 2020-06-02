@@ -8,7 +8,7 @@
 				<div class="sub-pages">					
 						<div class="row row-smaller">
 							<div class="col-sm-6 col-lg-4 col-smaller starter">
-								Explore our Enviromental Health Indicators.
+								Explore our Environmental Health Indicators.
 							</div>
 							<% loop $IndicatorsHolders %>															
 									<div class="col-sm-6 col-lg-4 col-smaller">
