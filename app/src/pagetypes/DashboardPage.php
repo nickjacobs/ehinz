@@ -4,13 +4,15 @@ namespace {
 
 
     use SilverStripe\CMS\Model\SiteTree;
+    use SilverStripe\Forms\CheckboxField;
     use SilverStripe\Forms\TextField;
 
 class DashboardPage extends Page
     {
 
         private static $db = [ 
-            'DashboardLink' => 'Varchar(255)',                      
+            'DashboardLink' => 'Varchar(255)', 
+            'OpenDirectlyInNewWindow' => 'Boolean'                     
         ];
 
         private static $has_one = [
@@ -33,6 +35,9 @@ class DashboardPage extends Page
             $fields = parent::getCMSFields();
 
             $fields->addFieldToTab('Root.Main',TextField::create('DashboardLink','Full URL for dashboard'),'Content');
+            $fields->addFieldToTab('Root.Main',CheckboxField::create('OpenDirectlyInNewWindow','Open directly in new window')->setDescription('This opens in a new window directly (if it\'s not on a landing page)'),'Content');
+
+            
            
             return $fields;
         }
