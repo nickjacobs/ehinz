@@ -9620,3 +9620,33 @@ https://flickity.metafizzy.co
     padding-left: 30px !important; }
   .atlas-dashboard-wrapper table td, .atlas-dashboard-wrapper table th {
     padding: 3px !important; }
+
+.dashboard-page-list {
+  margin-top: 60px; }
+  .dashboard-page-list__item {
+    margin-bottom: 30px;
+    background-color: #f3f7e8;
+    padding: 30px 20px;
+    position: relative; }
+    .dashboard-page-list__item::before {
+      content: '';
+      position: absolute;
+      right: 30px;
+      bottom: 0;
+      top: -15px;
+      width: 216px;
+      background: url(../images/dash-nzmap.png) no-repeat top; }
+    .dashboard-page-list__item h5 {
+      text-transform: uppercase;
+      font-size: .9rem;
+      color: #8BB220; }
+    .dashboard-page-list__item h2 {
+      font-size: 2rem;
+      color: #8BB220;
+      font-weight: 600;
+      padding-right: 246px; }
+    .dashboard-page-list__item a {
+      color: #195C2F;
+      text-decoration: underline;
+      margin-top: 20px;
+      display: block; }

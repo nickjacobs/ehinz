@@ -25,3 +25,45 @@
 		}
 	}
 }
+
+
+
+.dashboard-page-list {
+	margin-top:60px;
+
+	&__item {
+		margin-bottom:30px;
+		background-color:$ehlightgreen;
+		padding:30px 20px;
+		position:relative;
+		&::before {
+			content:'';
+			position: absolute;
+			right:30px;
+			bottom:0;
+			top:-15px;
+			width:216px;
+			background:url(../images/dash-nzmap.png) no-repeat top;
+			//background:url(../images/dashboard-graphic.svg) no-repeat top left;
+
+		}
+		h5 {
+			text-transform: uppercase;
+			font-size:.9rem;
+			color:$ehgreen;
+		}
+		h2 {
+			font-size:2rem;
+			color:$ehgreen;
+			font-weight:$font-semi;
+			padding-right:246px;
+		}
+		a {
+			color:$ehdarkgreen;
+			text-decoration:underline;
+			margin-top:20px;
+			display:block;
+
+		}
+	}
+}
