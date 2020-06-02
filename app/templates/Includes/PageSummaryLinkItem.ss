@@ -5,7 +5,12 @@
 	</div>
 	<% end_if %>
 	<div class="content <% if $SummaryIcon %>col-10<% else %><% end_if %>">
-		<a href="$Link">$Title</a>
+		<% if $ClassName == 'DashboardPage' && $OpenDirectlyInNewWindow %>
+			<a href="$DashboardLink" target="_blank">$Title</a>
+		<% else %>
+			<a href="$Link">$Title</a>
+		<% end_if %>
+
 		<span>$Summary</span>
 	</div>
 </div>
