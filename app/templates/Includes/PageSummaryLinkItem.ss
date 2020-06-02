@@ -11,6 +11,6 @@
 			<a href="$Link">$Title</a>
 		<% end_if %>
 
-		<span>$Summary</span>
+		<% if $Summary %><span>$Summary</span><% end_if %>
 	</div>
 </div>
