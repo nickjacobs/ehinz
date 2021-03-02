@@ -33,7 +33,7 @@
     
   </head>
   <body class="cls-{$ClassName.LowerCase} section-{$Level(1).URLSegment.Lowercase} page-{$ID}  d-flex flex-column h-100" id="top">
-      
+    <% include GTMCode %>
       <main role="main" class="flex-shrink-0">
         <div id="headerAndNav">
         <% include Header %>
