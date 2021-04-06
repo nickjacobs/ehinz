@@ -46,5 +46,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.1"
+  },
+  "resolutions":{
+    "graceful-fs":"^4.2.4"
   }
 }
