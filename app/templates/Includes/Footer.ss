@@ -7,7 +7,7 @@
 					<img src="images/footer-logo.png" />
 				</div>
 				<p>$SiteConfig.Address</p>
-				<img class="footer-badge" src="images/footer-logo-badge.png" />
+				$SVG('massey-logo-white')
 			</div>
 			<div class="col-md-4">
 				<div class="footer-header">
