@@ -5,17 +5,25 @@ header.page-top-header {
 	position: relative;
 	.uni-link,.home-link {
 		display:inline-block;
+		position:relative;
+		svg {
+			max-width: 100%;
+		}
+	}
+	.uni-link {
+		padding-right:30px;
 	}
 	.uni-link:after {
 		position: absolute;
-		width: 1px;
-		height: 33px;
+		width: 2px;
+		height: 75px;
 		content: "";
 		background: $lightgrey;
-		right: 16px;
-		top: 10px;
+		right: -3px;
+		top: 0px;
 	}
 	.home-link {
+		padding-left:30px;
 		margin-top:-10px;
 		position:relative;
 	}
@@ -47,6 +55,11 @@ header.page-top-header {
 		    top: -34px;
 		    background: $lightergrey url(../images/icon-search.png) no-repeat 3px 8px;
 		}
+	}
+
+	@include max-lg {
+		.uni-link {width:160px;padding-right:20px;}
+		.home-link {width:300px;padding-left:20px;}
 	}
 }
 

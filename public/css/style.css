@@ -8680,16 +8680,22 @@ header.page-top-header {
   color: #000;
   position: relative; }
   header.page-top-header .uni-link, header.page-top-header .home-link {
-    display: inline-block; }
+    display: inline-block;
+    position: relative; }
+    header.page-top-header .uni-link svg, header.page-top-header .home-link svg {
+      max-width: 100%; }
+  header.page-top-header .uni-link {
+    padding-right: 30px; }
   header.page-top-header .uni-link:after {
     position: absolute;
-    width: 1px;
-    height: 33px;
+    width: 2px;
+    height: 75px;
     content: "";
     background: #ECECEC;
-    right: 16px;
-    top: 10px; }
+    right: -3px;
+    top: 0px; }
   header.page-top-header .home-link {
+    padding-left: 30px;
     margin-top: -10px;
     position: relative; }
   header.page-top-header .search-bar {
@@ -8717,6 +8723,13 @@ header.page-top-header {
       position: relative;
       top: -34px;
       background: #f2f2f2 url(../images/icon-search.png) no-repeat 3px 8px; }
+  @media (max-width: 1199.98px) {
+    header.page-top-header .uni-link {
+      width: 160px;
+      padding-right: 20px; }
+    header.page-top-header .home-link {
+      width: 300px;
+      padding-left: 20px; } }
 
 header.mobile-top-header {
   padding: 10px 0px;
@@ -9181,6 +9194,8 @@ footer {
     font-weight: 700; }
   .page-summary-link-item .content span {
     display: block; }
+  .page-summary-link-item.type-DashboardPage {
+    background: url(../images/dashboard-link-bg.png) top right no-repeat; }
 
 /* sub pages */
 .page-groups .page-group {
