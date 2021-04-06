@@ -1,4 +1,10 @@
+SetEnvIf X-Forwarded-Proto https HTTPS=on
 
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
 ### SILVERSTRIPE START ###
 # Deny access to templates (but allow from localhost)
 <Files *.ss>
