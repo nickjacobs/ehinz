@@ -48,7 +48,7 @@ class PageController extends ContentController
     }
 
     public function IndicatorsHolders() {
-        return IndicatorsHolder::get();
+        return IndicatorsHolder::get()->filter('ParentID',6);
     }
 
 
