@@ -9298,6 +9298,9 @@ footer {
     text-decoration: underline;
     font-size: 16px; }
 
+.blogpost img {
+  max-width: 100%; }
+
 .pagination {
   margin-top: 30px; }
   .pagination a {

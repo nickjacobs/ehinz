@@ -1,5 +1,5 @@
 
-<section class="main-page-content">
+<section class="main-page-content blogpost">
 	<div class="container">		
 		<div class="row">
 			<div class="col-md-9">
