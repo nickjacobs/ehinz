@@ -56,6 +56,12 @@ class PageController extends ContentController
         return Page::get()->filter(['ClassName'=>['Page','DashboardPage','DashboardHolder'],'ParentID'=>$this->ID]);
     }
 
+    public function StandardsListing()
+    {
+        $holder = StandardsHolder::get()->first();
+        return StandardsPage::get()->filter(['ParentID' => $holder->ID]);
+    }
+
     
     
 }

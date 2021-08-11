@@ -45,7 +45,7 @@
 					<h4>$HealthspaceHeading</h4>
 					<div class="healthspace">
 						$HealthspaceDescription
-						<img class="img-responsive" src="$HealthspaceImage.ScaleWidth(340).Link" />
+						<img class="img-fluid" src="$HealthspaceImage.ScaleWidth(340).Link" />
 					</div>
 					<a class="twitter-timeline" data-height="400" href="https://twitter.com/EHI_NewZealand?ref_src=twsrc%5Etfw">Tweets by EHI_NewZealand</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				</div>

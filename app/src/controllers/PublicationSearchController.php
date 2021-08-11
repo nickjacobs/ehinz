@@ -96,10 +96,12 @@ class PublicationSearchController extends PageController
     public function index(HTTPRequest $request)
     {
         
+        $isQuery = false;
         $docs=DownloadFile::get()->filter('ID', 0);
 
         if($request->getVar('Topic') || $request->getVar('Keywords') || $request->getVar('DocType')){
             $docs = DownloadFile::get();
+            $isQuery = true;
         }
 
         if ($topic = $request->getVar('Topic')) {
@@ -119,7 +121,8 @@ class PublicationSearchController extends PageController
         }
 
         return [
-            'Results' => $docs
+            'Results' => $docs,
+            'isQuery' => $isQuery
         ];
     }
 

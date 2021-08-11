@@ -8767,11 +8767,12 @@ header.mobile-top-header {
 body.page-1 #MainBanner .container {
   height: 470px; }
 
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+
 #topLevelNav {
   padding: 0;
   background: #8BB220; }
-  #topLevelNav .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
   #topLevelNav #mainNavigation ul.navbar-nav {
     /* home icon */ }
     #topLevelNav #mainNavigation ul.navbar-nav li.nav-item {
@@ -8786,91 +8787,51 @@ body.page-1 #MainBanner .container {
         display: block;
         height: 100%;
         font-weight: 400; }
+        @media (max-width: 991.98px) {
+          #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
+            padding: 18px 18px;
+            text-align: left;
+            font-size: 18px; } }
         #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.current {
           background-color: #195C2F; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-6 {
-        max-width: 190px; }
-        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-6 a {
-          padding: 8px 4px 0; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-239 {
-        max-width: 210px; }
-        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-239 a {
-          padding: 8px 4px 0; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-326 {
-        max-width: 150px; }
-        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.section-326 a {
-          padding: 8px 4px 0; }
-    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child {
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.dropdown-togglex:after {
+          border-style: solid;
+          border-width: 0.15em 0.15em 0 0;
+          content: '';
+          display: inline-block;
+          height: 0.5em;
+          width: 0.5em;
+          left: 0.5em;
+          position: relative;
+          top: .25em;
+          -webkit-transform: rotate(135deg);
+              -ms-transform: rotate(135deg);
+                  transform: rotate(135deg);
+          vertical-align: top; }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu {
+        min-width: 100%;
+        padding: 0 0 .5em;
+        top: 96%;
+        border: none;
+        border-radius: 0;
+        background-color: #8BB220; }
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu .dropdown-item {
+          color: white;
+          border-top: 1px solid rgba(1, 1, 1, 0.05); }
+          #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu .dropdown-item:hover {
+            background-color: #195C2F; }
+    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.url-home {
       -webkit-box-flex: 0;
           -ms-flex: none;
               flex: none; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link {
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.url-home a.nav-link {
         text-indent: -9999px;
         overflow: hidden;
         width: 55px;
         height: 55px;
         background: url(../images/icon-home.png) no-repeat 12px 13px; }
-        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item:first-child a.nav-link.current {
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.url-home a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.url-home a.nav-link.current {
           background-color: #195C2F; }
-
-#subNavigation {
-  display: none;
-  position: absolute;
-  z-index: 999;
-  background: #8BB220;
-  width: 100%;
-  padding: 45px 0px;
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
-  #subNavigation .subpages {
-    display: none; }
-    #subNavigation .subpages h4 {
-      padding-bottom: 20px;
-      color: #fff; }
-    #subNavigation .subpages a {
-      color: #fff;
-      padding: 8px 0px;
-      display: block; }
-
-#mobileLevelNav {
-  padding: 40px 0px;
-  background: #8BB220;
-  position: fixed;
-  top: 55px;
-  width: 100%;
-  z-index: 2;
-  display: none; }
-  #mobileLevelNav.open {
-    display: block; }
-  #mobileLevelNav a.nav-link {
-    color: #fff; }
-  #mobileLevelNav .search-bar {
-    height: 34px;
-    padding: 9px 0px;
-    margin-bottom: 20px; }
-    #mobileLevelNav .search-bar div.text {
-      width: calc(100% - 34px); }
-    #mobileLevelNav .search-bar input.text {
-      border-top-left-radius: 80px;
-      border-bottom-left-radius: 80px;
-      border: 0 none;
-      padding: 4px 20px;
-      background: #f2f2f2;
-      font-size: 14px;
-      width: 100%; }
-    #mobileLevelNav .search-bar input.action {
-      width: 34px;
-      height: 34px;
-      background: 0 0;
-      border: 0 none;
-      border-top-right-radius: 80px;
-      border-bottom-right-radius: 80px;
-      text-indent: -9999px;
-      overflow: hidden;
-      position: relative;
-      top: -34px;
-      background: #f2f2f2 url(../images/icon-search.png) no-repeat 3px 8px;
-      left: calc(100% - 36px); }
 
 footer {
   background: #4a4a4a;
@@ -9379,8 +9340,7 @@ button:focus {
   margin-bottom: 40px; }
 
 @media (max-width: 991.98px) {
-  .page-top-header,
-  #topLevelNav {
+  .page-top-header {
     display: none; }
   header.mobile-top-header {
     display: block; }
@@ -9602,6 +9562,11 @@ https://flickity.metafizzy.co
 
 .expand-box.contacts .domain-first {
   margin-bottom: 20px; }
+
+.standards-listing-item h2 {
+  border-bottom: 1px solid #8BB220;
+  padding-bottom: 8px;
+  margin-bottom: 12px; }
 
 .section-security .main-page-content {
   max-width: 400px;

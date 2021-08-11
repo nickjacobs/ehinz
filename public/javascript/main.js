@@ -1,24 +1,39 @@
 $(function() {
 
 
-	$("#topLevelNav .nav-link").mouseover(function(e){
-		$(".subpages").hide();
-		$(".subnav").hide();
-		if($("[data-in-id='"+$(this).attr("data-id")+"']").length > 0){
-			$(".subnav").show();
-			$("[data-in-id='"+$(this).attr("data-id")+"']").css({"display": "flex"});
-		}
-	});
+	function toggleDropdown (e) {
+		var _d = $(e.target).closest('.dropdown'),
+		  _m = $('.dropdown-menu', _d);
+		setTimeout(function(){
+		  var shouldOpen = e.type !== 'click' && _d.is(':hover');
+		  _m.toggleClass('show', shouldOpen);
+		  _d.toggleClass('show', shouldOpen);
+		  $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+		}, e.type === 'mouseleave' ? 300 : 0);
+	  }
+	  
+	  $('body')
+		.on('mouseenter mouseleave','.dropdown',toggleDropdown)
+		.on('click', '.dropdown-menu a', toggleDropdown);
 
-	$(".subnav").mouseleave(function(e){
-		$(".subnav").hide();
-		$(".subpages").hide();
-	});
+	// $("#topLevelNav .nav-link").mouseover(function(e){
+	// 	$(".subpages").hide();
+	// 	$(".subnav").hide();
+	// 	if($("[data-in-id='"+$(this).attr("data-id")+"']").length > 0){
+	// 		$(".subnav").show();
+	// 		$("[data-in-id='"+$(this).attr("data-id")+"']").css({"display": "flex"});
+	// 	}
+	// });
 
-	$(".toggle-clicker").click(function(e){
-		$(this).find(".toggle-btn").toggleClass("open"); 
-		$(this).parent().find(".row-toggle").toggleClass("open"); 
-	});
+	// $(".subnav").mouseleave(function(e){
+	// 	$(".subnav").hide();
+	// 	$(".subpages").hide();
+	// });
+
+	// $(".toggle-clicker").click(function(e){
+	// 	$(this).find(".toggle-btn").toggleClass("open"); 
+	// 	$(this).parent().find(".row-toggle").toggleClass("open"); 
+	// });
 
 	$(window).scroll(function(){
 		//console.log($(window).scrollTop());
@@ -32,16 +47,16 @@ $(function() {
 		}
 	});
 
-	$(".mobile-top-header .menu").click(function(e){
-		$("#mobileLevelNav").toggleClass("open");
-	});
+	// $(".mobile-top-header .menu").click(function(e){
+	// 	$("#mobileLevelNav").toggleClass("open");
+	// });
 
-	$(window).on('resize', function(){
-		var win = $(this);
-	    if (win.width() >= 992) {
-	    	$("#mobileLevelNav").removeClass("open");
-	    };
-	});
+	// $(window).on('resize', function(){
+	// 	var win = $(this);
+	//     if (win.width() >= 992) {
+	//     	$("#mobileLevelNav").removeClass("open");
+	//     };
+	// });
 
 	/*
 	$('.carousel-holder').flickity({

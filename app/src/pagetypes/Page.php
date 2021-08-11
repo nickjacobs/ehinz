@@ -99,7 +99,7 @@ namespace {
             $fields = parent::getCMSFields();
 
 
-            if($this->ClassName == 'Page' || $this->ClassName == 'IndicatorPage' || $this->ClassName == 'PublicationSearch'){
+            if($this->ClassName == 'Page' || $this->ClassName == 'IndicatorPage' || $this->ClassName == 'StandardsHolder' || $this->ClassName == 'StandardsPage' || $this->ClassName == 'PublicationSearch'){
                 $fields->addFieldToTab('Root.Main', HTMLEditorField::create('PageIntro')->setRows(8)->addExtraClass('stacked'),'Content');
                 //$fields->addFieldToTab('Root.Main', CheckboxField::create('ShowOnThisPage','Show "On this page list"?'),'Content');
             }
@@ -190,11 +190,14 @@ namespace {
         {
             preg_match_all('/<h2 class="anchor">(.*?)<\/h2>/is', $this->Content, $matches);
             $out = [];
+            $pos=1;
             foreach ($matches[1] as $subheading) {
                 $out[] = [
                     'Title'      => $subheading,
                     'urlsegment' => Convert::raw2url($subheading),
+                    'SubPos' => $pos
                 ];
+                $pos +=1;
             }
             return ArrayList::create($out);
         }
@@ -204,6 +207,16 @@ namespace {
             $content = $this->dbObject('Content')->RAW();
             foreach ($this->Subheadings() as $subheading) {
                 $content = str_replace('<h2 class="anchor">' . $subheading->Title . '</h2>', '<h2 class="anchor" id="' . $subheading->urlsegment . '">' . $subheading->Title . '</h2>', $content);
+            }
+            return DBField::create_field('HTMLText', $content);
+        }
+
+        public function ASFormattedContent()
+        {
+            $section = $this->SectionNumber;
+            $content = $this->dbObject('Content')->RAW();
+            foreach ($this->Subheadings() as $subheading) {
+                $content = str_replace('<h2 class="anchor">' . $subheading->Title . '</h2>', '<h2 class="anchor" id="' . $subheading->urlsegment . '">' . $section . '.' . $subheading->SubPos . ' ' . $subheading->Title . '</h2>', $content);
             }
             return DBField::create_field('HTMLText', $content);
         }

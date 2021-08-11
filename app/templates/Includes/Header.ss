@@ -22,9 +22,11 @@
       <div class="col-6">
         <a class="uni-link" href="/"><img src="images/mobile-logo.png" /></a>
       </div>
-      <div class="col-6 text-right">
-        <img class="menu" src="images/mobile-menu.png" />
-      </div>
+       <div class="col-6 text-right">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </div> 
     </div>
   </div>
 </header>

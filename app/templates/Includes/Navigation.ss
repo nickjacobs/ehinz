@@ -1,53 +1,33 @@
-<nav class="navbar navbar-expand-sm" id="topLevelNav"> 
-    <div class="container" id="mainNavigation">
-        <ul class="nav navbar-nav nav-fill w-100">        
-          <% loop $Menu(1) %>          
-          <li class="nav-item section-{$ID}">
-            <a class="nav-link $LinkingMode" title="{$MenuTitle}" data-id="$Link" href="$Link" >$MenuTitle <% if $LinkingMode=='current'%><span class="sr-only">(current)</span><% end_if %></a>
-          </li>          
-          <% end_loop %>
-        </ul>
-      </div>  
-</nav>
-
-<nav class="subnav" id="subNavigation"> 
-	<div class="container" >
-		<% loop $Menu(1) %>
-			<% if $Children %>  
-				<div class="subpages row" data-in-id="$Link">
-					<div class="col-12">
-						<h4>$MenuTitle</h4>
-					</div>
-					<% loop $Children %>
-						<div class="col-3">
-							<a class="$LinkingMode" title="{$MenuTitle}" href="$Link" >$MenuTitle <% if $LinkingMode=='current'%><span class="sr-only">(current)</span><% end_if %></a>
-						</div>
-					<% end_loop %>
-				</div>
-			<% end_if %>
-		<% end_loop %>
-	</div>
-</nav>
-
-<nav class="" id="mobileLevelNav">
-	<div class="container" >
-		<div class="row" >
-			<div class="col-md-12" >
-				<ul class="nav navbar-nav nav-fill w-100">  
-					<li>
-						<% if $SearchForm %>				
-			  				<div class="search-bar">
-			  					$SearchForm
-			  				</div>
-			  			<% end_if %>      
-		          <% loop $Menu(1) %> 
-		          </li>         
-		          <li class="nav-item section-{$ID}">
-		            <a class="nav-link $LinkingMode" title="{$MenuTitle}" data-id="$Link" href="$Link" >$MenuTitle <% if $LinkingMode=='current'%><span class="sr-only">(current)</span><% end_if %></a>
-		          </li>          
-		          <% end_loop %>
-		        </ul>
-		    </div>
+  <nav class="navbar navbar-expand-md" id="topLevelNav">
+	<div class="container">
+		<div class=" collapse navbar-collapse" id="mainNavigation">
+			<ul class="navbar-nav w-100 nav-fill">
+				<li class="d-block d-md-none">
+					<% if $SearchForm %>				
+						  <div class="search-bar">
+							  $SearchForm
+						  </div>
+					  <% end_if %>
+				</li>
+				<% loop Menu(1) %>
+					<% if $Children %>	  
+						<li class="nav-item dropdown url-{$URLSegment}">
+							<a class="nav-link dropdown-togglex" title="{$MenuTitle}" href="$Link" id="navbarDropdown{$ID}" role="button"  aria-haspopup="true" aria-expanded="false">
+								$MenuTitle.XML <% if $LinkingMode=='current'%><span class="sr-only">(current)</span><% end_if %>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown{$ID}">
+								<% loop $Children %>
+								<a class="dropdown-item" title="{$MenuTitle}" href="$Link">$MenuTitle.XML <% if $LinkingMode=='current'%><span class="sr-only">(current)</span><% end_if %></a>
+								<% end_loop %>
+							</div>
+						</li>
+					<% else %>
+						<li class="nav-item url-{$URLSegment}">
+							<a class="nav-link" title="{$MenuTitle}" href="$Link">$MenuTitle.XML <% if $LinkingMode=='current'%><span class="sr-only">(current)</span><% end_if %></a>
+						</li>
+				<% end_if %>
+				<% end_loop %>
+			</ul>
 		</div>
 	</div>
 </nav>

@@ -25,12 +25,8 @@
 			</div>
 			<% include ContentSection %>
 			<% end_if %>
-
-
 			<% include PublicationFilterForm %>
-
 			<div class="publication-search-results">
-			
 			<% if $Results %>
 			<div class="row">
 				<% loop $Results %>
@@ -51,20 +47,19 @@
 						</div>
 					</div>
 					</div>
-				</div>
-				
+				</div>				
 				<% end_loop %>
 			</div>
+			<% else %>	
+				<% if $isQuery %>			
+				<div class="row"><div class="col">
+					There were no results for that search.
+				</div></div>
+			<% end_if %>			
 			<% end_if %>
-
 			</div>
-
-
-
 			</div>
 		</div>
 	</div>
 </section>
 <% include SideTabs %>
-
-

@@ -1,11 +1,12 @@
 @include media-breakpoint-down(md) {
-	.page-top-header,
-	#topLevelNav {
+	.page-top-header {
+	//#topLevelNav {
 		display: none;
 	}
 	header.mobile-top-header {
 		display: block;
 	}
+	
 	#MainBanner .container .banner__title h1 {
 	    font-size: 38px;
 	    font-weight: 700;
