@@ -27,9 +27,7 @@
         }
     }
 }
-.standards-listing {
-        
-
+.standards-listing { 
     .standards-listing-item {
         h2 {
             border-bottom:1px solid $ehgreen;
@@ -39,7 +37,7 @@
         }
         h3 {
             a {
-                color:$body;
+                color:$ehgreen;
                 font-size:18px;
                 text-decoration:underline;
             }
