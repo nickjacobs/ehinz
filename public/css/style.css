@@ -9563,10 +9563,34 @@ https://flickity.metafizzy.co
 .expand-box.contacts .domain-first {
   margin-bottom: 20px; }
 
-.standards-listing-item h2 {
+.cls-standardspage .main-page-content .side-header a, .cls-standardsholder .main-page-content .side-header a {
+  color: #464749; }
+
+.cls-standardspage .main-page-content .side-menu ul.as-menu, .cls-standardsholder .main-page-content .side-menu ul.as-menu {
+  margin: 0;
+  padding: 0;
+  display: block; }
+  .cls-standardspage .main-page-content .side-menu ul.as-menu li, .cls-standardsholder .main-page-content .side-menu ul.as-menu li {
+    border: none; }
+    .cls-standardspage .main-page-content .side-menu ul.as-menu li a, .cls-standardsholder .main-page-content .side-menu ul.as-menu li a {
+      text-decoration: underline; }
+    .cls-standardspage .main-page-content .side-menu ul.as-menu li ul, .cls-standardsholder .main-page-content .side-menu ul.as-menu li ul {
+      display: block;
+      margin-top: 0; }
+      .cls-standardspage .main-page-content .side-menu ul.as-menu li ul li a, .cls-standardsholder .main-page-content .side-menu ul.as-menu li ul li a {
+        padding-left: 15px; }
+
+.standards-listing .standards-listing-item h2 {
   border-bottom: 1px solid #8BB220;
   padding-bottom: 8px;
   margin-bottom: 12px; }
+  .standards-listing .standards-listing-item h2 a {
+    color: #464749; }
+
+.standards-listing .standards-listing-item h3 a {
+  color: #464749;
+  font-size: 18px;
+  text-decoration: underline; }
 
 .section-security .main-page-content {
   max-width: 400px;

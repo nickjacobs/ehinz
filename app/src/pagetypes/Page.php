@@ -186,16 +186,18 @@ namespace {
         }
 
 
-        public function Subheadings()
+        public function Subheadings($depth = 3)
         {
+            
             preg_match_all('/<h2 class="anchor">(.*?)<\/h2>/is', $this->Content, $matches);
+            //preg_match_all('/<h[2-'.$depth.'] class="anchor">(.*?)<\/h[2-'.$depth.']>/is', $this->Content, $matches);
             $out = [];
             $pos=1;
             foreach ($matches[1] as $subheading) {
                 $out[] = [
                     'Title'      => $subheading,
                     'urlsegment' => Convert::raw2url($subheading),
-                    'SubPos' => $pos
+                    'SubPos' => $pos                    
                 ];
                 $pos +=1;
             }
@@ -211,16 +213,7 @@ namespace {
             return DBField::create_field('HTMLText', $content);
         }
 
-        public function ASFormattedContent()
-        {
-            $section = $this->SectionNumber;
-            $content = $this->dbObject('Content')->RAW();
-            foreach ($this->Subheadings() as $subheading) {
-                $content = str_replace('<h2 class="anchor">' . $subheading->Title . '</h2>', '<h2 class="anchor" id="' . $subheading->urlsegment . '">' . $section . '.' . $subheading->SubPos . ' ' . $subheading->Title . '</h2>', $content);
-            }
-            return DBField::create_field('HTMLText', $content);
-        }
-
+        
 
         public function getTopics()
         {

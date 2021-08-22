@@ -1,7 +1,12 @@
 <% if $StandardsListing %>
-    <% loop $StandardsListing %>
-        <div class="standards-listing-item">
-            <h2><% if $SectionNumber %>{$SectionNumber}.<% end_if %> $Title</h2>
-        </div>
-    <% end_loop %>
+    <div class="standards-listing">
+        <% loop $StandardsListing %>
+            <div class="standards-listing-item mb-5">
+                <h2><a href="$Link">$Title</a></h2>
+                <% loop $Subheadings %>
+                    <h3><a href="$Up.Link#{$urlsegment}">$Title</a></h3>
+                <% end_loop %>
+            </div>
+        <% end_loop %>
+    </div>
 <% end_if %>

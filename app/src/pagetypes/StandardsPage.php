@@ -31,10 +31,12 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->addFieldToTab('Root.Main', NumericField::create('SectionNumber','Top level section number'),'MenuTitle');            
+            //$fields->addFieldToTab('Root.Main', NumericField::create('SectionNumber','Top level section number'),'MenuTitle');            
 
             return $fields;
         }
+
+
 
     }
 

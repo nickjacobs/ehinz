@@ -1,7 +1,48 @@
-.standards-listing-item {
-    h2 {
-        border-bottom:1px solid $ehgreen;
-        padding-bottom:8px;
-        margin-bottom:12px;
+.cls-standardspage,.cls-standardsholder {
+    .main-page-content {
+        .side-header a {
+            color:$body;
+        }
+        .side-menu {
+            ul.as-menu {
+                margin:0;padding:0;
+                display:block;
+                li {
+                    border:none;
+                    a {
+                        text-decoration:underline;
+                        
+                    }
+                    ul {
+                        display:block;
+                        margin-top:0;
+                        li {
+                            a{
+                                padding-left:15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.standards-listing {
+        
+
+    .standards-listing-item {
+        h2 {
+            border-bottom:1px solid $ehgreen;
+            padding-bottom:8px;
+            margin-bottom:12px;
+            a {color:$body;}
+        }
+        h3 {
+            a {
+                color:$body;
+                font-size:18px;
+                text-decoration:underline;
+            }
+        }
     }
 }
