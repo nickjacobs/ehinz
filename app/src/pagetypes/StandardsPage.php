@@ -39,7 +39,9 @@ namespace {
 
         public function SortedASFiles()
         {
-            return $this->Parent()->RelatedDocs()->Sort('Sort');
+            $holder=StandardsHolder::get()->first();
+            
+            return $holder->RelatedDocs()->Sort('Sort');
         }
 
 
