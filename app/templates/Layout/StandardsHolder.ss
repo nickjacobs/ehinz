@@ -4,9 +4,9 @@
 			<% if $Menu(2) %>
 				<div class="col-md-3">					
 					<div class="side-header">$MenuTitle</div>
-					<ul class="side-menu">
-						<% include ASSidebarMenu %>
-					</ul>					
+					
+					<% include ASSidebarMenu %>
+									
 				</div>
 			<% end_if %>
 			<div class="<% if $Menu(2)  %>col-md-9<% else %>col-md-12<% end_if %>">

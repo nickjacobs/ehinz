@@ -9592,6 +9592,26 @@ https://flickity.metafizzy.co
   font-size: 18px;
   text-decoration: underline; }
 
+.as-pdf-list h4 {
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 2px solid #8bb220;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  margin-top: 40px; }
+
+.as-pdf-list .as-pdf-item {
+  margin-bottom: 12px; }
+  .as-pdf-list .as-pdf-item .as-pdf-title {
+    text-decoration: underline;
+    padding-left: 20px;
+    background: url("../images/download.png") no-repeat left top 4px; }
+  .as-pdf-list .as-pdf-item .as-pdf-summary {
+    color: #464749;
+    font-size: 14px;
+    line-height: 1.2; }
+
 .section-security .main-page-content {
   max-width: 400px;
   padding-top: 60px;

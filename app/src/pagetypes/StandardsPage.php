@@ -37,6 +37,12 @@ namespace {
         }
 
 
+        public function SortedASFiles()
+        {
+            return $this->Parent()->RelatedDocs()->Sort('Sort');
+        }
+
+
 
     }
 

@@ -5,7 +5,10 @@ namespace {
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
     use SilverStripe\Forms\TextField;
-
+    use SilverStripe\Assets\File;
+    use SilverStripe\Forms\GridField\GridField;
+    use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
+    use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
     
 
@@ -22,11 +25,13 @@ namespace {
         ];
 
         private static $has_many = [
-           
+            'RelatedDocs' => ASDownloadFile::class           
         ];
 
+        
+
         private static $owns = [
-            
+            'RelatedDocs'            
         ];
 
         private static $description ="Analytical standards index page";
@@ -43,9 +48,14 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            //$fields->addFieldToTab('Root.Main', TextField::create("TeReoTitle"),'Content');
+            $fields->removeByName('Files');
 
-            
+
+            $config = GridFieldConfig_RelationEditor::create();
+            $config->addComponent(new GridFieldOrderableRows());
+            $gridField = new GridField("RelatedDocs", "Related documents", $this->RelatedDocs(), $config);
+            $fields->addFieldToTab("Root.ASFiles", $gridField);
+                  
             
 
             return $fields;
@@ -55,6 +65,11 @@ namespace {
         public function ASPages()
         {
             return StandardsPage::get()->filter('ParentID',$this->ID);
+        }
+
+        public function SortedASFiles()
+        {
+            return $this->RelatedDocs()->Sort('Sort');
         }
 
     }
