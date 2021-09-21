@@ -30,10 +30,10 @@ $(function() {
 	// 	$(".subpages").hide();
 	// });
 
-	// $(".toggle-clicker").click(function(e){
-	// 	$(this).find(".toggle-btn").toggleClass("open"); 
-	// 	$(this).parent().find(".row-toggle").toggleClass("open"); 
-	// });
+	$(".toggle-clicker").click(function(e){
+		$(this).find(".toggle-btn").toggleClass("open"); 
+		$(this).parent().find(".row-toggle").toggleClass("open"); 
+	});
 
 	$(window).scroll(function(){
 		//console.log($(window).scrollTop());
