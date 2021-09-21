@@ -50,7 +50,7 @@ namespace {
        ];
 
         //private static $default_sort = 'Sort';
-        private static $default_sort = 'Created DESC';
+        private static $default_sort = 'LastEdited DESC';
 
         public function getCMSFields()
         {
