@@ -4,6 +4,17 @@
 use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
 use SilverStripe\Forms\HTMLEditor\HtmlEditorConfig;
 use SilverStripe\View\Parsers\ShortcodeParser;
+use SilverStripe\Core\Environment;
+
+Environment::getEnv('SS_BASE_URL');
+Environment::getEnv('SS_DATABASE_CLASS');
+Environment::getEnv('SS_DATABASE_NAME');
+Environment::getEnv('SS_DATABASE_PASSWORD');
+Environment::getEnv('SS_DATABASE_SERVER');
+Environment::getEnv('SS_DATABASE_USERNAME');
+Environment::getEnv('SS_DEFAULT_ADMIN_USERNAME');
+Environment::getEnv('SS_DEFAULT_ADMIN_PASSWORD');
+Environment::getEnv('SS_ENVIRONMENT_TYPE');
 
 
 $formats = [    
