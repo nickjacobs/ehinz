@@ -39,7 +39,7 @@ namespace {
         ];
 
         private static $summary_fields = [
-            'DocType','Title'
+            'DocType','LastEdited.Nice'=>'Edited','Title'
         ];
 
         private static $searchable_fields = [
@@ -49,7 +49,8 @@ namespace {
           'Topics.Topic'
        ];
 
-        private static $default_sort = 'Sort';
+        //private static $default_sort = 'Sort';
+        private static $default_sort = 'Created DESC';
 
         public function getCMSFields()
         {
@@ -98,6 +99,8 @@ namespace {
 
             return $result;
         }
+
+        
 
 
 
