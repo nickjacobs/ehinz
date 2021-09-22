@@ -18,10 +18,10 @@
 <% end_if %>
 <% if $SortedASFiles %>
 <div class="as-pdf-list">
-	<h4>Standards documents</h4>
+	<h4>Downloads</h4>
 <% loop $SortedASFiles %>
 	<div class="as-pdf-item">
-		<div class="as-pdf-title"><a href="$File.Link">$Title</a></div>
+		<div class="as-pdf-title"><a target="_blank" href="$File.Link">$Title</a></div>
 		<% if $Summary %><div class="as-pdf-summary">$Summary</div><% end_if %>
 	</div>
 <% end_loop %>
