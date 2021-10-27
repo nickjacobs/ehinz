@@ -2,7 +2,7 @@
 	<div class="downloads expand-box" id="downloads">
 		<h3 class="toggle-clicker"><img src="images/icon-download.png" /> Downloads <img class="toggle-btn <% if $SiteConfig.DownloadsOpen %>open<% end_if %>" src="images/icon-toggle.png" /></h3>
 		<div class="row row-toggle <% if $SiteConfig.DownloadsOpen %>open<% end_if %>">
-			<% loop $Files %>
+			<% loop $Files.Sort(FileSort) %>
 				<div class="col-1 download-icon">
 					<% if $DocType == 'Background' %><img src="images/icon-doc-background.png" /><% end_if %>
 					<% if $DocType == 'Metadata' %><img src="images/icon-doc-metadata.png" /><% end_if %>

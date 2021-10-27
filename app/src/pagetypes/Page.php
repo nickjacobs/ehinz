@@ -132,19 +132,19 @@ namespace {
 
 
             $config = GridFieldConfig_RelationEditor::create();
-            $config->addComponent(new GridFieldOrderableRows());
+            $config->addComponent(new GridFieldOrderableRows('FileSort'));
             $gridField = new GridField("Files", "Files", $this->Files(), $config);
             $fields->addFieldToTab("Root.Files", $gridField);
 
             $config2 = GridFieldConfig_RelationEditor::create();
-            $config2->addComponent(new GridFieldOrderableRows());
+            $config2->addComponent(new GridFieldOrderableRows('LinkSort'));
             $gridField2 = new GridField("Links", "Links", $this->Links(), $config2);
             $fields->addFieldToTab("Root.Links", $gridField2);
 
             $fields->addFieldToTab("Root.StaffContacts", LiteralField::create('lf1','<p>The first contact will display as the primary domain contact - all others will be listed as domain seconds</p>'));
 
             $config3 = GridFieldConfig_RelationEditor::create();
-            $config3->addComponent(new GridFieldOrderableRows());
+            $config3->addComponent(new GridFieldOrderableRows('ContactSort'));
             $config3->removeComponentsByType(SilverStripe\Forms\GridField\GridFieldAddNewButton::class);
             $gridField3 = new GridField("StaffContacts", "StaffContacts", $this->StaffContacts(), $config3);
             $fields->addFieldToTab("Root.StaffContacts", $gridField3);
