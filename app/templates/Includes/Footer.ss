@@ -7,7 +7,7 @@
 					<img src="images/footer-logo.png" />
 				</div>
 				<p>$SiteConfig.Address</p>
-				$SVG('massey-logo-white')
+				
 			</div>
 			<div class="col-md-4">
 				<div class="footer-header">
@@ -39,6 +39,12 @@
 						<a class="social-icon" href="$SiteConfig.LinkedInLink" target="_blank"><img src="images/icon-in.png" /></a>
 					<% end_if %>
 				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="footer-partner-logo">$SVG('massey-logo-white')</div>
+				<div class="footer-partner-logo"><img src="images/moh_logo2.png"></div>
 			</div>
 		</div>		
 	</div>
