@@ -22,6 +22,7 @@ namespace {
             "Title" => "Varchar(128)",
             "Summary" => "Varchar(512)",
             "DocType" => "Varchar(128)", //"Enum('Factsheet,Metadata,Background,Report')",
+            "OnlineLink" => "Varchar(255)",
             "Sort" => "Int"
         ];
 
@@ -56,8 +57,7 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->removeByName("Sort");
-            $fields->removeByName("Topics");
+            $fields->removeByName(["Sort","Topics","OnlineLink"]);
 
             $pages = Page::get();
             $fields->addFieldToTab("Root.Main", new TextField("Title","Title"));
@@ -75,6 +75,8 @@ namespace {
             $up1->setFolderName('Factsheets');
             $up1->getValidator()->setAllowedExtensions(['pdf']);           
             $fields->addFieldToTab('Root.Main', $up1);
+
+            $fields->addFieldToTab("Root.Main", new TextField("OnlineLink","Facsheet online link"));
 
 
             $fields->addFieldToTab('Root.Main', ListboxField::create(

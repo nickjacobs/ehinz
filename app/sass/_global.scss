@@ -61,6 +61,10 @@ a:hover {
 			width:30px;height:auto;
 		}
 	}
+	.download-item {
+		color:$ehgreen;
+		a {display:block;text-decoration:underline;}
+	}
 }
 
 

@@ -1,6 +1,6 @@
 <% if $Files %>
 	<div class="downloads expand-box" id="downloads">
-		<h3 class="toggle-clicker"><img src="images/icon-download.png" /> Downloads <img class="toggle-btn <% if $SiteConfig.DownloadsOpen %>open<% end_if %>" src="images/icon-toggle.png" /></h3>
+		<h3 class="toggle-clicker"><img src="images/icon-download.png" /> Documents <img class="toggle-btn <% if $SiteConfig.DownloadsOpen %>open<% end_if %>" src="images/icon-toggle.png" /></h3>
 		<div class="row row-toggle <% if $SiteConfig.DownloadsOpen %>open<% end_if %>">
 			<% loop $Files.Sort(FileSort) %>
 				<div class="col-1 download-icon">
@@ -10,10 +10,13 @@
 					<% if $DocType == 'Report' %><img src="images/icon-doc-report.png" /><% end_if %>
 				</div>
 				<div class="col-11 col-md-5 content">
-					<a href="$File.Link" target="_blank">
-						<strong>$DocType:</strong> 
+					<div class="download-item">					
+						<strong>$DocType:</strong> 						
 						$Title
-					</a>
+						<% if $File %><a href="$File.Link" target="_blank">Download report PDF</a><% end_if %>
+						<% if $OnlineLink %><a href="$OnlineLink" target="_blank">View interactive report</a><% end_if %>
+					</div>
+					
 				</div>
 			<% end_loop %>
 		</div>

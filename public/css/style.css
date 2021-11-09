@@ -8448,6 +8448,12 @@ a:hover {
   width: 30px;
   height: auto; }
 
+.downloads .download-item {
+  color: #8BB220; }
+  .downloads .download-item a {
+    display: block;
+    text-decoration: underline; }
+
 .healthspace-link-section {
   border: 1px solid #8BB220;
   margin: 30px 0 40px;
