@@ -112,6 +112,9 @@ class PublicationSearchController extends PageController
             $docs = $docs->filterAny([
                 'Title:PartialMatch' => $search,
                 'Summary:PartialMatch' => $search,
+                'Keywords:PartialMatch' => $search,
+                'Filename:PartialMatch' => $search,
+
             ]);
         }
         if ($doctype = $request->getVar('DocType')) {

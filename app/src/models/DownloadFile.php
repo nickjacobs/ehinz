@@ -23,6 +23,8 @@ namespace {
             "Summary" => "Varchar(512)",
             "DocType" => "Varchar(128)", //"Enum('Factsheet,Metadata,Background,Report')",
             "OnlineLink" => "Varchar(255)",
+            "Keywords" => 'Text',
+            "Filename" => 'Text',
             "Sort" => "Int"
         ];
 
@@ -57,11 +59,12 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->removeByName(["Sort","Topics","OnlineLink"]);
+            $fields->removeByName(["Sort","Topics","OnlineLink","Keywords"]);
 
             $pages = Page::get();
             $fields->addFieldToTab("Root.Main", new TextField("Title","Title"));
             $fields->addFieldToTab("Root.Main", new TextareaField("Summary","Summary"));
+            
 
             $types = [
                 "Factsheet"=>"Factsheet",
@@ -85,6 +88,8 @@ namespace {
             Topic::get()->map('ID', 'Topic')
         ), 'Metadata');
 
+        $fields->addFieldToTab("Root.Main", TextField::create("Keywords","Keywords")->setDescription("Additional keywords for search"));
+
             return $fields;
         }
 
@@ -103,9 +108,12 @@ namespace {
         }
 
         
-
-
-
-
+        public function onBeforeWrite()
+        {
+            parent::onBeforeWrite();
+            if($file = $this->File()){
+                $this->Filename = $file->Filename;
+            }            
+        }
     }
 }
