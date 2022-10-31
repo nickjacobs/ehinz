@@ -8449,7 +8449,8 @@ a:hover {
   height: auto; }
 
 .downloads .download-item {
-  color: #8BB220; }
+  color: #8BB220;
+  padding-top: 3px; }
   .downloads .download-item a {
     display: block;
     text-decoration: underline; }
