@@ -59,7 +59,7 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->removeByName(["Sort","Topics","OnlineLink","Keywords"]);
+            $fields->removeByName(["Sort","Topics","OnlineLink","Keywords","Filename"]);
 
             $pages = Page::get();
             $fields->addFieldToTab("Root.Main", new TextField("Title","Title"));
