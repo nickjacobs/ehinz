@@ -1,15 +1,8 @@
 <?php
 
 use SilverStripe\CMS\Controllers\ContentController;
-use SilverStripe\CMS\Model\SiteTree;
-use SilverStripe\Control\Controller;
-use SilverStripe\Control\Director;
-use SilverStripe\Control\HTTPRequest;
-use SilverStripe\ORM\FieldType\DBField;
-use SilverStripe\Security\Permission;
-use SilverStripe\View\Requirements;
-
 use SilverStripe\blog\Model\BlogPost;
+
 
 class PageController extends ContentController
 {
@@ -61,7 +54,4 @@ class PageController extends ContentController
         $holder = StandardsHolder::get()->first();
         return StandardsPage::get()->filter(['ParentID' => $holder->ID]);
     }
-
-    
-    
 }

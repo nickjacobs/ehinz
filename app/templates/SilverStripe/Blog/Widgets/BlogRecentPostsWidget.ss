@@ -1,4 +1,5 @@
-<% if $Posts %>
+
+<% if $Posts && not $isBlog %>
 	<ul>
 		<% loop $Posts %>
 			<li>

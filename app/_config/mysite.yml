@@ -28,10 +28,16 @@ SilverStripe\ORM\Search\FulltextSearchable:
 SilverStripe\Blog\Model\Blog:
   extensions:
     - SilverStripe\Widgets\Extensions\WidgetPageExtension
+
 SilverStripe\Blog\Model\BlogPost:
   extensions:
     - SilverStripe\Widgets\Extensions\WidgetPageExtension
     - BlogPostExtension
+
+SilverStripe\Blog\Widgets\BlogRecentPostsWidgetController:
+  extensions:
+    - BlogRecentPostsWidgetControllerExtension
+
 
 GoogleRecaptcha:
   recaptcha_key: 6LeFssYUAAAAACSIxzYSDnPs9AK3rW4pNplabP3w
