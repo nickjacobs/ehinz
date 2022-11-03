@@ -170,8 +170,8 @@ namespace {
         public function getSettingsFields() {
             $fields = parent::getSettingsFields();
 
-            $fields->insertAfter( new CheckboxField("ShowInFooterMenuAbout","Show In footer More Info menu"), "ShowInMenus" );
-            $fields->insertAfter( new CheckboxField("ShowInFooterMenu","Show In footer menu"), "ShowInMenus");
+            // $fields->insertAfter( new CheckboxField("ShowInFooterMenuAbout","Show In footer More Info menu"), "ShowInMenus" );
+            // $fields->insertAfter( new CheckboxField("ShowInFooterMenu","Show In footer menu"), "ShowInMenus");
             
             return $fields;
         }

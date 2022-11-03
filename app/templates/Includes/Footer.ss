@@ -13,21 +13,13 @@
 				<div class="footer-header">
 					What Are You Looking For?
 				</div>
-				<ul>
-					<% loop FooterMenuItems %>
-						<li><a href="$Link">$Title</a></li>
-					<% end_loop %>
-				</ul>
+				$SiteConfig.FooterMenu
 			</div>
 			<div class="col-md-4">
 				<div class="footer-header">
 					More Information
 				</div>
-				<ul>
-					<% loop FooterMenuItemsAbout %>
-						<li><a href="$Link">$Title</a></li>
-					<% end_loop %>
-				</ul>
+				$SiteConfig.FooterMenuAbout
 				<div class="social-icons">
 					<% if $SiteConfig.TWLink %>
 						<a class="social-icon" href="$SiteConfig.TWLink" target="_blank"><img src="images/icon-tw.png" /></a>

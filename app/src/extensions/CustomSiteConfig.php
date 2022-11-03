@@ -7,7 +7,7 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
-
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
 class CustomSiteConfig extends DataExtension
 {
@@ -22,6 +22,8 @@ class CustomSiteConfig extends DataExtension
         'LinksOpen' => 'Boolean',
         'ContactsOpen' => 'Boolean',
         'HealthspaceHeader' => 'Text',
+        'FooterMenu' => 'HTMLText',
+        'FooterMenuAbout' => 'HTMLText',
 
     ];
 
@@ -48,15 +50,18 @@ class CustomSiteConfig extends DataExtension
             CheckboxField::create('DownloadsOpen','Default downloads section to open'),
             CheckboxField::create('LinksOpen','Default links section to open'),
             CheckboxField::create('ContactsOpen','Default staff contacts section to open')
-        ]
-        );
+        ]);
 
         $fields->addFieldsToTab('Root.Main',[            
             HeaderField::create('hf3','Healthspace'),
-            Textfield::create('HealthspaceHeader','Healthspace default header')
-           
-        ]
-        );
+            Textfield::create('HealthspaceHeader','Healthspace default header')           
+        ]);
+
+        $fields->addFieldsToTab('Root.Main',[            
+            HeaderField::create('hf3','Footer'),
+            HTMLEditorField::create('FooterMenu','Footer menu')->setRows(6),
+            HTMLEditorField::create('FooterMenuAbout','Footer menu about')->setRows(6)          
+        ]);
 
      
         
