@@ -4,7 +4,7 @@ namespace {
 
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
-   
+    use SilverStripe\Forms\CheckboxField;
     //use SilverStripe\Assets\Image;
     //use SilverStripe\AssetAdmin\Forms\UploadField;
     use SilverStripe\Forms\TextField;
@@ -28,7 +28,8 @@ namespace {
     {
 
         private static $db = [ 
-            'TeReoTitle' => 'Varchar'
+            'TeReoTitle' => 'Varchar',
+            'HideFromHomeTiles' => 'Boolean'
 
         ];
 
@@ -59,7 +60,12 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->addFieldToTab('Root.Main', TextField::create("TeReoTitle"),'Content');
+            $fields->addFieldsToTab('Root.Main', [
+                TextField::create("TeReoTitle"),
+                CheckboxField::create('HideFromHomeTiles','Hide from homepage tiles')
+            ],'Content');
+
+                
 
             
             $config = GridFieldConfig_RecordEditor::create();

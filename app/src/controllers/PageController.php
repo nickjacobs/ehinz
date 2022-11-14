@@ -41,7 +41,7 @@ class PageController extends ContentController
     }
 
     public function IndicatorsHolders() {
-        return IndicatorsHolder::get()->filter('ParentID',6);
+        return IndicatorsHolder::get()->filter(['ParentID'=>6,'HideFromHomeTiles'=>0]);
     }
 
 
