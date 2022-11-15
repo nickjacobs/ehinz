@@ -8876,7 +8876,8 @@ footer {
   font-size: 44px;
   font-weight: 500;
   line-height: 1.1;
-  display: block; }
+  display: block;
+  color: #656565; }
 
 .main-page-content {
   padding: 50px 0px; }
