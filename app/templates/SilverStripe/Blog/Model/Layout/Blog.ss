@@ -5,7 +5,8 @@
 			<div class="col-md-9">
 
 				<%-- <h1>Latest News</h1> --%>
-				<h1>
+				<div class="page-title">
+					<h1 class="<% if $TeReoTitle %>has-tereo<% end_if %>">
 				<% if $ArchiveYear %>
 					<%t SilverStripe\\Blog\\Model\\Blog.Archive 'Archive' %>:
 					<% if $ArchiveDay %>
@@ -20,9 +21,14 @@
 				<% else_if $CurrentCategory %>
 					<%t SilverStripe\\Blog\\Model\\Blog.Category 'Category' %>: $CurrentCategory.Title
 				<% else %>
+					
 					$Title
+					
+				
 				<% end_if %>
 				</h1>
+			<% if $TeReoTitle %><span class="tereo-title">$TeReoTitle</span><% end_if %>
+				</div>
 
 				<% if $PaginatedList.Exists %>
 				<% loop $PaginatedList %>

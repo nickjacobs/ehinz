@@ -8868,6 +8868,16 @@ footer {
       height: 100%;
       width: auto; }
 
+.page-title h1.has-tereo {
+  margin-bottom: 0px; }
+
+.page-title .tereo-title {
+  margin-bottom: 20px;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.1;
+  display: block; }
+
 .main-page-content {
   padding: 50px 0px; }
   .main-page-content .side-header {

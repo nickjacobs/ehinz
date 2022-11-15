@@ -99,10 +99,8 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            if($this->ParentID == 0){
-                
-                $fields->insertAfter('MenuTitle',TextField::create("TeReoTitle","Te Reo label"));
-            }
+            $fields->insertAfter('MenuTitle',TextField::create("TeReoTitle","Te Reo label"));
+            
 
 
             if($this->ClassName == 'Page' || $this->ClassName == 'IndicatorPage' || $this->ClassName == 'StandardsHolder' || $this->ClassName == 'StandardsPage' || $this->ClassName == 'PublicationSearch'){

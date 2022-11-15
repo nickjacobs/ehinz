@@ -27,8 +27,7 @@ namespace {
     class IndicatorsHolder extends Page
     {
 
-        private static $db = [ 
-            'TeReoTitle' => 'Varchar',
+        private static $db = [             
             'HideFromHomeTiles' => 'Boolean'
 
         ];
@@ -60,8 +59,7 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->addFieldsToTab('Root.Main', [
-                TextField::create("TeReoTitle"),
+            $fields->addFieldsToTab('Root.Main', [                
                 CheckboxField::create('HideFromHomeTiles','Hide from homepage tiles')
             ],'Content');
 
