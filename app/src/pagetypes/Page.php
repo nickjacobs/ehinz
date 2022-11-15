@@ -48,7 +48,8 @@ namespace {
             "HealthspaceExtraTitle" => "Varchar",
             "HealthspaceExtra" => "HTMLText",
             "ExtraTitle" => "Varchar",
-            "ExtraContent" => "HTMLText"
+            "ExtraContent" => "HTMLText",
+            'TeReoTitle' => 'Varchar'
         ];
 
         private static $has_one = [
@@ -97,6 +98,11 @@ namespace {
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
+
+            if($this->ParentID == 0){
+                
+                $fields->insertAfter('MenuTitle',TextField::create("TeReoTitle","Te Reo label"));
+            }
 
 
             if($this->ClassName == 'Page' || $this->ClassName == 'IndicatorPage' || $this->ClassName == 'StandardsHolder' || $this->ClassName == 'StandardsPage' || $this->ClassName == 'PublicationSearch'){

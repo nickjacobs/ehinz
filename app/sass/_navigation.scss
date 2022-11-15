@@ -11,8 +11,10 @@
 		ul.navbar-nav {
 			li.nav-item {
 				padding:0;
+				margin-right:40px;
+				&.last {margin-right:0;}
 				a.nav-link {
-					padding:18px 4px;
+					padding:14px 22px 14px 0;
 					color:$white;
 					font-family:$heading-font;
 					font-size: 16px;
@@ -36,14 +38,18 @@
 						border-style: solid;
 						border-width: 0.15em 0.15em 0 0;
 						content: '';
-						display: inline-block;
+						display: block;
 						height: 0.5em;
 						width: 0.5em;
-						left: 0.5em;
-						position: relative;
-						top: .25em;
+						right: 0em;
+						position: absolute;
+						top:1.2rem;
 						transform: rotate(135deg);
-						vertical-align: top;					
+						//vertical-align: top;					
+					}
+					.tereo{
+						display:block;
+						opacity:.8;
 					}
 									
 				}
@@ -54,6 +60,7 @@
 					border:none;
 					border-radius:0;
 					background-color:$ehgreen;
+					margin-left:-1.5rem;
 					.dropdown-item {
 						color:white;
 						&:hover {
@@ -63,110 +70,11 @@
 					}
 
 				}
-				//the Indicators item
-				// &.section-6 {
-				// 	max-width:190px;
-				// 	a {
-				// 		padding:8px 4px 0;
-				// 	}
-				// }
-				// //the PAWS item
-				// &.section-239 {
-				// 	max-width:210px;
-				// 	a {
-				// 		padding:8px 4px 0;
-				// 	}
-				// }
-				// //the birth defects registry item
-				// &.section-326 {
-				// 	max-width:150px;
-				// 	a {
-				// 		padding:8px 4px 0;
-				// 	}
-				// }
+				
 			}
-			/* home icon */
-			li.nav-item.url-home {
-				flex: none;
-				a.nav-link{
-					text-indent: -9999px;
-					overflow: hidden;
-					width: 55px;
-					height: 55px;
-					background: url(../images/icon-home.png) no-repeat 12px 13px;
-					&.section,&.current {
-						background-color:$ehdarkgreen;
-					}	
-				}
-			}
+			
 		}
 	}
 
 }
 
-// #subNavigation {
-// 	display: none;
-// 	position: absolute;
-// 	z-index: 999;
-//     background: $ehgreen;
-//     width: 100%;
-//     padding: 45px 0px;
-//     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
-//     .subpages {
-//     	display: none;
-// 	    h4 {
-// 	    	padding-bottom: 20px;
-// 	    	color:$white;
-// 	    }
-// 	    a {
-// 	    	color: $white;
-// 	    	padding: 8px 0px;
-// 	    	display: block;
-// 	    }
-// 	}
-// }
-
-// #mobileLevelNav {
-// 	padding: 40px 0px;
-// 	background: $ehgreen;
-// 	position: fixed;
-// 	top: 55px;
-// 	width: 100%;
-// 	z-index: 2;
-// 	display: none;
-// 	&.open {
-// 		display: block;
-// 	}
-// 	a.nav-link{color:$white;}
-// 	.search-bar {
-// 		height: 34px;
-// 		padding: 9px 0px;
-// 		margin-bottom: 20px;
-// 		div.text {
-// 			width: calc(100% - 34px);
-// 		}
-// 		input.text {
-// 			border-top-left-radius: 80px;
-// 		    border-bottom-left-radius: 80px;
-// 		    border: 0 none;
-// 		    padding: 4px 20px;
-// 		    background: $lightergrey;
-// 		    font-size: 14px;
-// 		    width: 100%;
-// 		}
-// 		input.action {
-// 			width: 34px;
-// 		    height: 34px;
-// 		    background: 0 0;
-// 		    border: 0 none;
-// 		    border-top-right-radius: 80px;
-// 		    border-bottom-right-radius: 80px;
-// 		    text-indent: -9999px;
-// 		    overflow: hidden;
-// 		    position: relative;
-// 		    top: -34px;
-// 		    background: #f2f2f2 url(../images/icon-search.png) no-repeat 3px 8px;
-// 		    left: calc(100% - 36px);
-// 		}
-// 	}
-// }

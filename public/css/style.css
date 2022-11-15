@@ -8780,64 +8780,56 @@ body.page-1 #MainBanner .container {
 #topLevelNav {
   padding: 0;
   background: #8BB220; }
-  #topLevelNav #mainNavigation ul.navbar-nav {
-    /* home icon */ }
-    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item {
-      padding: 0; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
-        padding: 18px 4px;
-        color: #fff;
-        font-family: "Source Sans Pro", sans-serif;
-        font-size: 16px;
-        line-height: 1.2;
-        text-rendering: optimizeLegibility;
+  #topLevelNav #mainNavigation ul.navbar-nav li.nav-item {
+    padding: 0;
+    margin-right: 40px; }
+    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.last {
+      margin-right: 0; }
+    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
+      padding: 14px 22px 14px 0;
+      color: #fff;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 16px;
+      line-height: 1.2;
+      text-rendering: optimizeLegibility;
+      display: block;
+      height: 100%;
+      font-weight: 400; }
+      @media (max-width: 991.98px) {
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
+          padding: 18px 18px;
+          text-align: left;
+          font-size: 18px; } }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.current {
+        background-color: #195C2F; }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.dropdown-togglex:after {
+        border-style: solid;
+        border-width: 0.15em 0.15em 0 0;
+        content: '';
         display: block;
-        height: 100%;
-        font-weight: 400; }
-        @media (max-width: 991.98px) {
-          #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
-            padding: 18px 18px;
-            text-align: left;
-            font-size: 18px; } }
-        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.current {
-          background-color: #195C2F; }
-        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.dropdown-togglex:after {
-          border-style: solid;
-          border-width: 0.15em 0.15em 0 0;
-          content: '';
-          display: inline-block;
-          height: 0.5em;
-          width: 0.5em;
-          left: 0.5em;
-          position: relative;
-          top: .25em;
-          -webkit-transform: rotate(135deg);
-              -ms-transform: rotate(135deg);
-                  transform: rotate(135deg);
-          vertical-align: top; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu {
-        min-width: 100%;
-        padding: 0 0 .5em;
-        top: 96%;
-        border: none;
-        border-radius: 0;
-        background-color: #8BB220; }
-        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu .dropdown-item {
-          color: white;
-          border-top: 1px solid rgba(1, 1, 1, 0.05); }
-          #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu .dropdown-item:hover {
-            background-color: #195C2F; }
-    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.url-home {
-      -webkit-box-flex: 0;
-          -ms-flex: none;
-              flex: none; }
-      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.url-home a.nav-link {
-        text-indent: -9999px;
-        overflow: hidden;
-        width: 55px;
-        height: 55px;
-        background: url(../images/icon-home.png) no-repeat 12px 13px; }
-        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.url-home a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item.url-home a.nav-link.current {
+        height: 0.5em;
+        width: 0.5em;
+        right: 0em;
+        position: absolute;
+        top: 1.2rem;
+        -webkit-transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+                transform: rotate(135deg); }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link .tereo {
+        display: block;
+        opacity: .8; }
+    #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu {
+      min-width: 100%;
+      padding: 0 0 .5em;
+      top: 96%;
+      border: none;
+      border-radius: 0;
+      background-color: #8BB220;
+      margin-left: -1.5rem; }
+      #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu .dropdown-item {
+        color: white;
+        border-top: 1px solid rgba(1, 1, 1, 0.05); }
+        #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu .dropdown-item:hover {
           background-color: #195C2F; }
 
 footer {
