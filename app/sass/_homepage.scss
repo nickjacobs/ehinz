@@ -13,7 +13,7 @@
 		padding-left: 30px;
 		h4 {
 			border-bottom: 1px solid $lightgrey;
-			font-size: 16px;
+			font-size: 18px;
 		    font-weight: 600;
 		    line-height: 25px;
 		    padding: 13px 20% 13px 0px;
@@ -25,6 +25,24 @@
 		.blog-items {
 			padding: 0px 0px;
 			margin: 0px 0px;
+
+			height:150px;
+			overflow:hidden;
+			position:relative;
+			transition: height .5s ease-in-out;
+			&:after {
+				content:'';
+				position:absolute;
+				bottom:0;
+				left:0;
+				right:0;
+				height:50px;
+				background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+			}
+			&:hover {
+				height:unset;
+				&:after {display:none}
+			}
 			li {
 				list-style: none;
 				padding: 8px 0px;
@@ -58,7 +76,7 @@
 		.healthspace {
 			//font-size: 14px;
 			img {
-				margin-bottom: 40px;
+				margin-bottom: 20px;
 			}
 		}
 		.twitter-timeline {

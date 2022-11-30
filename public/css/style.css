@@ -8943,7 +8943,7 @@ footer {
   padding-left: 30px; }
   .home-page .home-side h4 {
     border-bottom: 1px solid #ECECEC;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 25px;
     padding: 13px 20% 13px 0px;
@@ -8952,7 +8952,25 @@ footer {
       margin-top: 0px; }
   .home-page .home-side .blog-items {
     padding: 0px 0px;
-    margin: 0px 0px; }
+    margin: 0px 0px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: height .5s ease-in-out;
+    transition: height .5s ease-in-out; }
+    .home-page .home-side .blog-items:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: -webkit-gradient(linear, left bottom, left top, from(white), to(rgba(255, 255, 255, 0)));
+      background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0) 100%); }
+    .home-page .home-side .blog-items:hover {
+      height: unset; }
+      .home-page .home-side .blog-items:hover:after {
+        display: none; }
     .home-page .home-side .blog-items li {
       list-style: none;
       padding: 8px 0px;
@@ -8973,7 +8991,7 @@ footer {
       padding: 7px 0px 7px 30px;
       background: url(../images/list-arrow-dark.png) no-repeat 0px 13px; }
   .home-page .home-side .healthspace img {
-    margin-bottom: 40px; }
+    margin-bottom: 20px; }
   .home-page .home-side .twitter-timeline {
     height: 250px;
     margin-top: 30px; }

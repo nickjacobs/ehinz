@@ -35,7 +35,7 @@
 								<span class="date">$NiceDatePublished</span>
 							</li>
 						<% end_loop %>
-					</ul>
+					</ul>					
 					
 					<h4>$HealthspaceHeading</h4>
 					<div class="healthspace">
