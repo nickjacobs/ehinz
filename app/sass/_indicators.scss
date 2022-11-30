@@ -48,6 +48,12 @@
 		    	font-size: 18px;
 		    	font-weight: 400;
 		    }
+			a {
+				text-decoration: none;
+				span {
+					text-decoration: underline;
+				}
+			}
 		}
 		.row-toggle {
 			transition: all 0.4s ease;

@@ -30,10 +30,10 @@
 				padding: 8px 0px;
 				margin: 0px 0px;
 				a {
-					color: $ehgreen;
+					color: $ehdarkgreen;
 					display: block;
 					line-height: 1.2;
-					font-size: 16px;
+					//font-size: 16px;
 										
 				}
 				span {
@@ -45,18 +45,18 @@
 		}
 		.quick-links {
 			p {
-				font-size: 16px;
+				//font-size: 16px;
 				margin: 0px 0px;
 				padding: 0px 0px;
 				a {
 					display: block;
 					padding: 7px 0px 7px 30px;
-					background: url(../images/list-arrow.png) no-repeat 0px 13px;
+					background: url(../images/list-arrow-dark.png) no-repeat 0px 13px;
 				}
 			}
 		}
 		.healthspace {
-			font-size: 14px;
+			//font-size: 14px;
 			img {
 				margin-bottom: 40px;
 			}

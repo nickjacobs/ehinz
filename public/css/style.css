@@ -8408,10 +8408,10 @@ body {
   font-weight: 300; }
 
 a {
-  color: #8BB220; }
-
-a:hover {
-  color: #195C2F; }
+  color: #134b25;
+  text-decoration: underline; }
+  a:hover {
+    color: #000; }
 
 .on-this-page {
   padding: 20px 0px 10px 0px;
@@ -8516,11 +8516,10 @@ a:hover {
   font-weight: 600; }
 
 .typography a {
-  color: #8BB220;
-  border-bottom: 1px solid #8BB220; }
+  color: #134b25;
+  text-decoration: underline; }
   .typography a:hover {
-    text-decoration: none;
-    background: #f3f7e8; }
+    color: #000; }
 
 .typography table ul {
   margin: 0; }
@@ -8794,14 +8793,15 @@ body.page-1 #MainBanner .container {
       text-rendering: optimizeLegibility;
       display: block;
       height: 100%;
-      font-weight: 400; }
+      font-weight: 400;
+      text-decoration: none; }
       @media (max-width: 991.98px) {
         #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link {
           padding: 18px 18px;
           text-align: left;
           font-size: 18px; } }
       #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.section, #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.current {
-        background-color: #195C2F; }
+        background-color: #134b25; }
       #topLevelNav #mainNavigation ul.navbar-nav li.nav-item a.nav-link.dropdown-togglex:after {
         border-style: solid;
         border-width: 0.15em 0.15em 0 0;
@@ -8828,9 +8828,10 @@ body.page-1 #MainBanner .container {
       margin-left: -1.5rem; }
       #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu .dropdown-item {
         color: white;
+        text-decoration: none;
         border-top: 1px solid rgba(1, 1, 1, 0.05); }
         #topLevelNav #mainNavigation ul.navbar-nav li.nav-item .dropdown-menu .dropdown-item:hover {
-          background-color: #195C2F; }
+          background-color: #134b25; }
 
 footer {
   background: #4a4a4a;
@@ -8957,26 +8958,22 @@ footer {
       padding: 8px 0px;
       margin: 0px 0px; }
       .home-page .home-side .blog-items li a {
-        color: #8BB220;
+        color: #134b25;
         display: block;
-        line-height: 1.2;
-        font-size: 16px; }
+        line-height: 1.2; }
       .home-page .home-side .blog-items li span {
         display: block;
         color: #707070;
         font-size: 14px; }
   .home-page .home-side .quick-links p {
-    font-size: 16px;
     margin: 0px 0px;
     padding: 0px 0px; }
     .home-page .home-side .quick-links p a {
       display: block;
       padding: 7px 0px 7px 30px;
-      background: url(../images/list-arrow.png) no-repeat 0px 13px; }
-  .home-page .home-side .healthspace {
-    font-size: 14px; }
-    .home-page .home-side .healthspace img {
-      margin-bottom: 40px; }
+      background: url(../images/list-arrow-dark.png) no-repeat 0px 13px; }
+  .home-page .home-side .healthspace img {
+    margin-bottom: 40px; }
   .home-page .home-side .twitter-timeline {
     height: 250px;
     margin-top: 30px; }
@@ -9114,6 +9111,10 @@ footer {
     .expand-box .content .bigger {
       font-size: 18px;
       font-weight: 400; }
+    .expand-box .content a {
+      text-decoration: none; }
+      .expand-box .content a span {
+        text-decoration: underline; }
   .expand-box .row-toggle {
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -9191,7 +9192,7 @@ footer {
     text-decoration: none; }
     .indicator-link-item:hover .indicator-link-item__title {
       text-decoration: underline;
-      color: #195C2F; }
+      color: #134b25; }
     .indicator-link-item:hover .indicator-link-item__summary {
       color: #464749;
       text-decoration: none; }
@@ -9300,7 +9301,7 @@ footer {
           -ms-transform: scale(1.1);
               transform: scale(1.1); }
   .pagination span {
-    background: #195C2F;
+    background: #134b25;
     border-radius: 50px;
     display: inline-block;
     width: 35px;
@@ -9691,7 +9692,7 @@ https://flickity.metafizzy.co
       font-weight: 600;
       padding-right: 246px; }
     .dashboard-page-list__item a {
-      color: #195C2F;
+      color: #134b25;
       text-decoration: underline;
       margin-top: 20px;
       display: block; }

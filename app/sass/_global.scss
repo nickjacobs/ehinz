@@ -7,11 +7,11 @@ body {
 }
 
 a {
-	color:$ehgreen;
-}
-
-a:hover {
 	color:$ehdarkgreen;
+	text-decoration:underline;			
+	&:hover {				
+		color:$black;
+	}
 }
 
 .container {

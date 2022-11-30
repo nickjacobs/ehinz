@@ -36,15 +36,16 @@
 							</li>
 						<% end_loop %>
 					</ul>
-					<h4>$QuickLinksHeading</h4>
-					<div class="quick-links">
-						$QuickLinks
-					</div>
+					
 					<h4>$HealthspaceHeading</h4>
 					<div class="healthspace">
 						$HealthspaceDescription
-						<img class="img-fluid" src="$HealthspaceImage.ScaleWidth(340).Link" />
-					</div>					
+						<a href="https://healthspace.ac.nz/" target="_blank"><img class="img-fluid" src="$HealthspaceImage.ScaleWidth(340).Link" /></a>
+					</div>	
+					<h4>$QuickLinksHeading</h4>
+					<div class="quick-links">
+						$QuickLinks
+					</div>				
 				</div>
 			</div>
 		</div>

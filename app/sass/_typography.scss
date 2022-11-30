@@ -61,12 +61,10 @@
 		}
 
 		a {
-			color:$ehgreen;
-			//text-decoration:underline;
-			border-bottom:1px solid $ehgreen;
-			&:hover {
-				text-decoration: none;
-				background:$ehlightgreen;
+			color:$ehdarkgreen;
+			text-decoration:underline;			
+			&:hover {				
+				color:$black;
 			}
 		}
 
