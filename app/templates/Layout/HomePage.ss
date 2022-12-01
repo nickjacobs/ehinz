@@ -25,7 +25,7 @@
 			<div class="col-md-4">
 				<div class="home-side">
 					<% if $KeyFindings %>
-					<h4>Key Findings</h4>
+					<h4>Latest key findings</h4>
 					<ul class="key-findings">
 						<% loop $KeyFindings.sort('Sort') %>
 							<li>
@@ -38,7 +38,7 @@
 					</ul>
 				<% end_if %>					
 					
-					<h4>Latest News</h4>
+					<h4>Latest news</h4>
 					<ul class="blog-items">
 						<% loop $LatestPosts(4) %>
 							<li>

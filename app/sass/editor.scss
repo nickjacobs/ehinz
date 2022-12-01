@@ -8,3 +8,9 @@ h2.anchor {
 	color:blue;
 
 }
+td.header {
+	background-color:$ehgreen;
+}
+td.hilite {
+	background-color:lighten($ehgreen, 50%);
+}

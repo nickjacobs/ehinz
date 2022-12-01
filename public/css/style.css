@@ -8524,6 +8524,12 @@ a {
 .typography table ul {
   margin: 0; }
 
+.typography table td.header {
+  background-color: #8BB220; }
+
+.typography table td.hilite {
+  background-color: #f0f8d9; }
+
 .typography img[alt*="pdf"], .typography img[alt*="excel"], .typography img[alt*="Excel"], .typography img[alt*="doc"] {
   display: inline-block !important;
   float: none !important;
