@@ -7,10 +7,10 @@ namespace {
     use SilverStripe\AssetAdmin\Forms\UploadField;
     use SilverStripe\Forms\TextField;
     use SilverStripe\Forms\TextareaField;
-    //use SilverStripe\Forms\TreeDropdownField;
-    //use SilverStripe\Forms\GridField\GridField;
-    //use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
-    //use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+    
+    use SilverStripe\Forms\GridField\GridField;
+    use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+    use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
     use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 
@@ -28,8 +28,12 @@ namespace {
             'HealthspaceImage' =>  Image::class
         ];
 
+        private static $has_many = [
+            "KeyFindings" => KeyFinding::class           
+         ]; 
+
         private static $owns = [
-            'HealthspaceImage'
+            'HealthspaceImage','KeyFindings'
         ];
 
         public function getCMSFields()
@@ -44,6 +48,13 @@ namespace {
             $up1->setFolderName('HealthspaceImages');
             $up1->getValidator()->setAllowedExtensions(['png', 'gif', 'jpeg', 'jpg']);           
             $fields->addFieldToTab('Root.Healthspace', $up1);
+
+
+            $config = GridFieldConfig_RecordEditor::create(100);
+            $config->addComponent(new GridFieldOrderableRows());
+            $gridField = new GridField("KeyFindings", "KeyFindings", $this->KeyFindings(), $config);
+            $fields->addFieldToTab("Root.Main", $gridField,'Metadata');
+
 
             return $fields;
         }

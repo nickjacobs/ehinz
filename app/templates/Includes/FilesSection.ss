@@ -6,17 +6,22 @@
 				<div class="col-1 download-icon">
 					<% if $DocType == 'Background' %><img src="images/icon-doc-background.png" /><% end_if %>
 					<% if $DocType == 'Metadata' %><img src="images/icon-doc-metadata.png" /><% end_if %>
-					<% if $DocType == 'Factsheet' %><img src="images/icon-doc-factsheet.png" /><% end_if %>
+					<% if $DocType == 'Factsheet' %>
+						<% if $OnlineLink %>
+							<img src="images/icon-doc-factsheet-interactive.png" title="Interactive factsheet available"/>
+						<% else %>
+							<img src="images/icon-doc-factsheet.png" />
+						<% end_if %>
+					<% end_if %>
 					<% if $DocType == 'Report' %><img src="images/icon-doc-report.png" /><% end_if %>
 				</div>
 				<div class="col-11 col-md-5 content">
 					<div class="download-item">					
 						<strong>$DocType:</strong> 						
 						$Title
-						<% if $File %><a href="$File.Link" target="_blank">Download report PDF</a><% end_if %>
-						<% if $OnlineLink %><a href="$OnlineLink" target="_blank">View interactive report</a><% end_if %>
+					<% if $OnlineLink %><a href="$OnlineLink" target="_blank">View interactive report</a><% end_if %>
+				<% if $File %><a href="$File.Link" target="_blank">Download report PDF</a><% end_if %>					
 					</div>
-					
 				</div>
 			<% end_loop %>
 		</div>

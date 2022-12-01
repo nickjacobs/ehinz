@@ -22,14 +22,29 @@
 		    	margin-top: 0px;
 		    }
 		}
+		.key-findings {
+			list-style:none;
+			padding: 0px 0px;
+			margin: 0px 0px;
+			a {color: $ehdarkgreen;}
+			.key-finding-title {
+				font-weight:500;font-size:16px;
+			}
+			.key-finding-summary {
+				font-size:16px;
+				line-height:1.2;
+				margin-bottom:12px;
+			}
+
+		}
+
 		.blog-items {
 			padding: 0px 0px;
 			margin: 0px 0px;
-
 			height:150px;
 			overflow:hidden;
 			position:relative;
-			transition: height .5s ease-in-out;
+			transition: all .75s ease-in-out;
 			&:after {
 				content:'';
 				position:absolute;
@@ -51,7 +66,7 @@
 					color: $ehdarkgreen;
 					display: block;
 					line-height: 1.2;
-					//font-size: 16px;
+					font-size: 16px;
 										
 				}
 				span {
@@ -63,7 +78,7 @@
 		}
 		.quick-links {
 			p {
-				//font-size: 16px;
+				font-size: 16px;
 				margin: 0px 0px;
 				padding: 0px 0px;
 				a {
@@ -74,7 +89,7 @@
 			}
 		}
 		.healthspace {
-			//font-size: 14px;
+			font-size: 16px;
 			img {
 				margin-bottom: 20px;
 			}

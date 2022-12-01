@@ -8950,14 +8950,27 @@ footer {
     margin-top: 20px; }
     .home-page .home-side h4:first-child {
       margin-top: 0px; }
+  .home-page .home-side .key-findings {
+    list-style: none;
+    padding: 0px 0px;
+    margin: 0px 0px; }
+    .home-page .home-side .key-findings a {
+      color: #134b25; }
+    .home-page .home-side .key-findings .key-finding-title {
+      font-weight: 500;
+      font-size: 16px; }
+    .home-page .home-side .key-findings .key-finding-summary {
+      font-size: 16px;
+      line-height: 1.2;
+      margin-bottom: 12px; }
   .home-page .home-side .blog-items {
     padding: 0px 0px;
     margin: 0px 0px;
     height: 150px;
     overflow: hidden;
     position: relative;
-    -webkit-transition: height .5s ease-in-out;
-    transition: height .5s ease-in-out; }
+    -webkit-transition: all .75s ease-in-out;
+    transition: all .75s ease-in-out; }
     .home-page .home-side .blog-items:after {
       content: '';
       position: absolute;
@@ -8978,20 +8991,24 @@ footer {
       .home-page .home-side .blog-items li a {
         color: #134b25;
         display: block;
-        line-height: 1.2; }
+        line-height: 1.2;
+        font-size: 16px; }
       .home-page .home-side .blog-items li span {
         display: block;
         color: #707070;
         font-size: 14px; }
   .home-page .home-side .quick-links p {
+    font-size: 16px;
     margin: 0px 0px;
     padding: 0px 0px; }
     .home-page .home-side .quick-links p a {
       display: block;
       padding: 7px 0px 7px 30px;
       background: url(../images/list-arrow-dark.png) no-repeat 0px 13px; }
-  .home-page .home-side .healthspace img {
-    margin-bottom: 20px; }
+  .home-page .home-side .healthspace {
+    font-size: 16px; }
+    .home-page .home-side .healthspace img {
+      margin-bottom: 20px; }
   .home-page .home-side .twitter-timeline {
     height: 250px;
     margin-top: 30px; }
@@ -9249,6 +9266,10 @@ footer {
   border-bottom: 1px solid #464749;
   padding-bottom: 12px;
   padding-top: 12px; }
+  .publication-search-results .result-item a {
+    text-decoration: none;
+    line-height: 1.1;
+    display: block; }
 
 .blog {
   padding: 30px 15px; }
