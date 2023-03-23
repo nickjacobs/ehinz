@@ -61,12 +61,15 @@
                                                 <tbody>
                                                 <% loop $IndicatorListItems %>
                                                     <tr class="indicator-table-row" id="IndicatorTableRow{$Up.ID}_{$ID}">
-
-                                                        <td>
+                                                        <td class="topic-cell">
                                                             <% loop $Topics %><% if $PageLink %><a href="{$PageLink.LinkURL}"><% end_if %>$Topic<% if $PageLink %></a><% end_if %><% if not $Last %>, <% end_if %>
                                                             <% end_loop %>
                                                         </td>
-                                                        <td>$Title</td>
+                                                        <td class="title-cell">
+                                                            <% if $PageLink %><a href="{$PageLink.LinkURL}"><% end_if %>
+                                                            $Title
+                                                            <% if $PageLink %></a><% end_if %>
+                                                        </td>
 
                                                     </tr>
                                                 <% end_loop %>

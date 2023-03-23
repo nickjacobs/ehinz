@@ -59,6 +59,12 @@
                     tbody {
                         tr.indicator-table-row {
                             td {
+                                &.topic-cell {
+                                    padding-right:1rem;
+                                }
+                                &.title-cell {
+
+                                }
 
                             }
                             &.item--active {

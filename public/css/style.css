@@ -9282,6 +9282,8 @@ footer {
         font-weight: 400;
         text-transform: uppercase;
         border-top: none !important; }
+      .indicators-list-accordion .accordion .card .card-body .indicators-table tbody tr.indicator-table-row td.topic-cell {
+        padding-right: 1rem; }
       .indicators-list-accordion .accordion .card .card-body .indicators-table tbody tr.indicator-table-row.item--active td {
         background-color: #fff7de; }
 
