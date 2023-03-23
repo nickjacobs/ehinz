@@ -32,7 +32,7 @@ namespace {
 
         private static $summary_fields = [
             'TopicsString' => 'Domains',
-            'Title',            
+            'Title',
             'PageLink.LinkURL' => 'Pagelink'
         ];
 
@@ -61,7 +61,7 @@ namespace {
                 'Domains',
                 Topic::get()->map('ID', 'Topic')
                 ),
-                LinkField::create('PageLinkID','Override page link')->setDescription('This is optional - otherwise we\'ll use the default domain link')
+                LinkField::create('PageLinkID','Override page link')->setDescription('This is optional')
 
             ], 'Metadata');
 
