@@ -31,7 +31,9 @@ namespace {
         ];
 
         private static $summary_fields = [
-            'Title','TopicsString' => 'Domains','PageLink.LinkURL' => 'Pagelink'
+            'TopicsString' => 'Domains',
+            'Title',            
+            'PageLink.LinkURL' => 'Pagelink'
         ];
 
         private static $searchable_fields = [
