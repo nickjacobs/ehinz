@@ -5,9 +5,9 @@
   	<% base_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title><% if $MetaTitle %>$MetaTitle<% else %>$SiteConfig.Title<% end_if %></title> 
+	<title><% if $MetaTitle %>$MetaTitle<% else %>$SiteConfig.Title<% end_if %></title>
 
-  $MetaTags(false) 
+  $MetaTags(false)
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -26,11 +26,11 @@
   <meta property="og:url" content="$AbsoluteLink">
   <meta property="og:site_name" content="Data Protection and Use Policy">
   <meta property="og:image" content=""> --%>
-  
+
   <% require css('public/css/style.min.css') %>
   <script src="https://kit.fontawesome.com/d689586e59.js" crossorigin="anonymous"></script>
   <%-- <script src="https://kit.fontawesome.com/f7dd464e09.js"></script> --%>
-    
+
   </head>
   <body class="cls-{$ClassName.LowerCase} section-{$Level(1).URLSegment.Lowercase} page-{$ID}  d-flex flex-column h-100" id="top">
     <% include GTMCode %>
@@ -39,17 +39,17 @@
         <% include Header %>
         <% include Navigation %>
         <% include Banner %>
-        
+
         </div>
         $Layout
       </main><!-- /.container -->
       <% include Footer %>
 
-    <% require javascript('public/javascript/scripts.min.js') %>  
+    <% require javascript('public/javascript/scripts.min.js') %>
     <%--
     <script>
     AOS.init();
-    </script> 
+    </script>
     --%>
   </body>
 </html>

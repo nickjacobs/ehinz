@@ -8117,7 +8117,7 @@ a.text-dark:hover, a.text-dark:focus {
 .text-body {
   color: #212529 !important; }
 
-.text-muted {
+.text-muted, .indicators-list-accordion .accordion .card .card-body .indicators-table thead tr th {
   color: #6c757d !important; }
 
 .text-black-50 {
@@ -9240,6 +9240,50 @@ footer {
   .indicator-link-item__title {
     color: #8BB220;
     text-decoration: none; }
+
+.indicators-list-accordion .accordion .card {
+  border-radius: 0 !important;
+  border: none;
+  border-bottom: 1px solid #8BB220 !important; }
+  .indicators-list-accordion .accordion .card.first {
+    border-top: 1px solid #8BB220 !important; }
+  .indicators-list-accordion .accordion .card .card-header {
+    padding: 0;
+    background-color: white;
+    border-bottom: none !important; }
+    .indicators-list-accordion .accordion .card .card-header h2 button.btn {
+      background: none;
+      border: none;
+      color: #134b25;
+      font-size: 1.2rem;
+      padding: .5rem 0;
+      position: relative; }
+      .indicators-list-accordion .accordion .card .card-header h2 button.btn:after {
+        position: absolute;
+        top: 16px;
+        right: 0;
+        content: '';
+        width: 18px;
+        height: 18px;
+        background-image: url("data:image/svg+xml,%3Csvg enable-background='new 0 0 128 128' viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m64 88c-1.023 0-2.047-.391-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l37.172 37.172 37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40c-.781.781-1.805 1.172-2.828 1.172z' fill='%23134b25' /%3E%3C/svg%3E");
+        -webkit-transition: all ease-in-out .2s;
+        transition: all ease-in-out .2s; }
+      .indicators-list-accordion .accordion .card .card-header h2 button.btn:not(.collapsed)::after {
+        -webkit-transform: rotate(-180deg);
+            -ms-transform: rotate(-180deg);
+                transform: rotate(-180deg); }
+  .indicators-list-accordion .accordion .card .card-body {
+    padding: 1.2rem 0; }
+    .indicators-list-accordion .accordion .card .card-body .indicators-table {
+      font-size: 1.125rem;
+      color: #464749; }
+      .indicators-list-accordion .accordion .card .card-body .indicators-table thead tr th {
+        font-size: 13px;
+        font-weight: 400;
+        text-transform: uppercase;
+        border-top: none !important; }
+      .indicators-list-accordion .accordion .card .card-body .indicators-table tbody tr.indicator-table-row.item--active td {
+        background-color: #fff7de; }
 
 .searchResults {
   padding: 50px 15px; }

@@ -5,6 +5,8 @@ namespace {
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;   
     use SilverStripe\Forms\TextField;
+    use Sheadawson\Linkable\Forms\LinkField;
+    use Sheadawson\Linkable\Models\Link;
    
 
        
@@ -14,15 +16,25 @@ namespace {
 
         private static $db = [ 
             "Topic" => "Varchar(128)"            
-        ];        
+        ]; 
+
+        private static $has_one = [
+            "PageLink" => Link::class,
+        ]; 
+        
+        private static $owns = [
+            'PageLink'
+        ];
 
         private static $summary_fields = [
-            'Topic'
+            'Topic','PageLink.LinkURL' => 'Domain link'
         ];
 
         private static $belongs_many_many = array(
             'DownloadFiles' => DownloadFile::class,
+            'IndicatorListItems' => IndicatorListItem::class,
         );
+       
 
         private static $default_sort = 'Topic';
 
@@ -30,12 +42,20 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
-            $fields->removeByName('DownloadFiles');
+            $fields->removeByName('DownloadFiles','IndicatorListItems');
 
-            $fields->addFieldToTab("Root.Main", new TextField("Topic","Topic"));
+            $fields->addFieldsToTab("Root.Main", [
+                new TextField("Topic","Topic"),
+                LinkField::create('PageLinkID','Domain link')->setDescription('Links to the domain page')
+            
+            ]);
+            
 
             return $fields;
         }
+
+
+        //public function 
 
     }
 

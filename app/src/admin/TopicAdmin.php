@@ -4,16 +4,16 @@ use SilverStripe\Admin\ModelAdmin;
 use SilverStripe\ORM\DataObject;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
-class DownloadFileAdmin extends ModelAdmin 
+class TopicAdmin extends ModelAdmin 
 {
 
     private static $managed_models = [
-        'DownloadFile'  
+        'Topic'  
     ];
 
-    private static $url_segment = 'download-files';
+    private static $url_segment = 'domains';
 
-    private static $menu_title = 'Download Files';
+    private static $menu_title = 'Domains';
 
 
 
