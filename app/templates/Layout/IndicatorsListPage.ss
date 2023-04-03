@@ -37,6 +37,7 @@
 
 
                             <% loop $IndicatorsList %>
+                                <% if $IndicatorListItems %>
                                 <div class="card $FirstLast">
                                   <div class="card-header" id="IndicatorListHeading{$Pos}">
                                     <h2 class="mb-0">
@@ -82,6 +83,7 @@
                                     </div>
                                   </div>
                                 </div>
+                                <% end_if %>
                             <% end_loop %>
                         </div>
                     </div>
