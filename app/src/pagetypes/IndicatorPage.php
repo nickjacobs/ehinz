@@ -2,6 +2,7 @@
 
 namespace {
 
+    use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
     use SilverStripe\ORM\DBEnum;
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
@@ -12,19 +13,20 @@ namespace {
     class IndicatorPage extends Page
     {
 
-        private static $db = [ 
+        private static $db = [
+            'References' => 'HTMLText'
 
         ];
 
         private static $has_one = [
-           
+
         ];
 
         // private static $many_many = [
         //    "Files" => DownloadFile::class,
         //    "Links" => Link::class,
         //    //"ExtraContent" => ExtraContent::class
-        // ];        
+        // ];
 
         // private static $many_many_extraFields = [
         //     'Files' => [
@@ -47,6 +49,8 @@ namespace {
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
+
+            $fields->addFieldToTab("Root.Main", HTMLEditorField::create('References')->addExtraClass('stacked'),'Metadata');
 
             // $config = GridFieldConfig_RecordEditor::create();
             // $config->addComponent(new GridFieldOrderableRows());

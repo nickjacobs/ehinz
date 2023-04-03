@@ -9241,6 +9241,10 @@ footer {
     color: #8BB220;
     text-decoration: none; }
 
+.references.expand-box {
+  border-color: #d5d4d4;
+  background-color: #f2f2f2; }
+
 .indicators-list-accordion .accordion .card {
   border-radius: 0 !important;
   border: none;
