@@ -14,7 +14,7 @@ namespace {
     {
 
         private static $db = [
-            "Title" => "Varchar(128)",
+            "Title" => "Varchar(255)",
             "Sort" => "Int"
         ];
 
