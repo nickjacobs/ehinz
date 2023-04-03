@@ -60,7 +60,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <% loop $IndicatorListItems %>
+                                                <% loop $IndicatorListItems.sort('Title') %>
                                                     <tr class="indicator-table-row" id="IndicatorTableRow{$Up.ID}_{$ID}">
 <%--                                                        <td class="topic-cell">--%>
 <%--                                                            <% loop $Topics %><% if $PageLink %><a href="{$PageLink.LinkURL}"><% end_if %>$Topic<% if $PageLink %></a><% end_if %><% if not $Last %>, <% end_if %>--%>
