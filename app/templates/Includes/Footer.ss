@@ -1,4 +1,4 @@
-<footer class="mt-auto">	
+<footer class="mt-auto">
 	<div class="container">
 		<div class="row">
 
@@ -7,7 +7,7 @@
 					<img src="images/footer-logo.png" />
 				</div>
 				<p>$SiteConfig.Address</p>
-				
+
 			</div>
 			<div class="col-md-4">
 				<div class="footer-header">
@@ -37,7 +37,8 @@
 			<div class="col">
 				<div class="footer-partner-logo">$SVG('massey-logo-white')</div>
 				<div class="footer-partner-logo"><img src="images/moh_logo2.png"></div>
+                <div class="footer-partner-logo"><img src="images/two-logo.png"></div>
 			</div>
-		</div>		
+		</div>
 	</div>
 </footer>
