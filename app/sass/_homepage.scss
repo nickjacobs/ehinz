@@ -67,7 +67,7 @@
 					display: block;
 					line-height: 1.2;
 					font-size: 16px;
-										
+
 				}
 				span {
 						display: block;
@@ -98,6 +98,22 @@
 			height: 250px;
 			margin-top: 30px;
 		}
+
+
+        .page-summary-link-item {
+            background-position:right -80px top;
+            h4 {
+                border:none
+            }
+
+        }
+
+
+
+
+
+
+
 	}
 
 	.col-smaller {
@@ -108,8 +124,8 @@
 	}
 	.starter {
 		color: $ehgreen;
-		font-size: 20px;	
-		font-weight: $font-semi;	
+		font-size: 20px;
+		font-weight: $font-semi;
 		line-height: 25px;
 		padding: 20px 20px;
 		position: relative;
@@ -127,7 +143,7 @@
 			width:70%;height:1;
 			border-top:1px solid #f1f1f1;
 		}
-		
+
 	}
 	.sub-pages {
 		margin-top: 70px;

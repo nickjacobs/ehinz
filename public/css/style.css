@@ -9018,6 +9018,10 @@ footer {
   .home-page .home-side .twitter-timeline {
     height: 250px;
     margin-top: 30px; }
+  .home-page .home-side .page-summary-link-item {
+    background-position: right -80px top; }
+    .home-page .home-side .page-summary-link-item h4 {
+      border: none; }
 
 .home-page .col-smaller {
   padding: 0px 5px; }

@@ -7,7 +7,7 @@ namespace {
     use SilverStripe\AssetAdmin\Forms\UploadField;
     use SilverStripe\Forms\TextField;
     use SilverStripe\Forms\TextareaField;
-    
+
     use SilverStripe\Forms\GridField\GridField;
     use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
     use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
@@ -17,23 +17,26 @@ namespace {
     class HomePage extends Page
     {
 
-        private static $db = [ 
+        private static $db = [
             "QuickLinks" => "HTMLText",
             "QuickLinksHeading" => "Varchar(128)",
-            "HealthspaceHeading" => "Varchar(128)",
-            "HealthspaceDescription" => "HTMLText"
+            "RegionalDashHeading" => "Varchar(128)",
+            "RegionalDashDescription" => "HTMLText",
+            "RegionalDashLinkText" => "Varchar(255)",
+            "RegionalDashLink" => "Varchar(255)"
+
         ];
 
         private static $has_one = [
-            'HealthspaceImage' =>  Image::class
+
         ];
 
         private static $has_many = [
-            "KeyFindings" => KeyFinding::class           
-         ]; 
+            "KeyFindings" => KeyFinding::class
+         ];
 
         private static $owns = [
-            'HealthspaceImage','KeyFindings'
+            'KeyFindings'
         ];
 
         public function getCMSFields()
@@ -42,12 +45,13 @@ namespace {
             $fields->addFieldToTab('Root.QuickLinks', TextField::create("QuickLinksHeading","Quick Links Heading"));
             $fields->addFieldToTab('Root.QuickLinks', HTMLEditorField::create("QuickLinks","Quick Links Content"));
 
-            $fields->addFieldToTab('Root.Healthspace', TextField::create("HealthspaceHeading","Healthspace Heading"));
-            $fields->addFieldToTab('Root.Healthspace', HTMLEditorField::create("HealthspaceDescription","Healthspace Description"));
-            $up1 = UploadField::create('HealthspaceImage',"Image");
-            $up1->setFolderName('HealthspaceImages');
-            $up1->getValidator()->setAllowedExtensions(['png', 'gif', 'jpeg', 'jpg']);           
-            $fields->addFieldToTab('Root.Healthspace', $up1);
+            $fields->addFieldsToTab('Root.Healthspace', [
+                TextField::create("RegionalDashHeading","Regional dashboard heading"),
+                HTMLEditorField::create("RegionalDashDescription","Regional dashboard description")->setRows(6),
+                TextField::create("RegionalDashLinkText","Regional dashboard link text"),
+                TextField::create("RegionalDashLink","Regional dashboard link"),
+            ]);
+
 
 
             $config = GridFieldConfig_RecordEditor::create(100);

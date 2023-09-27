@@ -50,11 +50,20 @@
 						<% end_loop %>
 					</ul>
 
-					<h4>$HealthspaceHeading</h4>
+					<h4>$RegionalDashHeading</h4>
 					<div class="healthspace">
-						$HealthspaceDescription
-						<a href="https://healthspace.ac.nz/" target="_blank"><img class="img-fluid" src="$HealthspaceImage.ScaleWidth(340).Link" /></a>
+                        $RegionalDashDescription
+
+                        <div class="page-summary-link-item row type-DashboardPage">
+                            <div class="content col-10">
+                                <h4><a href="$RegionalDashLink" target="_blank">$RegionalDashLinkText</a></h4>
+                                </div>
+                        </div>
+
 					</div>
+
+
+
 					<h4>$QuickLinksHeading</h4>
 					<div class="quick-links">
 						$QuickLinks
