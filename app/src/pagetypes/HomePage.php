@@ -24,7 +24,6 @@ namespace {
             "RegionalDashDescription" => "HTMLText",
             "RegionalDashLinkText" => "Varchar(255)",
             "RegionalDashLink" => "Varchar(255)"
-
         ];
 
         private static $has_one = [
@@ -45,7 +44,7 @@ namespace {
             $fields->addFieldToTab('Root.QuickLinks', TextField::create("QuickLinksHeading","Quick Links Heading"));
             $fields->addFieldToTab('Root.QuickLinks', HTMLEditorField::create("QuickLinks","Quick Links Content"));
 
-            $fields->addFieldsToTab('Root.Healthspace', [
+            $fields->addFieldsToTab('Root.RegionalDashboard ', [
                 TextField::create("RegionalDashHeading","Regional dashboard heading"),
                 HTMLEditorField::create("RegionalDashDescription","Regional dashboard description")->setRows(6),
                 TextField::create("RegionalDashLinkText","Regional dashboard link text"),
