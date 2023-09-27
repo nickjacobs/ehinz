@@ -7829,7 +7829,7 @@
         text: "text/plain",
         html: "text/html",
         xml: "application/xml, text/xml",
-        json: "application/json, text/javascript"
+        json: "application/json, text/js"
       },
       contents: {
         xml: /\bxml\b/,
@@ -8496,7 +8496,7 @@
 
   jQuery.ajaxSetup({
     accepts: {
-      script: "text/javascript, application/javascript, " + "application/ecmascript, application/x-ecmascript"
+      script: "text/js, application/js, " + "application/ecmascript, application/x-ecmascript"
     },
     contents: {
       script: /\b(?:java|ecma)script\b/
