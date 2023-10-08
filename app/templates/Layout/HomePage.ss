@@ -24,6 +24,16 @@
 			</div>
 			<div class="col-md-4">
 				<div class="home-side">
+
+                    <h4>$RegionalDashHeading</h4>
+                    <div class="healthspace">
+                        $RegionalDashDescription
+                        <div class="page-summary-link-item row type-DashboardPage">
+                            <div class="content col-10">
+                                <h4><a href="$RegionalDashLink" target="_blank">$RegionalDashLinkText</a></h4>
+                            </div>
+                        </div>
+                    </div>
 					<% if $KeyFindings %>
 					<h4>Annual key findings</h4>
 					<ul class="key-findings">
@@ -49,20 +59,6 @@
 							</li>
 						<% end_loop %>
 					</ul>
-
-					<h4>$RegionalDashHeading</h4>
-					<div class="healthspace">
-                        $RegionalDashDescription
-
-                        <div class="page-summary-link-item row type-DashboardPage">
-                            <div class="content col-10">
-                                <h4><a href="$RegionalDashLink" target="_blank">$RegionalDashLinkText</a></h4>
-                                </div>
-                        </div>
-
-					</div>
-
-
 
 					<h4>$QuickLinksHeading</h4>
 					<div class="quick-links">
