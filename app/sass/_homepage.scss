@@ -13,7 +13,7 @@
 		padding-left: 30px;
 		h4 {
 			border-bottom: 1px solid $lightgrey;
-			font-size: 18px;
+			font-size: 20px;
 		    font-weight: 600;
 		    line-height: 25px;
 		    padding: 13px 20% 13px 0px;
@@ -103,17 +103,10 @@
         .page-summary-link-item {
             background-position:right -80px top;
             h4 {
-                border:none
+                border:none;
+                font-size: 18px;
             }
-
         }
-
-
-
-
-
-
-
 	}
 
 	.col-smaller {
