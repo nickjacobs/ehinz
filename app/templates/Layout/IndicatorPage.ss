@@ -22,7 +22,6 @@
 					<% include OnThisPageList %>
 					<% include ContentSection %>
                     <% include References %>
-					<% include HealthspaceSection %>
 					<% include ExtraContentSection %>
 					<% include LinksSection %>
 					<% include StaffContactsSection %>

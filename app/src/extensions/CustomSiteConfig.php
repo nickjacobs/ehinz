@@ -21,16 +21,15 @@ class CustomSiteConfig extends DataExtension
         'DownloadsOpen' => 'Boolean',
         'LinksOpen' => 'Boolean',
         'ContactsOpen' => 'Boolean',
-        'HealthspaceHeader' => 'Text',
         'FooterMenu' => 'HTMLText',
         'FooterMenuAbout' => 'HTMLText',
 
     ];
 
-    private static $has_one = [        
+    private static $has_one = [
     ];
 
-    private static $owns = [        
+    private static $owns = [
     ];
 
     public function updateCMSFields(FieldList $fields)
@@ -45,25 +44,22 @@ class CustomSiteConfig extends DataExtension
             TextareaField::create('Address'),
     	]);
 
-        $fields->addFieldsToTab('Root.Main',[            
+        $fields->addFieldsToTab('Root.Main',[
             HeaderField::create('hf2','Downloads and Links section'),
             CheckboxField::create('DownloadsOpen','Default downloads section to open'),
             CheckboxField::create('LinksOpen','Default links section to open'),
             CheckboxField::create('ContactsOpen','Default staff contacts section to open')
         ]);
 
-        $fields->addFieldsToTab('Root.Main',[            
-            HeaderField::create('hf3','Healthspace'),
-            Textfield::create('HealthspaceHeader','Healthspace default header')           
-        ]);
 
-        $fields->addFieldsToTab('Root.Main',[            
+
+        $fields->addFieldsToTab('Root.Main',[
             HeaderField::create('hf3','Footer'),
             HTMLEditorField::create('FooterMenu','Footer menu')->setRows(6),
-            HTMLEditorField::create('FooterMenuAbout','Footer menu about')->setRows(6)          
+            HTMLEditorField::create('FooterMenuAbout','Footer menu about')->setRows(6)
         ]);
 
-     
-        
+
+
     }
 }
