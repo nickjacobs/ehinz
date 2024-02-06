@@ -45,13 +45,14 @@ class PublicationSearchController extends PageController
     public function PublicationSearchForm()
     {
         $topics=Topic::get()->Sort('Topic')->map('ID', 'Topic');
+
         $types = [
-            "Factsheet"=>"Factsheet",
-            "Metadata"=>"Metadata",
-            "Background"=>"Background",
-            "Report"=>"Report"
+            "Surveillance Report" => "Surveillance Report",
+            "Metadata" => "Metadata",
+            "Background" => "Background",
+            "Report" => "Report"
         ];
-                
+
         $form = Form::create(
             $this,
             'PublicationSearchForm',
@@ -59,16 +60,16 @@ class PublicationSearchController extends PageController
                 TextField::create('Keywords')
                     ->setAttribute('placeholder', 'Search for keywords in title and summary...')
                     ->addExtraClass('form-group'),
-                
-                DropdownField::create('Topic','Topic')                  
+
+                DropdownField::create('Topic','Topic')
                     ->setSource($topics)
                     ->setEmptyString('-- any --')
                     ->addExtraClass('form-group'),
 
-                DropdownField::create('DocType','Type')                  
+                DropdownField::create('DocType','Type')
                     ->setSource($types)
                     ->setEmptyString('-- any --')
-                    ->addExtraClass('form-group'),                             
+                    ->addExtraClass('form-group'),
             ),
             FieldList::create(
                 FormAction::create('doPublicationSearch','Search')
@@ -95,7 +96,7 @@ class PublicationSearchController extends PageController
 
     public function index(HTTPRequest $request)
     {
-        
+
         $isQuery = false;
         $docs=DownloadFile::get()->filter('ID', 0);
 
@@ -106,7 +107,7 @@ class PublicationSearchController extends PageController
 
         if ($topic = $request->getVar('Topic')) {
             $t = Topic::get()->byId($topic);
-            $docs = $t->DownloadFiles(); 
+            $docs = $t->DownloadFiles();
         }
         if ($search = $request->getVar('Keywords')) {
             $docs = $docs->filterAny([
@@ -144,9 +145,9 @@ class PublicationSearchController extends PageController
     }
 
 
-    
 
-    
-   
-    
+
+
+
+
 }

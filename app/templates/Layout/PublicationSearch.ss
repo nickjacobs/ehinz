@@ -1,5 +1,5 @@
 <section class="main-page-content">
-	<div class="container">		
+	<div class="container">
 		<div class="row">
 			<% if $Menu(2) %>
 				<div class="col-md-3">
@@ -16,7 +16,7 @@
 				<h1>$MenuTitle</h1>
 			</div>
 			<% if not $Results %>
-			<div class="typography">				
+			<div class="typography">
 				<% if $PageIntro %>
 				<div class="pad-bottom">
 					$PageIntro
@@ -36,26 +36,26 @@
 						<div class="download-icon col-2">
 							<% if $DocType == 'Background' %><img src="images/icon-doc-background.png" /><% end_if %>
 							<% if $DocType == 'Metadata' %><img src="images/icon-doc-metadata.png" /><% end_if %>
-							<% if $DocType == 'Factsheet' %><img src="images/icon-doc-factsheet.png" /><% end_if %>
+							<% if $DocType == 'Surveillance Report' %><img src="images/icon-doc-surveillance.png" /><% end_if %>
 							<% if $DocType == 'Report' %><img src="images/icon-doc-report.png" /><% end_if %>
 						</div>
 						<div class="content col-10">
 							<a href="$File.Link" target="_blank">
-								<strong>$DocType:</strong> 
+								<strong>$DocType:</strong>
 								$Title
 							</a>
 						</div>
 					</div>
 					</div>
-				</div>				
+				</div>
 				<% end_loop %>
 			</div>
-			<% else %>	
-				<% if $isQuery %>			
+			<% else %>
+				<% if $isQuery %>
 				<div class="row"><div class="col">
 					There were no results for that search.
 				</div></div>
-			<% end_if %>			
+			<% end_if %>
 			<% end_if %>
 			</div>
 			</div>

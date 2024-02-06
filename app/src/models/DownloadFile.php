@@ -2,7 +2,7 @@
 
 
 namespace {
-	
+
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
     //use SilverStripe\Assets\Image;
@@ -13,12 +13,12 @@ namespace {
     use SilverStripe\Forms\TextField;
     use SilverStripe\Forms\TextareaField;
     use SilverStripe\Forms\ListboxField;
-    
+
 
 	class DownloadFile extends DataObject
     {
 
-        private static $db = [ 
+        private static $db = [
             "Title" => "Varchar(128)",
             "Summary" => "Varchar(512)",
             "DocType" => "Varchar(128)", //"Enum('Factsheet,Metadata,Background,Report')",
@@ -64,19 +64,19 @@ namespace {
             $pages = Page::get();
             $fields->addFieldToTab("Root.Main", new TextField("Title","Title"));
             $fields->addFieldToTab("Root.Main", new TextareaField("Summary","Summary"));
-            
+
 
             $types = [
-                "Factsheet"=>"Factsheet",
-                "Metadata"=>"Metadata",
-                "Background"=>"Background",
-                "Report"=>"Report"
+                "Surveillance Report" => "Surveillance Report",
+                "Metadata" => "Metadata",
+                "Background" => "Background",
+                "Report" => "Report"
             ];
             $fields->addFieldToTab("Root.Main", new DropdownField("DocType","Document Type",$types,$this->DocType));
 
             $up1 = UploadField::create('File',"File");
             $up1->setFolderName('Factsheets');
-            $up1->getValidator()->setAllowedExtensions(['pdf']);           
+            $up1->getValidator()->setAllowedExtensions(['pdf']);
             $fields->addFieldToTab('Root.Main', $up1);
 
             $fields->addFieldToTab("Root.Main", new TextField("OnlineLink","Facsheet online link"));
@@ -94,26 +94,26 @@ namespace {
         }
 
 
-        public function validate() 
+        public function validate()
         {
             $result = parent::validate();
-                $doc = DownloadFile::get()->filter(['Title' => $this->Title,'DocType' => $this->DocType,'ID:not' => $this->ID])->first();               
-                
+                $doc = DownloadFile::get()->filter(['Title' => $this->Title,'DocType' => $this->DocType,'ID:not' => $this->ID])->first();
+
             if($doc) {
                  $result->addError('This download document already exists - please use the add existing link to add this document');
             }
-            
+
 
             return $result;
         }
 
-        
+
         public function onBeforeWrite()
         {
             parent::onBeforeWrite();
             if($file = $this->File()){
                 $this->Filename = $file->Filename;
-            }            
+            }
         }
     }
 }
