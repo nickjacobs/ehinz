@@ -8924,6 +8924,10 @@ footer {
             font-size: 16px;
             color: #888888;
             line-height: 1; }
+          .main-page-content .side-menu li ul li ul {
+            margin-left: 10px; }
+            .main-page-content .side-menu li ul li ul li {
+              border-left: none; }
       .main-page-content .side-menu li.current ul, .main-page-content .side-menu li.section ul {
         display: block; }
 

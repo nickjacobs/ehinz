@@ -57,6 +57,12 @@
 						color: $greytext;
 						line-height: 1;
 					}
+                    ul {
+                        margin-left:10px;
+                        li {
+                            border-left:none;
+                        }
+                    }
 				}
 			}
 			&.current, &.section {
@@ -83,6 +89,6 @@
 	min-height:400px;
 		width:100%;
 		margin:30px 0;
-	
+
 }
 
