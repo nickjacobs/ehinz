@@ -1,6 +1,6 @@
 header.page-top-header {
 	padding:24px 0;
-	background-color:$white;	
+	background-color:$white;
 	color:$black;
 	position: relative;
 	.uni-link,.home-link {
@@ -16,7 +16,7 @@ header.page-top-header {
 	.uni-link:after {
 		position: absolute;
 		width: 2px;
-		height: 75px;
+		height: 60px;
 		content: "";
 		background: $lightgrey;
 		right: -3px;

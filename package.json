@@ -20,6 +20,7 @@
     "url": "https://github.com/dpezer/ss-bs/issues"
   },
   "homepage": "https://github.com/dpezer/ss-bs",
+
   "dependencies": {
     "aos": "^2.3.4",
     "gulp": "^3.9.1",
@@ -32,7 +33,7 @@
     "gulp-lodash": "^0.1.2",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.1.0",
+    "sass": "^1.72.0",
     "gulp-util": "^3.0.8",
     "jquery-match-height": "^0.7.2",
     "parallax-js": "^3.1.0"
@@ -45,9 +46,13 @@
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^2.6.5"
   },
-  "resolutions": {
-    "graceful-fs": "^4.2.4"
+
+  "overrides": {
+    "graceful-fs": "^4.2.11"
   }
+
 }

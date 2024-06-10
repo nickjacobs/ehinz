@@ -2,16 +2,16 @@
   <div class="container">
   	<div class="row">
       <div class="col-8">
-        <a class="uni-link" href="/">$SVG('massey-logo')</a>      
-        <a class="home-link" href="/">$SVG('ehinz-logo')</a>
-      </div> 
+        <a class="uni-link" href="/">$SVG('mu-logo-colour').height(50).width(232)</a>
+        <a class="home-link" href="/">$SVG('ehinz-logo').height(50).width(301)</a>
+      </div>
   		<div class="col-4 text-right">
-  			<% if $SearchForm %>				
+  			<% if $SearchForm %>
   				<div class="search-bar">
   					$SearchForm
   				</div>
   			<% end_if %>
-  		</div> 		
+  		</div>
   	</div>
   </div>
 </header>
@@ -26,7 +26,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      </div> 
+      </div>
     </div>
   </div>
 </header>

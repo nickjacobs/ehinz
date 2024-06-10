@@ -1,12 +1,17 @@
 .lead {
   font-size: 22px;
-  line-height: 1.2; }
+  line-height: 1.2;
+}
 
 h2.anchor {
-  color: blue; }
+  color: blue;
+}
 
 td.header {
-  background-color: #8BB220; }
+  background-color: #8BB220;
+}
 
 td.hilite {
-  background-color: #f0f8d9; }
+  background-color: #f0f8d9;
+}
+/*# sourceMappingURL=editor.css.map */

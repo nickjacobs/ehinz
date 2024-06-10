@@ -3,6 +3,8 @@
 // Include gulp
 var gulp = require('gulp');
 var livereload = require('gulp-livereload');
+var sass = require('gulp-sass')(require('sass'));
+var plumber = require('gulp-plumber');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
@@ -12,6 +14,7 @@ var uglify = require('gulp-uglify');
 var babel = require("gulp-babel");
 //var postcss = require('gulp-postcss');
 //var autoprefixer = require('autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 // Config file
@@ -79,19 +82,40 @@ gulp.task('scripts', function() {
 
 });
 
-gulp.task('sass', function() {
-  	return gulp.src(config.sass.src)
-  		.pipe($.plumber({
-  			errorHandler: messages.error
-  		}))
-  		.pipe($.sass(config.sass.config))
-  		.pipe($.autoprefixer({
-  			browsers: config.sass.autoprefixer
-  		}))
-  		.pipe(gulp.dest(config.sass.destination))
-  		.pipe($.notify(messages.success))
-      .pipe(livereload());
-  });
+// gulp.task('sass', function() {
+//   	return gulp.src(config.sass.src)
+//   		.pipe($.plumber({
+//   			errorHandler: messages.error
+//   		}))
+//   		.pipe($.sass(config.sass.config))
+//   		.pipe($.autoprefixer({
+//   			browsers: config.sass.autoprefixer
+//   		}))
+//   		.pipe(gulp.dest(config.sass.destination))
+//   		.pipe($.notify(messages.success))
+//       .pipe(livereload());
+//   });
+
+
+
+gulp.task('sass', function () {
+    gulp.src(config.sass.src,{sourcemap: true, style: 'compact'}) // path to your file
+        .pipe(plumber({ errorHandler: function(err) {
+                notify.onError({
+                    title: "Gulp error in " + err.plugin,
+                    message:  err.toString()
+                })(err);
+                gutil.beep();
+            }}))
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        //.pipe(cleanCss({inline: ['all']}))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(config.sass.destination))
+        .pipe(livereload());
+});
+
+
 
 gulp.task('minify-css', function() {
 return gulp.src(config.css.src)
