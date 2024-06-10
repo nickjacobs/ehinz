@@ -35,9 +35,9 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<div class="footer-partner-logo">$SVG('massey-logo-white')</div>
+				<div class="footer-partner-logo">$SVG('mu-logo-white').height(50).width(226)</div>
 				<div class="footer-partner-logo"><img src="images/moh_logo2.png"></div>
-                <div class="footer-partner-logo"><img src="images/two-logo.png"></div>
+                <div class="footer-partner-logo">$SVG('health-nz-logo').height(40)</div>
 			</div>
 		</div>
 	</div>
