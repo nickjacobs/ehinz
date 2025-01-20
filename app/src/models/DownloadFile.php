@@ -53,7 +53,9 @@ namespace {
             "Title",
             "Summary",
             "DocType",
-            "Topics.Topic"
+            "Topics.Topic",
+            "Filename",
+            "Keywords"
         ];
 
         private static $default_sort = "LastEdited DESC";
