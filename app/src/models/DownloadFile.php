@@ -4,6 +4,7 @@
 namespace {
 
     use SilverStripe\Assets\Folder;
+    use SilverStripe\Forms\TreeDropdownField;
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
     //use SilverStripe\Assets\Image;
@@ -79,7 +80,8 @@ namespace {
 
             // Upload Folder Dropdown
             $rootFolder = Folder::find_or_make("Surveillance-reports");
-            $folders = Folder::get()->filter("ParentID", $rootFolder->ID)->map("ID", "Name")->toArray();
+            //$folders = Folder::get()->filter("ParentID", $rootFolder->ID)->map("ID", "Name")->toArray();
+            //$folders = Folder::get()->filter("ParentID", $rootFolder->ID);
 
             // File Upload
             $uploadField = UploadField::create("File", "File");
@@ -89,11 +91,18 @@ namespace {
 
 
 
-            $fields->addFieldToTab("Root.Main", DropdownField::create(
-                "UploadFolder",
-                "Upload Folder",
-                $folders
-            )->setEmptyString("-- Select a Folder --"));
+            $fields->addFieldToTab(
+                "Root.Main",
+                TreeDropdownField::create(
+                    "UploadFolder",
+                    "Upload Folder",
+                    Folder::class
+                )
+                    ->setDescription("Choose a folder under 'Surveillance-reports' where the file will be saved.")
+                    ->setTreeBaseID($rootFolder->ID) // Restrict to folders under the root
+            );
+
+
 
             // Online Link
             $fields->addFieldToTab("Root.Main", TextField::create("OnlineLink", "Factsheet Online Link"));
@@ -102,7 +111,7 @@ namespace {
             $fields->addFieldToTab("Root.Main", ListboxField::create(
                 "Topics",
                 "Topics",
-                Topic::get()->map("ID", "Title")
+                Topic::get()->map("ID", "Topic")
             ));
 
             // Keywords
@@ -136,10 +145,22 @@ namespace {
         {
             parent::onBeforeWrite();
 
-            // Handle file association and folder
+            // Check for existing records with the same Title and DocType
+            $existingRecord = DownloadFile::get()->filter([
+                "Title" => $this->Title,
+                "DocType" => $this->DocType,
+                "ID:not" => $this->ID
+            ])->first();
+
+            // If a matching record exists, reuse the folder
+            if ($existingRecord && $existingRecord->File()->exists()) {
+                $this->UploadFolder = $existingRecord->File()->ParentID;
+            }
+
+            // Handle file association and folder assignment
             if ($file = $this->File()) {
-                if ($this->UploadFolder && Folder::get()->byID($this->UploadFolder)) {
-                    $file->ParentID = $this->UploadFolder;
+                if ($this->UploadFolder && $folder = Folder::get()->byID($this->UploadFolder)) {
+                    $file->ParentID = $folder->ID;
                     $file->write();
                 }
 
