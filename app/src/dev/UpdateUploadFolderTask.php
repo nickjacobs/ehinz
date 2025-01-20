@@ -11,6 +11,10 @@ class UpdateUploadFolderTask extends BuildTask
 
     public function run($request)
     {
+
+        return false;
+
+
         // Fetch all DownloadFile records
         $records = DownloadFile::get()->filter('UploadFolder', 0);
         $count = $records->count();
