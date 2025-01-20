@@ -89,18 +89,19 @@ namespace {
             $uploadField->getValidator()->setAllowedExtensions(["pdf"]);
             $fields->addFieldToTab("Root.Main", $uploadField);
 
+            // Build dropdown options dynamically from folder hierarchy
+            $folderOptions = $this->getFolderOptions();
+
+            // Add custom DropdownField for folder selection
+            $fields->addFieldToTab("Root.Main", DropdownField::create(
+                "UploadFolder",
+                "Upload Folder",
+                $folderOptions
+            )->setEmptyString("-- Select a Folder --"));
 
 
-            $fields->addFieldToTab(
-                "Root.Main",
-                TreeDropdownField::create(
-                    "UploadFolder",
-                    "Upload Folder",
-                    Folder::class
-                )
-                    ->setDescription("Choose a folder under 'Surveillance-reports' where the file will be saved.")
-                    ->setTreeBaseID($rootFolder->ID) // Restrict to folders under the root
-            );
+
+
 
 
 
@@ -140,6 +141,39 @@ namespace {
 
             return $result;
         }
+
+
+        protected function getFolderOptions()
+        {
+            $rootFolder = Folder::find_or_make("Surveillance-reports");
+            $folderOptions = [];
+
+            // Get all nested folders under the root folder
+            $folders = Folder::get()->filter("ParentID", $rootFolder->ID);
+
+            foreach ($folders as $folder) {
+                $folderOptions[$folder->ID] = $folder->Title;
+
+                // Recursively add subfolders
+                $this->addSubfolderOptions($folder, $folderOptions, $prefix = "- ");
+            }
+
+            return $folderOptions;
+        }
+
+        protected function addSubfolderOptions($folder, &$folderOptions, $prefix)
+        {
+            $subfolders = Folder::get()->filter("ParentID", $folder->ID);
+
+            foreach ($subfolders as $subfolder) {
+                $folderOptions[$subfolder->ID] = $prefix . $subfolder->Title;
+
+                // Recursive call for deeper subfolders
+                $this->addSubfolderOptions($subfolder, $folderOptions, $prefix . "- ");
+            }
+        }
+
+
 
         public function onBeforeWrite()
         {
