@@ -12,7 +12,7 @@ class UpdateUploadFolderTask extends BuildTask
     public function run($request)
     {
 
-        //return false;
+        return false;
 
 
         // Fetch all DownloadFile records
