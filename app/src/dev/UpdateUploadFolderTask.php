@@ -12,7 +12,7 @@ class UpdateUploadFolderTask extends BuildTask
     public function run($request)
     {
 
-        return false;
+        //return false;
 
 
         // Fetch all DownloadFile records
@@ -34,6 +34,7 @@ class UpdateUploadFolderTask extends BuildTask
                     // Update the UploadFolder field with the file's ParentID
                     $record->UploadFolder = $file->ParentID;
                     $record->write();
+                    $record->PublishRecursive();
 
                     echo "Updated record ID {$record->ID}: UploadFolder set to {$file->ParentID}." . PHP_EOL;
                     $updatedCount++;

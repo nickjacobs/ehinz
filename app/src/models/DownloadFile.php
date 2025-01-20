@@ -124,25 +124,25 @@ namespace {
             return $fields;
         }
 
-        public function validate()
-        {
-            $result = parent::validate();
-
-            // Check for duplicate documents
-            $duplicateDoc = DownloadFile::get()->filter([
-                "Title" => $this->Title,
-                "DocType" => $this->DocType,
-                "ID:not" => $this->ID
-            ])->first();
-
-            if ($duplicateDoc) {
-                $result->addError(
-                    "This download document already exists. Please use the add-existing link to include this document."
-                );
-            }
-
-            return $result;
-        }
+//        public function validate()
+//        {
+//            $result = parent::validate();
+//
+//            // Check for duplicate documents
+//            $duplicateDoc = DownloadFile::get()->filter([
+//                "Title" => $this->Title,
+//                "DocType" => $this->DocType,
+//                "ID:not" => $this->ID
+//            ])->first();
+//
+//            if ($duplicateDoc) {
+//                $result->addError(
+//                    "This download document already exists. Please use the add-existing link to include this document."
+//                );
+//            }
+//
+//            return $result;
+//        }
 
 
         protected function getFolderOptions()
