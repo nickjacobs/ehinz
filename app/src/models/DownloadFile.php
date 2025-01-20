@@ -3,6 +3,7 @@
 
 namespace {
 
+    use SilverStripe\Assets\Folder;
     use SilverStripe\ORM\DataObject;
     use SilverStripe\CMS\Model\SiteTree;
     //use SilverStripe\Assets\Image;
@@ -15,103 +16,134 @@ namespace {
     use SilverStripe\Forms\ListboxField;
 
 
-	class DownloadFile extends DataObject
+    class DownloadFile extends DataObject
     {
-
         private static $db = [
             "Title" => "Varchar(128)",
             "Summary" => "Varchar(512)",
-            "DocType" => "Varchar(128)", //"Enum('Factsheet,Metadata,Background,Report')",
+            "DocType" => "Varchar(128)", // Example: 'Enum("Factsheet,Metadata,Background,Report")'
             "OnlineLink" => "Varchar(255)",
-            "Keywords" => 'Text',
-            "Filename" => 'Text',
-            "Sort" => "Int"
+            "Keywords" => "Text",
+            "Filename" => "Text",
+            "Sort" => "Int",
+            "UploadFolder" => "Int"
         ];
 
         private static $has_one = [
-           // "IndicatorPage" => "IndicatorPage",
             "File" => File::class
         ];
 
         private static $many_many = [
-            'Topics' => Topic::class
+            "Topics" => Topic::class
         ];
 
         private static $owns = [
-            "File","Topics"
+            "File",
+            "Topics"
         ];
 
         private static $summary_fields = [
-            'DocType','LastEdited.Nice'=>'Edited','Title'
+            "DocType",
+            "LastEdited.Nice" => "Edited",
+            "Title"
         ];
 
         private static $searchable_fields = [
-          'Title',
-          'Summary',
-          'DocType',
-          'Topics.Topic'
-       ];
+            "Title",
+            "Summary",
+            "DocType",
+            "Topics.Topic"
+        ];
 
-        //private static $default_sort = 'Sort';
-        private static $default_sort = 'LastEdited DESC';
+        private static $default_sort = "LastEdited DESC";
 
         public function getCMSFields()
         {
             $fields = parent::getCMSFields();
 
-            $fields->removeByName(["Sort","Topics","OnlineLink","Keywords","Filename"]);
+            // Remove unused fields
+            $fields->removeByName(["Sort", "Topics", "OnlineLink", "Keywords", "Filename"]);
 
-            $pages = Page::get();
-            $fields->addFieldToTab("Root.Main", new TextField("Title","Title"));
-            $fields->addFieldToTab("Root.Main", new TextareaField("Summary","Summary"));
+            // Title and Summary
+            $fields->addFieldToTab("Root.Main", TextField::create("Title", "Title"));
+            $fields->addFieldToTab("Root.Main", TextareaField::create("Summary", "Summary"));
 
-
+            // Document Type Dropdown
             $types = [
                 "Surveillance Report" => "Surveillance Report",
                 "Metadata" => "Metadata",
                 "Background" => "Background",
                 "Report" => "Report"
             ];
-            $fields->addFieldToTab("Root.Main", new DropdownField("DocType","Document Type",$types,$this->DocType));
+            $fields->addFieldToTab("Root.Main", DropdownField::create("DocType", "Document Type", $types));
 
-            $up1 = UploadField::create('File',"File");
-            $up1->setFolderName('Factsheets');
-            $up1->getValidator()->setAllowedExtensions(['pdf']);
-            $fields->addFieldToTab('Root.Main', $up1);
+            // Upload Folder Dropdown
+            $rootFolder = Folder::find_or_make("Surveillance-reports");
+            $folders = Folder::get()->filter("ParentID", $rootFolder->ID)->map("ID", "Name")->toArray();
 
-            $fields->addFieldToTab("Root.Main", new TextField("OnlineLink","Facsheet online link"));
+            // File Upload
+            $uploadField = UploadField::create("File", "File");
+            $uploadField->setFolderName("Surveillance-reports");
+            $uploadField->getValidator()->setAllowedExtensions(["pdf"]);
+            $fields->addFieldToTab("Root.Main", $uploadField);
 
 
-            $fields->addFieldToTab('Root.Main', ListboxField::create(
-            'Topics',
-            'Topics',
-            Topic::get()->map('ID', 'Topic')
-        ), 'Metadata');
 
-        $fields->addFieldToTab("Root.Main", TextField::create("Keywords","Keywords")->setDescription("Additional keywords for search"));
+            $fields->addFieldToTab("Root.Main", DropdownField::create(
+                "UploadFolder",
+                "Upload Folder",
+                $folders
+            )->setEmptyString("-- Select a Folder --"));
+
+            // Online Link
+            $fields->addFieldToTab("Root.Main", TextField::create("OnlineLink", "Factsheet Online Link"));
+
+            // Topics
+            $fields->addFieldToTab("Root.Main", ListboxField::create(
+                "Topics",
+                "Topics",
+                Topic::get()->map("ID", "Title")
+            ));
+
+            // Keywords
+            $fields->addFieldToTab("Root.Main", TextField::create("Keywords", "Keywords")
+                ->setDescription("Additional keywords for search"));
 
             return $fields;
         }
 
-
         public function validate()
         {
             $result = parent::validate();
-                $doc = DownloadFile::get()->filter(['Title' => $this->Title,'DocType' => $this->DocType,'ID:not' => $this->ID])->first();
 
-            if($doc) {
-                 $result->addError('This download document already exists - please use the add existing link to add this document');
+            // Check for duplicate documents
+            $duplicateDoc = DownloadFile::get()->filter([
+                "Title" => $this->Title,
+                "DocType" => $this->DocType,
+                "ID:not" => $this->ID
+            ])->first();
+
+            if ($duplicateDoc) {
+                $result->addError(
+                    "This download document already exists. Please use the add-existing link to include this document."
+                );
             }
-
 
             return $result;
         }
 
-
         public function onBeforeWrite()
         {
             parent::onBeforeWrite();
-            if($file = $this->File()){
+
+            // Handle file association and folder
+            if ($file = $this->File()) {
+                if ($this->UploadFolder && Folder::get()->byID($this->UploadFolder)) {
+                    $file->ParentID = $this->UploadFolder;
+                    $file->write();
+                }
+
+                // Update the filename in the database
                 $this->Filename = $file->Filename;
             }
         }
