@@ -75,7 +75,6 @@ namespace {
             $types = [
                 "Surveillance Report" => "Surveillance Report",
                 "Metadata" => "Metadata",
-                "Background" => "Background",
                 "Report" => "Report"
             ];
             $fields->addFieldToTab("Root.Main", DropdownField::create("DocType", "Document Type", $types));

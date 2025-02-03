@@ -21,7 +21,6 @@
 				<option value="" <% if $getTypeVar == '' %>selected="selected"<% end_if %>>Choose type</option>
 				<option value="Surveillance Report" <% if $getTypeVar == 'Surveillance Report' %>selected="selected"<% end_if %>>Surveillance Report</option>
 				<option value="Metadata" <% if $getTypeVar == 'Metadata' %>selected="selected"<% end_if %>>Metadata</option>
-				<option value="Background" <% if $getTypeVar == 'Background' %>selected="selected"<% end_if %>>Background</option>
 				<option value="Report" <% if $getTypeVar == 'Report' %>selected="selected"<% end_if %>>Report</option>
 			</select>
 		</div>

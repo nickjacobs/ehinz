@@ -49,7 +49,6 @@ class PublicationSearchController extends PageController
         $types = [
             "Surveillance Report" => "Surveillance Report",
             "Metadata" => "Metadata",
-            "Background" => "Background",
             "Report" => "Report"
         ];
 
