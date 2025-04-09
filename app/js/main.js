@@ -1,6 +1,7 @@
 $(function() {
 
 
+
 	function toggleDropdown (e) {
 		var _d = $(e.target).closest('.dropdown'),
 		  _m = $('.dropdown-menu', _d);
@@ -16,19 +17,7 @@ $(function() {
 		.on('mouseenter mouseleave','.dropdown',toggleDropdown)
 		.on('click', '.dropdown-menu a', toggleDropdown);
 
-	// $("#topLevelNav .nav-link").mouseover(function(e){
-	// 	$(".subpages").hide();
-	// 	$(".subnav").hide();
-	// 	if($("[data-in-id='"+$(this).attr("data-id")+"']").length > 0){
-	// 		$(".subnav").show();
-	// 		$("[data-in-id='"+$(this).attr("data-id")+"']").css({"display": "flex"});
-	// 	}
-	// });
 
-	// $(".subnav").mouseleave(function(e){
-	// 	$(".subnav").hide();
-	// 	$(".subpages").hide();
-	// });
 
 	$(".toggle-clicker").click(function(e){
         e.preventDefault();
@@ -36,7 +25,34 @@ $(function() {
 		$(this).parent().find(".row-toggle").toggleClass("open");
 	});
 
-	$(window).scroll(function(){
+
+
+        $('a[href*="#ref"]').on('click', function (e) {
+            const href = $(this).attr('href');
+            const anchor = href.substring(href.indexOf('#')); // gets "#ref1", etc.
+
+
+            if (!anchor.startsWith('#ref')) return;
+
+            const $target = $(anchor);
+            const $toggle = $('.references .row-toggle');
+
+            if ($toggle.length && !$toggle.hasClass('open')) {
+                $toggle.addClass('open');
+            }
+
+            if ($target.length) {
+                $('li.refhighlight').removeClass('refhighlight');
+                $target.closest('li').addClass('refhighlight');
+            }
+        });
+
+
+
+
+
+
+    $(window).scroll(function(){
 		//console.log($(window).scrollTop());
 		//console.log($("#show-side-trigger").offset().top);
 		if($("#show-side-trigger").length){
@@ -47,34 +63,6 @@ $(function() {
 			}
 		}
 	});
-
-	// $(".mobile-top-header .menu").click(function(e){
-	// 	$("#mobileLevelNav").toggleClass("open");
-	// });
-
-	// $(window).on('resize', function(){
-	// 	var win = $(this);
-	//     if (win.width() >= 992) {
-	//     	$("#mobileLevelNav").removeClass("open");
-	//     };
-	// });
-
-	/*
-	$('.carousel-holder').flickity({
-	  // options
-	  cellAlign: 'left',
-	  //wrapAround: true,
-	  //autoPlay: true,
-	  watchCSS: true,
-	  prevNextButtons: true,
-	  pageDots: false,
-	  cellSelector: '.carousel-cell',
-	  arrowShape: 'M96,34.48H4a4,4,0,0,0,0,8.08H96a4,4,0,1,0,0-8.08Zm-86.23,4L41.38,6.9a4,4,0,0,0-5.72-5.72L1.18,35.66a4.06,4.06,0,0,0,0,5.72L35.66,75.86a4,4,0,0,0,5.72-5.71Z'
-	});
-	*/
-
-
-
 
 
     // indicator list search
@@ -132,17 +120,5 @@ $(function() {
         }
     });
 
-
-
-
-
-
-
-
 });
 
-
-
-
-// var scene = document.getElementById('bannerScene');
-// var parallaxInstance = new Parallax(scene);

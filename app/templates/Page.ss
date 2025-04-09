@@ -27,7 +27,7 @@
   <meta property="og:site_name" content="Data Protection and Use Policy">
   <meta property="og:image" content=""> --%>
 
-  <% require css('public/css/style.min.css') %>
+  <% require css('public/css/style.css') %>
 
 
   </head>
@@ -44,7 +44,7 @@
       </main><!-- /.container -->
       <% include Footer %>
 
-    <% require javascript('public/javascript/scripts.min.js') %>
+    <% require javascript('public/javascript/scripts.min.js?v2') %>
     <%--
     <script>
     AOS.init();

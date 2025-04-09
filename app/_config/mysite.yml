@@ -9,6 +9,10 @@ Silverstripe\SiteConfig\SiteConfig:
   extensions:
     - CustomSiteConfig
 
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - SiteTreeAnchorExtension
+
 SilverStripe\Assets\File:
   allowed_extensions:
     - svg

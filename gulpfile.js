@@ -1,146 +1,157 @@
-'use strict';
+var gulp = require('gulp')
+    , cleanCss = require("gulp-clean-css")
+    , sass = require('gulp-sass')(require('sass'))
+    , terser = require('gulp-terser')
+    , sourcemaps = require('gulp-sourcemaps')
+    , plumber = require('gulp-plumber')
+    , notify = require('gulp-notify')
+    , gutil = require('gulp-util')
+    , concat = require('gulp-concat')
+    , rename = require('gulp-rename')
+    , order = require("gulp-order")
+    ,clone = require('gulp-clone')
+    , browserSync = require('browser-sync').create();
 
-// Include gulp
-var gulp = require('gulp');
-var livereload = require('gulp-livereload');
-var sass = require('gulp-sass')(require('sass'));
-var plumber = require('gulp-plumber');
-var cleanCSS = require('gulp-clean-css');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-//var lodash = require('gulp-lodash');
-var babel = require("gulp-babel");
-//var postcss = require('gulp-postcss');
-//var autoprefixer = require('autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
+var filePath = {
+    build_dir: 'public',
+    sass:{
+        src: 'app/sass/**/*.scss',
+        dest: 'public/css/*.css',
+        dest_dir: 'public/css'
+    },
+    js:{
+        src: [
+            'app/js/**/!(main)*.js',
+            'app/js/**/main.js'
+        ],
+        dest: 'public/javascript/**/*.js',
+        dest_dir: 'public/javascript'
+    },
+    css:{
+        src: 'app/css/**/*.css',
+        dest: 'public/css/**/*.css',
+        dest_dir: 'public/css'
+    },
+};
 
-
-// Config file
-var config = require('./gulp_config.json')
-
-// Auto load all required plugins
-var $ = require('gulp-load-plugins')({
-	pattern: '*',
-	scope: 'dependencies',
-	rename: {
-		'jshint': 'jshintCore',
-		'jshint-stylish': 'stylish',
-	}
-});
-
-// Messages data for notify to display
-var messages = {
-	error: function(err) {
-		$.notify.onError({
-			title: config.messages.error.title,
-			message: config.messages.error.message,
-		}) (err);
-
-		this.emit('end');
-	},
-	success: {
-		title: config.messages.success.title,
-		message: config.messages.success.message,
-		onLast: true
-	}
-}
-
-
-
-
-
-  //script paths
-var jsFiles = [
-      'public/javascript/jquery/jquery-3.3.1.js',
-      'public/javascript/popper/popper.js',
-      'public/javascript/bootstrap/bootstrap.js',
-      //'public/javascript/flickity.js',
-      // 'public/javascript/slick.js',
-      // 'public/javascript/smoothscroll.js',
-      // 'public/javascript/jquery.cycle2.min.js',
-      // 'node_modules/aos/dist/aos.js',
-      // 'public/javascript/jquery.matchheight.js',
-      // 'public/javascript/ajaxchimp.js',
-      // 'public/javascript/jquery-modal-video.js',
-
-
-      'public/javascript/main.js'
-    ],
-jsDest = 'public/javascript';
-
-gulp.task('scripts', function() {
-  return gulp.src(jsFiles)
-      .pipe(babel())
-      .pipe(concat('scripts.js'))
-      .pipe(gulp.dest(jsDest))
-      .pipe(rename('scripts.min.js'))
-      .pipe(uglify().on('error', console.error))
-      .pipe(gulp.dest(jsDest))
-      .pipe(livereload());
-
-});
-
-// gulp.task('sass', function() {
-//   	return gulp.src(config.sass.src)
-//   		.pipe($.plumber({
-//   			errorHandler: messages.error
-//   		}))
-//   		.pipe($.sass(config.sass.config))
-//   		.pipe($.autoprefixer({
-//   			browsers: config.sass.autoprefixer
-//   		}))
-//   		.pipe(gulp.dest(config.sass.destination))
-//   		.pipe($.notify(messages.success))
-//       .pipe(livereload());
-//   });
-
-
-
-gulp.task('sass', function () {
-    gulp.src(config.sass.src,{sourcemap: true, style: 'compact'}) // path to your file
+// css minify task
+gulp.task('css', function () {
+    return gulp.src(filePath.css.src)
         .pipe(plumber({ errorHandler: function(err) {
                 notify.onError({
                     title: "Gulp error in " + err.plugin,
-                    message:  err.toString()
+                    message: err.toString()
                 })(err);
                 gutil.beep();
             }}))
+        .pipe(cleanCss())
+        .pipe(gulp.dest(filePath.css.dest_dir))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('watch-css', ['css'], function () {
+    gulp.watch(filePath.css.src, ['css']);
+});
+
+
+gulp.task('sass', function () {
+    return gulp.src(filePath.sass.src, { sourcemaps: true })
+        .pipe(plumber({
+            errorHandler: notify.onError(err => ({
+                title: "SASS ERROR",
+                message: err.message,
+                sound: "Beep"
+            }))
+        }))
         .pipe(sourcemaps.init())
-        .pipe(sass())
-        //.pipe(cleanCss({inline: ['all']}))
+        .pipe(sass().on('error', sass.logError)) // 🔥 add .on('error') handler too!
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.sass.destination))
-        .pipe(livereload());
+        .pipe(gulp.dest(filePath.sass.dest_dir))
+        .pipe(browserSync.stream({ match: '**/*.css' })); // limit to CSS
 });
 
 
 
-gulp.task('minify-css', function() {
-return gulp.src(config.css.src)
-  .pipe(cleanCSS())
-  .pipe(rename({
-    suffix: '.min'
-  }))
-  .pipe(gulp.dest(config.css.dest));
+gulp.task('watch-sass', ['sass'], function () {
+    gulp.watch(filePath.sass.src, ['sass']);
 });
 
+// js task
+gulp.task('js', function () {
+    return gulp.src(filePath.js.src)
+        .pipe(plumber({ errorHandler: function(err) {
+                notify.onError({
+                    title: "Gulp error in " + err.plugin,
+                    message: err.toString()
+                })(err);
+                gutil.beep();
+            }}))
+        .pipe(order([
+            'libs/jquery/jquery-3.3.1.js',
+            'libs/popper/popper.js',
+            'libs/bootstrap/bootstrap.js',
+            'main.js'
+        ]))
+        .pipe(concat('scripts.js'))
+        .pipe(gulp.dest(filePath.js.dest_dir))
+        .pipe(rename('scripts.min.js'))
+        .pipe(terser())
+        .pipe(gulp.dest(filePath.js.dest_dir))
+        .pipe(browserSync.stream());
+});
 
- gulp.task('watch', function() {
+gulp.task('watch-js', ['js'], function () {
+    gulp.watch(filePath.js.src, ['js']);
+});
 
-  	livereload.listen();
+// Watch SilverStripe .ss files (template refresh)
+gulp.task('watch-ss', function () {
+    gulp.watch('app/templates/**/*.ss').on('change', browserSync.reload);
+});
 
-  	gulp.watch(config.sass.src, ['sass']);
-    gulp.watch(jsFiles, ['scripts']);
-    gulp.watch(config.css.src, ['minify-css']);
-    gulp.watch('app/templates/**/*.ss').on('change', livereload.changed);
+// Serve & full watch
+gulp.task('serve', ['sass', 'css', 'js'], function () {
+
+    let domain = 'ehinz.test';
+
+    browserSync.init({
+        proxy: `https://${domain}`,
+        host: domain,
+        https: {
+            key: './localhost+2-key.pem',
+            cert: './localhost+2.pem'
+        },
+        port: 3000,
+        notify: false,
+        open: true
+    });
 
 
-  });
+    gulp.watch(filePath.sass.src, ['sass']);
+    gulp.watch(filePath.css.src, ['css']);
+    gulp.watch(filePath.js.src, ['js']);
+    gulp.watch('app/templates/**/*.ss').on('change', browserSync.reload);
+});
+
+// build only
+gulp.task('build', ['sass', 'css', 'js']);
+
+// default = serve
+gulp.task('default', ['serve']);
 
 
 
-gulp.task('default', ['scripts', 'sass', 'minify-css', 'watch']);
-gulp.task('build', ['scripts', 'sass', 'minify-css']);
+
+/*
+to install local ssl cert - run this on terminal in the site dir:
+mkcert localhost 127.0.0.1 ::1
+
+browserSync.init({
+  https: {
+    key: './localhost+2-key.pem',
+    cert: './localhost+2.pem'
+  },
+  ...
+ */
+
 
