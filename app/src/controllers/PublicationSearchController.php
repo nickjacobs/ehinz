@@ -68,7 +68,7 @@ class PublicationSearchController extends PageController
                 DropdownField::create('DocType','Type')
                     ->setSource($types)
                     ->setEmptyString('-- any --')
-                    ->addExtraClass('form-group'),
+                    ->addExtraClass('form-group')
             ),
             FieldList::create(
                 FormAction::create('doPublicationSearch','Search')
