@@ -27,25 +27,29 @@ $(function() {
 
 
 
-        $('a[href*="#ref"]').on('click', function (e) {
-            const href = $(this).attr('href');
-            const anchor = href.substring(href.indexOf('#')); // gets "#ref1", etc.
+    $('a[href*="#ref"]').on('click', function (e) {
+        const href = $(this).attr('href');
+        const anchor = href.substring(href.indexOf('#')); // "#ref2"
 
+        if (!anchor.startsWith('#ref')) return;
 
-            if (!anchor.startsWith('#ref')) return;
+        const anchorName = anchor.substring(1); // "ref2"
+        const $targetById = $('#' + anchorName);
+        const $targetByName = $('[name="' + anchorName + '"]');
+        const $target = $targetById.add($targetByName);
 
-            const $target = $(anchor);
-            const $toggle = $('.references .row-toggle');
+        const $toggle = $('.references .row-toggle');
 
-            if ($toggle.length && !$toggle.hasClass('open')) {
-                $toggle.addClass('open');
-            }
+        if ($toggle.length && !$toggle.hasClass('open')) {
+            $toggle.addClass('open');
+        }
 
-            if ($target.length) {
-                $('li.refhighlight').removeClass('refhighlight');
-                $target.closest('li').addClass('refhighlight');
-            }
-        });
+        if ($target.length) {
+            $('li.refhighlight').removeClass('refhighlight');
+            $target.closest('li').addClass('refhighlight');
+        }
+    });
+
 
 
 
