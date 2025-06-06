@@ -155,14 +155,14 @@ namespace {
 
             $siteconfig = SiteConfig::current_site_config();
 
-            if(!$this->ID == 1){
-                $fields->addFieldsToTab("Root.Healthspace",[
-                    HeaderField::create('Healthspace box'),
-                    Textfield::create('HealthspaceExtraTitle','Healthspace box title')->setDescription('override title - by default we\'ll use "'. $siteconfig->HealthspaceHeader .'"'),
-                    HTMLEditorField::create('HealthspaceExtra','Healthspace box content')->setRows(6)
-
-                ]);
-            }
+//            if(!$this->ID == 1){
+//                $fields->addFieldsToTab("Root.Healthspace",[
+//                    HeaderField::create('Healthspace box'),
+//                    Textfield::create('HealthspaceExtraTitle','Healthspace box title')->setDescription('override title - by default we\'ll use "'. $siteconfig->HealthspaceHeader .'"'),
+//                    HTMLEditorField::create('HealthspaceExtra','Healthspace box content')->setRows(6)
+//
+//                ]);
+//            }
 
 
 
