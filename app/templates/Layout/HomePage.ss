@@ -34,19 +34,7 @@
                             </div>
                         </div>
                     </div>
-					<% if $KeyFindings %>
-					<h4>Annual key findings</h4>
-					<ul class="key-findings">
-						<% loop $KeyFindings.sort('Sort') %>
-							<li>
-							<% if $PageLink %><a href="$PageLink.LinkURL"><% end_if %>
-								<div class="key-finding-title">$Title</div>
-							<% if $PageLink %></a><% end_if %>
-							<div class="key-finding-summary">$Summary</div>
-							</li>
-						<% end_loop %>
-					</ul>
-				<% end_if %>
+
 
 					<h4>Latest news</h4>
 					<ul class="blog-items">
@@ -59,6 +47,20 @@
 							</li>
 						<% end_loop %>
 					</ul>
+
+                    <% if $KeyFindings %>
+                        <h4>Annual key findings</h4>
+                        <ul class="key-findings">
+                            <% loop $KeyFindings.sort('Sort') %>
+                                <li>
+                                    <% if $PageLink %><a href="$PageLink.LinkURL"><% end_if %>
+                                    <div class="key-finding-title">$Title</div>
+                                    <% if $PageLink %></a><% end_if %>
+                                    <div class="key-finding-summary">$Summary</div>
+                                </li>
+                            <% end_loop %>
+                        </ul>
+                    <% end_if %>
 
 					<h4>$QuickLinksHeading</h4>
 					<div class="quick-links">
